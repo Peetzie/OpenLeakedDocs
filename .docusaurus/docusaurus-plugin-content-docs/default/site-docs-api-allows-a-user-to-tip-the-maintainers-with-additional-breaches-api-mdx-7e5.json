@@ -66,12 +66,17 @@
       },
       "responses": {
         "200": {
-          "description": "Successfully tipped us"
+          "description": "OK"
         },
-        "401": {
-          "description": "Request did not go through"
+        "400": {
+          "description": "Bad Request"
         }
       },
+      "security": [
+        {
+          "basicAuth": []
+        }
+      ],
       "description": "Allows a user to tip the maintainers with additional breaches",
       "method": "post",
       "path": "/api/tip/send",
@@ -89,6 +94,12 @@
           "description": "Local running server"
         }
       ],
+      "securitySchemes": {
+        "basicAuth": {
+          "type": "http",
+          "scheme": "basic"
+        }
+      },
       "jsonRequestBodyExample": {
         "desc": "description",
         "size": 114,
@@ -146,6 +157,21 @@
               "language": "json"
             }
           }
+        },
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "type": "any",
+              "value": "<Basic Auth Username>",
+              "key": "username"
+            },
+            {
+              "type": "any",
+              "value": "<Basic Auth Password>",
+              "key": "password"
+            }
+          ]
         }
       }
     },

@@ -1,0 +1,20 @@
+{
+  "unversionedId": "srces/sources",
+  "id": "srces/sources",
+  "title": "Sources used in the project",
+  "description": "1. https://faker.readthedocs.io/en/master/",
+  "source": "@site/docs/srces/sources.md",
+  "sourceDirName": "srces",
+  "slug": "/srces/sources",
+  "permalink": "/OpenLeakedDocs/docs/srces/sources",
+  "draft": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/srces/sources.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Redis cache",
+    "permalink": "/OpenLeakedDocs/docs/database-design/redis-cache"
+  }
+}

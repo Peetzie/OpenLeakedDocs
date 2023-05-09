@@ -57,10 +57,18 @@
         "200": {
           "description": "Sucess"
         },
-        "401": {
-          "description": "Failed to successfully adding user to the subscribe table"
+        "406": {
+          "description": "Email already exists in the subscribers database"
+        },
+        "409": {
+          "description": "Verification already send"
         }
       },
+      "security": [
+        {
+          "basicAuth": []
+        }
+      ],
       "method": "post",
       "path": "/api/subscribe/signup",
       "servers": [
@@ -77,6 +85,12 @@
           "description": "Local running server"
         }
       ],
+      "securitySchemes": {
+        "basicAuth": {
+          "type": "http",
+          "scheme": "basic"
+        }
+      },
       "jsonRequestBodyExample": {
         "local": "example",
         "domain": "example.com"
@@ -132,6 +146,21 @@
               "language": "json"
             }
           }
+        },
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "type": "any",
+              "value": "<Basic Auth Username>",
+              "key": "username"
+            },
+            {
+              "type": "any",
+              "value": "<Basic Auth Password>",
+              "key": "password"
+            }
+          ]
         }
       }
     },

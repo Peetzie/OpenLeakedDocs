@@ -51,7 +51,7 @@
           "description": "OK"
         },
         "400": {
-          "description": "Failed"
+          "description": "Bad Request"
         }
       },
       "method": "post",
@@ -70,6 +70,12 @@
           "description": "Local running server"
         }
       ],
+      "securitySchemes": {
+        "basicAuth": {
+          "type": "http",
+          "scheme": "basic"
+        }
+      },
       "jsonRequestBodyExample": {
         "Local": "johndoe",
         "Domain": "example.com"

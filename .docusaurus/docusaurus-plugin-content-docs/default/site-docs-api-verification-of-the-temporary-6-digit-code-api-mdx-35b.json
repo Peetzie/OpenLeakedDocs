@@ -54,7 +54,7 @@
           "description": "OK"
         },
         "400": {
-          "description": "Failed"
+          "description": "Bad Request"
         }
       },
       "description": "Verification of the temporary 6-digit code.",
@@ -74,6 +74,12 @@
           "description": "Local running server"
         }
       ],
+      "securitySchemes": {
+        "basicAuth": {
+          "type": "http",
+          "scheme": "basic"
+        }
+      },
       "jsonRequestBodyExample": {
         "Local": "johndoe",
         "Domain": "example.com",

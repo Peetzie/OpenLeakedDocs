@@ -1,31 +1,23 @@
 {
   "unversionedId": "intro",
   "id": "intro",
-  "title": "Tutorial Intro",
-  "description": "Let's discover Docusaurus in less than 5 minutes.",
+  "title": "Documentation introduction",
+  "description": "This is the official site for documentation related to the Open-Leaked project.",
   "source": "@site/docs/intro.md",
   "sourceDirName": ".",
   "slug": "/intro",
   "permalink": "/OpenLeakedDocs/docs/intro",
   "draft": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/intro.md",
-  "tags": [
-    {
-      "label": "test",
-      "permalink": "/OpenLeakedDocs/docs/tags/test"
-    }
-  ],
+  "tags": [],
   "version": "current",
   "sidebarPosition": 1,
   "frontMatter": {
-    "sidebar_position": 1,
-    "tags": [
-      "test"
-    ]
+    "sidebar_position": 1
   },
   "sidebar": "tutorialSidebar",
   "next": {
-    "title": "Tutorial - Basics",
-    "permalink": "/OpenLeakedDocs/docs/category/tutorial---basics"
+    "title": "Docker containers",
+    "permalink": "/OpenLeakedDocs/docs/Docker"
   }
 }

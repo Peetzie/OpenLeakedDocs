@@ -57,11 +57,6 @@ export default {
           "label": "Tutorial"
         },
         {
-          "to": "/blog",
-          "label": "Blog",
-          "position": "left"
-        },
-        {
           "label": "API Docs",
           "position": "left",
           "to": "/docs/api/open-leaked-yaml"
@@ -83,16 +78,16 @@ export default {
             {
               "label": "Tutorial",
               "to": "/docs/intro"
+            },
+            {
+              "label": "API Documentation",
+              "to": "/docs/api/open-leaked-yaml"
             }
           ]
         },
         {
           "title": "More",
           "items": [
-            {
-              "label": "Blog",
-              "to": "/blog"
-            },
             {
               "label": "GitHub",
               "href": "https://github.com/Open-Leaked/Monorepo"

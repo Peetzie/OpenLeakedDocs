@@ -35,20 +35,12 @@
                   "type": "object",
                   "properties": {
                     "value": {
-                      "type": "array",
-                      "items": {}
+                      "type": "string"
                     }
                   },
-                  "example": [
-                    "u",
-                    "s",
-                    "e",
-                    "r",
-                    "n",
-                    "a",
-                    "m",
-                    "e"
-                  ],
+                  "example": {
+                    "value": "username"
+                  },
                   "title": "Username"
                 }
               ]
@@ -61,10 +53,15 @@
         "200": {
           "description": "success"
         },
-        "401": {
+        "404": {
           "description": "No breaches found"
         }
       },
+      "security": [
+        {
+          "basicAuth": []
+        }
+      ],
       "method": "post",
       "path": "/api/Username/exists",
       "servers": [
@@ -81,16 +78,15 @@
           "description": "Local running server"
         }
       ],
-      "jsonRequestBodyExample": [
-        "u",
-        "s",
-        "e",
-        "r",
-        "n",
-        "a",
-        "m",
-        "e"
-      ],
+      "securitySchemes": {
+        "basicAuth": {
+          "type": "http",
+          "scheme": "basic"
+        }
+      },
+      "jsonRequestBodyExample": {
+        "value": "username"
+      },
       "info": {
         "title": "Open Leaked YAML",
         "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\nIt was **extended** to illustrate features of [generator-openapi-repo](https://github.com/Rebilly/generator-openapi-repo)\ntool and [ReDoc](https://github.com/Redocly/redoc) documentation. In addition to standard\nOpenAPI syntax we use a few [vendor extensions](https://github.com/Redocly/redoc/blob/master/docs/redoc-vendor-extensions.md).\n\n## Cross-Origin Resource Sharing\nThis API features Cross-Origin Resource Sharing (CORS) implemented in compliance with  [W3C spec](https://www.w3.org/TR/cors/).\nAnd that allows cross-domain communication from the browser.\nAll responses have a wildcard same-origin which makes them completely public and accessible to everyone, including any code on any site.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. A local API key may be optained from the vendor\n",
@@ -142,6 +138,21 @@
               "language": "json"
             }
           }
+        },
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "type": "any",
+              "value": "<Basic Auth Username>",
+              "key": "username"
+            },
+            {
+              "type": "any",
+              "value": "<Basic Auth Password>",
+              "key": "password"
+            }
+          ]
         }
       }
     },

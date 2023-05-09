@@ -23,7 +23,7 @@
     "permalink": "/OpenLeakedDocs/docs/API/allows-a-user-to-tip-the-maintainers-with-additional-breaches"
   },
   "next": {
-    "title": "Retrieves the ID of an email",
-    "permalink": "/OpenLeakedDocs/docs/API/retrieves-the-id-of-an-email"
+    "title": "Finds associated breaches",
+    "permalink": "/OpenLeakedDocs/docs/API/finds-associated-breaches"
   }
 }

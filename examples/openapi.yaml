@@ -55,8 +55,10 @@ paths:
       responses:
         "200":
           description: success
-        "401":
+        "404":
           description: No breaches found
+      security:
+      - basicAuth: []
   /api/username/breaches:
     post:
       tags:
@@ -67,9 +69,11 @@ paths:
         $ref: '#/components/requestBodies/Username'
       responses:
         "200":
-          description: sucess
-        "401":
+          description: Success
+        "404":
           description: Could not find username in database
+      security:
+      - basicAuth: []
   /api/subscribe/verify:
     post:
       tags:
@@ -81,8 +85,10 @@ paths:
       responses:
         "200":
           description: Sucess
-        "401":
-          description: Failed to verify user
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
   /api/subscribe/signup:
     post:
       tags:
@@ -94,8 +100,12 @@ paths:
       responses:
         "200":
           description: Sucess
-        "401":
-          description: Failed to successfully adding user to the subscribe table
+        "409":
+          description: Verification already send
+        "406":
+          description: Email already exists in the subscribers database
+      security:
+      - basicAuth: []
   /api/subscribe/unsubscribe:
     post:
       tags:
@@ -107,8 +117,10 @@ paths:
       responses:
         "200":
           description: Sucess
-        "401":
+        "400":
           description: Failed to remove subscribers users
+      security:
+      - basicAuth: []
   /api/password/exists:
     post:
       tags:
@@ -120,8 +132,10 @@ paths:
       responses:
         "200":
           description: success
-        "401":
-          description: No breaches found
+        "404":
+          description: Password not found
+      security:
+      - basicAuth: []
   /api/password/breaches:
     post:
       tags:
@@ -132,22 +146,11 @@ paths:
         $ref: '#/components/requestBodies/Password'
       responses:
         "200":
-          description: sucess
-        "401":
+          description: OK
+        "404":
           description: Could not find password in database
-  /api/email/id:
-    post:
-      tags:
-      - email
-      summary: Retrieves the ID of an email
-      description: Takes an emailID (see the requestbody) and retrieves the unique identifier from the database.
-      requestBody:
-        $ref: '#/components/requestBodies/Email'
-      responses:
-        "200":
-          description: sucess
-        "401":
-          description: Could not find email in the database.
+      security:
+      - basicAuth: []
   /api/email/breaches:
     post:
       tags:
@@ -158,9 +161,11 @@ paths:
         $ref: '#/components/requestBodies/Email'
       responses:
         "200":
-          description: sucess
-        "401":
+          description: OK
+        "404":
           description: No breaches found or email was not found
+      security:
+      - basicAuth: []
   /api/email/exists:
     post:
       tags:
@@ -171,9 +176,11 @@ paths:
         $ref: '#/components/requestBodies/Email'
       responses:
         "200":
-          description: success
-        "401":
-          description: No breaches found
+          description: OK
+        "404":
+          description: Email was not found in a breach.
+      security:
+      - basicAuth: []
   /api/healthcheck:
     get:
       tags:
@@ -182,9 +189,9 @@ paths:
       description: "Simple benefecial healthcheck, no further use."
       responses:
         "200":
-          description: successful operation
-        "401":
-          description: Bad request - Server not running
+          description: OK
+        "503":
+          description: Service Unavailable
   /api/tip/send:
     post:
       tags:
@@ -194,60 +201,56 @@ paths:
         $ref: '#/components/requestBodies/Tip'
       responses:
         "200":
-          description: Successfully tipped us
-        "401":
-          description: Request did not go through
+          description: OK
+        "400":
+          description: Bad Request
+      security:
+      - basicAuth: []
   /api/login/login:
     post:
       tags:
       - authorisations
       summary: Authorise an existing user
       description: This action can be performed by anyone. If the user is currently already in an active session the session is extended.
-      requestBody:
-        description: HTTP basic user authentication requestbody
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/User'
-        required: true
       responses:
         "200":
-          description: Sucess
+          description: Success
           headers:
-            X-Rate-Limit:
-              description: calls per hour allowed by the user
-              style: simple
-              explode: false
-              schema:
-                type: integer
-                format: int32
-            X-Expires-After:
-              description: date in UTC when token expires
+            set-cookie:
+              description: "SESSION cookie; SamSite=Strict, Secure; HttpOnly"
               style: simple
               explode: false
               schema:
                 type: string
-                format: date-time
         "401":
-          description: Unauthorised
+          description: Unauthorized
+          headers:
+            X-CUSTOM-AUTHENTICATE:
+              style: simple
+              explode: false
+              schema:
+                type: string
+      security:
+      - basicAuth: []
   /api/login/logout:
     post:
       tags:
       - authorisations
       summary: Ends current the current
       description: This action can be performed by any user currently in an active session (authorized). If sucessfull the session token will be revoked
-      requestBody:
-        description: HTTP basic authentication requestbody
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/User'
-        required: true
       responses:
         "200":
-          description: successful operation
-        "400":
-          description: Failed
+          description: OK
+        "401":
+          description: Unauthorized
+          headers:
+            X-CUSTOM-AUTHENTICATE:
+              style: simple
+              explode: false
+              schema:
+                type: string
+      security:
+      - basicAuth: []
   /api/login/verify:
     post:
       tags:
@@ -263,7 +266,7 @@ paths:
         "200":
           description: OK
         "400":
-          description: Failed
+          description: Bad Request
   /api/login/recover:
     post:
       tags:
@@ -280,7 +283,7 @@ paths:
         "200":
           description: OK
         "400":
-          description: Failed
+          description: Bad Request
   /api/login/newPassword:
     post:
       tags:
@@ -297,7 +300,7 @@ paths:
         "200":
           description: OK
         "400":
-          description: Failed
+          description: Bad Request
   /api/login/register:
     post:
       tags:
@@ -314,24 +317,18 @@ paths:
         "200":
           description: OK
         "400":
-          description: Failed
+          description: Bad Request
+        "409":
+          description: Password exists in the breach database
 components:
   schemas:
     Username:
       type: object
       properties:
         value:
-          type: array
-          items: {}
+          type: string
       example:
-      - u
-      - s
-      - e
-      - r
-      - "n"
-      - a
-      - m
-      - e
+        value: username
     Subscribe:
       type: object
       properties:
@@ -349,17 +346,9 @@ components:
       type: object
       properties:
         value:
-          type: array
-          items: {}
+          type: string
       example:
-      - p
-      - a
-      - s
-      - s
-      - w
-      - o
-      - r
-      - d
+        value: password
     Email:
       type: object
       properties:
@@ -470,6 +459,15 @@ components:
           type: string
         domain:
           type: string
+  responses:
+    UnauthorizedError:
+      description: Authentication information is missing or invalid
+      headers:
+        WWW_Authenticate:
+          style: simple
+          explode: false
+          schema:
+            type: string
   requestBodies:
     Username:
       content:
@@ -511,6 +509,10 @@ components:
             - title: Tip rqeust Body
             - $ref: '#/components/schemas/Tip'
       required: true
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
 x-tagGroups:
 - name: General
   tags:

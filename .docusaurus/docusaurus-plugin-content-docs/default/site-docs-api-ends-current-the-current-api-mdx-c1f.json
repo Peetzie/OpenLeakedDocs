@@ -23,45 +23,28 @@
         "authorisations"
       ],
       "description": "This action can be performed by any user currently in an active session (authorized). If sucessfull the session token will be revoked",
-      "requestBody": {
-        "description": "HTTP basic authentication requestbody",
-        "content": {
-          "application/json": {
-            "schema": {
-              "type": "object",
-              "properties": {
-                "email": {
-                  "minLength": 4,
-                  "type": "string",
-                  "description": "User supplied username",
-                  "example": "johndoe@example.com"
-                },
-                "password": {
-                  "minLength": 8,
-                  "pattern": "/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/",
-                  "type": "string",
-                  "description": "User password, MUST contain a mix of upper and lower case letters, as well as digits and special characters",
-                  "format": "password",
-                  "example": "drowssaP123#"
-                }
-              },
-              "xml": {
-                "name": "User"
-              },
-              "title": "User"
-            }
-          }
-        },
-        "required": true
-      },
       "responses": {
         "200": {
-          "description": "successful operation"
+          "description": "OK"
         },
-        "400": {
-          "description": "Failed"
+        "401": {
+          "description": "Unauthorized",
+          "headers": {
+            "X-CUSTOM-AUTHENTICATE": {
+              "style": "simple",
+              "explode": false,
+              "schema": {
+                "type": "string"
+              }
+            }
+          }
         }
       },
+      "security": [
+        {
+          "basicAuth": []
+        }
+      ],
       "method": "post",
       "path": "/api/login/logout",
       "servers": [
@@ -78,9 +61,11 @@
           "description": "Local running server"
         }
       ],
-      "jsonRequestBodyExample": {
-        "email": "johndoe@example.com",
-        "password": "drowssaP123#"
+      "securitySchemes": {
+        "basicAuth": {
+          "type": "http",
+          "scheme": "basic"
+        }
       },
       "info": {
         "title": "Open Leaked YAML",
@@ -118,21 +103,21 @@
           "query": [],
           "variable": []
         },
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
         "method": "POST",
-        "body": {
-          "mode": "raw",
-          "raw": "\"\"",
-          "options": {
-            "raw": {
-              "language": "json"
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "type": "any",
+              "value": "<Basic Auth Username>",
+              "key": "username"
+            },
+            {
+              "type": "any",
+              "value": "<Basic Auth Password>",
+              "key": "password"
             }
-          }
+          ]
         }
       }
     },
