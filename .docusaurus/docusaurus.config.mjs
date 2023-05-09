@@ -54,7 +54,7 @@ export default {
           "type": "doc",
           "docId": "intro",
           "position": "left",
-          "label": "Tutorial"
+          "label": "Documentation"
         },
         {
           "label": "API Docs",
@@ -76,7 +76,7 @@ export default {
           "title": "Docs",
           "items": [
             {
-              "label": "Tutorial",
+              "label": "Documentation",
               "to": "/docs/intro"
             },
             {
@@ -94,8 +94,7 @@ export default {
             }
           ]
         }
-      ],
-      "copyright": "Copyright © 2023 My Project, Inc. Built with Docusaurus."
+      ]
     },
     "prism": {
       "theme": {
@@ -292,7 +291,8 @@ export default {
       "additionalLanguages": [
         "ruby",
         "csharp",
-        "php"
+        "php",
+        "java"
       ],
       "magicComments": [
         {

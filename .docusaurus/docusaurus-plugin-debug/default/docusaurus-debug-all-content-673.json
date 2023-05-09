@@ -1186,7 +1186,8 @@
                 "sidebar_label": "Introduction",
                 "sidebar_position": 0,
                 "hide_title": true,
-                "custom_edit_url": null
+                "custom_edit_url": null,
+                "sidebar.collapsed": true
               },
               "sidebar": "openApiSidebar",
               "previous": {
@@ -2180,58 +2181,113 @@
               }
             },
             {
-              "unversionedId": "database-design/design",
-              "id": "database-design/design",
-              "title": "Datagen",
-              "description": "For development purposes we created a synthetic dataset.",
-              "source": "@site/docs/database-design/design.md",
-              "sourceDirName": "database-design",
-              "slug": "/database-design/design",
-              "permalink": "/OpenLeakedDocs/docs/database-design/design",
+              "unversionedId": "Database/BloomFilter",
+              "id": "Database/BloomFilter",
+              "title": "Redis - BloomFilter",
+              "description": "A brief introduction",
+              "source": "@site/docs/Database/BloomFilter.mdx",
+              "sourceDirName": "Database",
+              "slug": "/Database/BloomFilter",
+              "permalink": "/OpenLeakedDocs/docs/Database/BloomFilter",
               "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/database-design/design.md",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/Database/BloomFilter.mdx",
               "tags": [],
               "version": "current",
-              "frontMatter": {},
+              "frontMatter": {
+                "sidebar-position": 3
+              },
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "Docker setup",
-                "permalink": "/OpenLeakedDocs/docs/Docker-setup"
-              },
-              "next": {
-                "title": "Redis cache",
-                "permalink": "/OpenLeakedDocs/docs/database-design/redis-cache"
+                "title": "Redis - Cache",
+                "permalink": "/OpenLeakedDocs/docs/Database/Cache"
               }
             },
             {
-              "unversionedId": "database-design/redis-cache",
-              "id": "database-design/redis-cache",
-              "title": "Redis cache",
-              "description": "A cache layer in the database is utilized to improve overall performance.",
-              "source": "@site/docs/database-design/redis-cache.md",
-              "sourceDirName": "database-design",
-              "slug": "/database-design/redis-cache",
-              "permalink": "/OpenLeakedDocs/docs/database-design/redis-cache",
+              "unversionedId": "Database/Cache",
+              "id": "Database/Cache",
+              "title": "Redis - Cache",
+              "description": "We implement caching as a means to improve the overall performance of our database. It is a requirement for fulfilling the constraints of a RESTful API.",
+              "source": "@site/docs/Database/Cache.mdx",
+              "sourceDirName": "Database",
+              "slug": "/Database/Cache",
+              "permalink": "/OpenLeakedDocs/docs/Database/Cache",
               "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/database-design/redis-cache.md",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/Database/Cache.mdx",
               "tags": [],
               "version": "current",
-              "frontMatter": {},
+              "sidebarPosition": 2,
+              "frontMatter": {
+                "sidebar_position": 2
+              },
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "Datagen",
-                "permalink": "/OpenLeakedDocs/docs/database-design/design"
+                "title": "MariaDB - Persistent storage",
+                "permalink": "/OpenLeakedDocs/docs/Database/MariaDB"
               },
               "next": {
-                "title": "Sources used in the project",
-                "permalink": "/OpenLeakedDocs/docs/srces/sources"
+                "title": "Redis - BloomFilter",
+                "permalink": "/OpenLeakedDocs/docs/Database/BloomFilter"
+              }
+            },
+            {
+              "unversionedId": "Database/Introduction",
+              "id": "Database/Introduction",
+              "title": "Introduction",
+              "description": "This section aims to cover the different subjects of our CORE database design.",
+              "source": "@site/docs/Database/Introduction.md",
+              "sourceDirName": "Database",
+              "slug": "/Database/Introduction",
+              "permalink": "/OpenLeakedDocs/docs/Database/Introduction",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/Database/Introduction.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_position": 1
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Verify user",
+                "permalink": "/OpenLeakedDocs/docs/API/verify-user"
+              },
+              "next": {
+                "title": "MariaDB - Persistent storage",
+                "permalink": "/OpenLeakedDocs/docs/Database/MariaDB"
+              }
+            },
+            {
+              "unversionedId": "Database/MariaDB",
+              "id": "Database/MariaDB",
+              "title": "MariaDB - Persistent storage",
+              "description": "In this section we aim to provide usefull insight into the design decisions for the databases.",
+              "source": "@site/docs/Database/MariaDB.mdx",
+              "sourceDirName": "Database",
+              "slug": "/Database/MariaDB",
+              "permalink": "/OpenLeakedDocs/docs/Database/MariaDB",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/Database/MariaDB.mdx",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_position": 1
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Introduction",
+                "permalink": "/OpenLeakedDocs/docs/Database/Introduction"
+              },
+              "next": {
+                "title": "Redis - Cache",
+                "permalink": "/OpenLeakedDocs/docs/Database/Cache"
               }
             },
             {
               "unversionedId": "Docker",
               "id": "Docker",
               "title": "Docker containers",
-              "description": "Used ports",
+              "description": "Docker containers are used to manage the application. In the following section we briefly descripe the containerized aspect of our applicaiton design.",
               "source": "@site/docs/Docker.mdx",
               "sourceDirName": ".",
               "slug": "/Docker",
@@ -2246,7 +2302,7 @@
               },
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "Documentation introduction",
+                "title": "Introduction",
                 "permalink": "/OpenLeakedDocs/docs/intro"
               },
               "next": {
@@ -2255,33 +2311,9 @@
               }
             },
             {
-              "unversionedId": "Docker-setup",
-              "id": "Docker-setup",
-              "title": "Docker setup",
-              "description": "Docker has been used to make development and deployment much easier.",
-              "source": "@site/docs/Docker-setup.md",
-              "sourceDirName": ".",
-              "slug": "/Docker-setup",
-              "permalink": "/OpenLeakedDocs/docs/Docker-setup",
-              "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/Docker-setup.md",
-              "tags": [],
-              "version": "current",
-              "frontMatter": {},
-              "sidebar": "tutorialSidebar",
-              "previous": {
-                "title": "Verify user",
-                "permalink": "/OpenLeakedDocs/docs/API/verify-user"
-              },
-              "next": {
-                "title": "Datagen",
-                "permalink": "/OpenLeakedDocs/docs/database-design/design"
-              }
-            },
-            {
               "unversionedId": "intro",
               "id": "intro",
-              "title": "Documentation introduction",
+              "title": "Introduction",
               "description": "This is the official site for documentation related to the Open-Leaked project.",
               "source": "@site/docs/intro.md",
               "sourceDirName": ".",
@@ -2299,26 +2331,6 @@
               "next": {
                 "title": "Docker containers",
                 "permalink": "/OpenLeakedDocs/docs/Docker"
-              }
-            },
-            {
-              "unversionedId": "srces/sources",
-              "id": "srces/sources",
-              "title": "Sources used in the project",
-              "description": "1. https://faker.readthedocs.io/en/master/",
-              "source": "@site/docs/srces/sources.md",
-              "sourceDirName": "srces",
-              "slug": "/srces/sources",
-              "permalink": "/OpenLeakedDocs/docs/srces/sources",
-              "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/srces/sources.md",
-              "tags": [],
-              "version": "current",
-              "frontMatter": {},
-              "sidebar": "tutorialSidebar",
-              "previous": {
-                "title": "Redis cache",
-                "permalink": "/OpenLeakedDocs/docs/database-design/redis-cache"
               }
             }
           ],
@@ -2445,34 +2457,26 @@
                 ]
               },
               {
-                "type": "doc",
-                "id": "Docker-setup"
-              },
-              {
                 "type": "category",
-                "label": "database-design",
+                "label": "Database",
                 "collapsible": true,
                 "collapsed": true,
                 "items": [
                   {
                     "type": "doc",
-                    "id": "database-design/design"
+                    "id": "Database/Introduction"
                   },
                   {
                     "type": "doc",
-                    "id": "database-design/redis-cache"
-                  }
-                ]
-              },
-              {
-                "type": "category",
-                "label": "srces",
-                "collapsible": true,
-                "collapsed": true,
-                "items": [
+                    "id": "Database/MariaDB"
+                  },
                   {
                     "type": "doc",
-                    "id": "srces/sources"
+                    "id": "Database/Cache"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "Database/BloomFilter"
                   }
                 ]
               }

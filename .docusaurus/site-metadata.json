@@ -30,12 +30,12 @@
     "docusaurus-plugin-openapi-docs": {
       "type": "package",
       "name": "docusaurus-plugin-openapi-docs",
-      "version": "1.7.0"
+      "version": "1.7.3"
     },
     "docusaurus-theme-openapi": {
       "type": "package",
       "name": "docusaurus-theme-openapi-docs",
-      "version": "1.7.0"
+      "version": "1.7.3"
     }
   }
 }

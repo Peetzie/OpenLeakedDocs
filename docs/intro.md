@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Documentation introduction
+# Introduction
 
 <p align="center">
 <img src={require("/static/img/openleaked.png").default} width="375"/>
@@ -20,3 +20,11 @@ Many of this is also included in the Thesis.
 
 As an added benefit we allow ourselves to fully document the RESTful API ustilized in the project. 
 
+**Hosting**
+
+The application is currenly being hosted on a server at The Compute Department at The Technical University of Denmark
+
+
+:::info
+To start the project it is important to read through the documentation. However a Quick start / getting started is available here
+:::

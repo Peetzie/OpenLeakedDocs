@@ -1,7 +1,7 @@
 {
   "unversionedId": "intro",
   "id": "intro",
-  "title": "Documentation introduction",
+  "title": "Introduction",
   "description": "This is the official site for documentation related to the Open-Leaked project.",
   "source": "@site/docs/intro.md",
   "sourceDirName": ".",

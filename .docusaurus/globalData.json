@@ -111,13 +111,23 @@
               "sidebar": "openApiSidebar"
             },
             {
-              "id": "database-design/design",
-              "path": "/OpenLeakedDocs/docs/database-design/design",
+              "id": "Database/BloomFilter",
+              "path": "/OpenLeakedDocs/docs/Database/BloomFilter",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "database-design/redis-cache",
-              "path": "/OpenLeakedDocs/docs/database-design/redis-cache",
+              "id": "Database/Cache",
+              "path": "/OpenLeakedDocs/docs/Database/Cache",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Database/Introduction",
+              "path": "/OpenLeakedDocs/docs/Database/Introduction",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Database/MariaDB",
+              "path": "/OpenLeakedDocs/docs/Database/MariaDB",
               "sidebar": "tutorialSidebar"
             },
             {
@@ -126,18 +136,8 @@
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "Docker-setup",
-              "path": "/OpenLeakedDocs/docs/Docker-setup",
-              "sidebar": "tutorialSidebar"
-            },
-            {
               "id": "intro",
               "path": "/OpenLeakedDocs/docs/intro",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "srces/sources",
-              "path": "/OpenLeakedDocs/docs/srces/sources",
               "sidebar": "tutorialSidebar"
             },
             {

@@ -11,7 +11,7 @@
     "tutorialSidebar": [
       {
         "type": "link",
-        "label": "Documentation introduction",
+        "label": "Introduction",
         "href": "/OpenLeakedDocs/docs/intro",
         "docId": "intro"
       },
@@ -161,42 +161,34 @@
         ]
       },
       {
-        "type": "link",
-        "label": "Docker setup",
-        "href": "/OpenLeakedDocs/docs/Docker-setup",
-        "docId": "Docker-setup"
-      },
-      {
         "type": "category",
-        "label": "database-design",
+        "label": "Database",
         "collapsible": true,
         "collapsed": true,
         "items": [
           {
             "type": "link",
-            "label": "Datagen",
-            "href": "/OpenLeakedDocs/docs/database-design/design",
-            "docId": "database-design/design"
+            "label": "Introduction",
+            "href": "/OpenLeakedDocs/docs/Database/Introduction",
+            "docId": "Database/Introduction"
           },
           {
             "type": "link",
-            "label": "Redis cache",
-            "href": "/OpenLeakedDocs/docs/database-design/redis-cache",
-            "docId": "database-design/redis-cache"
-          }
-        ]
-      },
-      {
-        "type": "category",
-        "label": "srces",
-        "collapsible": true,
-        "collapsed": true,
-        "items": [
+            "label": "MariaDB - Persistent storage",
+            "href": "/OpenLeakedDocs/docs/Database/MariaDB",
+            "docId": "Database/MariaDB"
+          },
           {
             "type": "link",
-            "label": "Sources used in the project",
-            "href": "/OpenLeakedDocs/docs/srces/sources",
-            "docId": "srces/sources"
+            "label": "Redis - Cache",
+            "href": "/OpenLeakedDocs/docs/Database/Cache",
+            "docId": "Database/Cache"
+          },
+          {
+            "type": "link",
+            "label": "Redis - BloomFilter",
+            "href": "/OpenLeakedDocs/docs/Database/BloomFilter",
+            "docId": "Database/BloomFilter"
           }
         ]
       }
@@ -516,40 +508,40 @@
       "description": "Authenticate the user by checking the entered verification code.",
       "sidebar": "openApiSidebar"
     },
-    "database-design/design": {
-      "id": "database-design/design",
-      "title": "Datagen",
-      "description": "For development purposes we created a synthetic dataset.",
+    "Database/BloomFilter": {
+      "id": "Database/BloomFilter",
+      "title": "Redis - BloomFilter",
+      "description": "A brief introduction",
       "sidebar": "tutorialSidebar"
     },
-    "database-design/redis-cache": {
-      "id": "database-design/redis-cache",
-      "title": "Redis cache",
-      "description": "A cache layer in the database is utilized to improve overall performance.",
+    "Database/Cache": {
+      "id": "Database/Cache",
+      "title": "Redis - Cache",
+      "description": "We implement caching as a means to improve the overall performance of our database. It is a requirement for fulfilling the constraints of a RESTful API.",
+      "sidebar": "tutorialSidebar"
+    },
+    "Database/Introduction": {
+      "id": "Database/Introduction",
+      "title": "Introduction",
+      "description": "This section aims to cover the different subjects of our CORE database design.",
+      "sidebar": "tutorialSidebar"
+    },
+    "Database/MariaDB": {
+      "id": "Database/MariaDB",
+      "title": "MariaDB - Persistent storage",
+      "description": "In this section we aim to provide usefull insight into the design decisions for the databases.",
       "sidebar": "tutorialSidebar"
     },
     "Docker": {
       "id": "Docker",
       "title": "Docker containers",
-      "description": "Used ports",
-      "sidebar": "tutorialSidebar"
-    },
-    "Docker-setup": {
-      "id": "Docker-setup",
-      "title": "Docker setup",
-      "description": "Docker has been used to make development and deployment much easier.",
+      "description": "Docker containers are used to manage the application. In the following section we briefly descripe the containerized aspect of our applicaiton design.",
       "sidebar": "tutorialSidebar"
     },
     "intro": {
       "id": "intro",
-      "title": "Documentation introduction",
+      "title": "Introduction",
       "description": "This is the official site for documentation related to the Open-Leaked project.",
-      "sidebar": "tutorialSidebar"
-    },
-    "srces/sources": {
-      "id": "srces/sources",
-      "title": "Sources used in the project",
-      "description": "1. https://faker.readthedocs.io/en/master/",
       "sidebar": "tutorialSidebar"
     }
   }

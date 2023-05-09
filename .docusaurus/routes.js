@@ -44,7 +44,7 @@ export default [
   },
   {
     path: '/OpenLeakedDocs/docs',
-    component: ComponentCreator('/OpenLeakedDocs/docs', 'dee'),
+    component: ComponentCreator('/OpenLeakedDocs/docs', '881'),
     routes: [
       {
         path: '/OpenLeakedDocs/docs/API/allows-a-user-to-tip-the-maintainers-with-additional-breaches',
@@ -173,14 +173,26 @@ export default [
         sidebar: "openApiSidebar"
       },
       {
-        path: '/OpenLeakedDocs/docs/database-design/design',
-        component: ComponentCreator('/OpenLeakedDocs/docs/database-design/design', 'c8c'),
+        path: '/OpenLeakedDocs/docs/Database/BloomFilter',
+        component: ComponentCreator('/OpenLeakedDocs/docs/Database/BloomFilter', 'b77'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/OpenLeakedDocs/docs/database-design/redis-cache',
-        component: ComponentCreator('/OpenLeakedDocs/docs/database-design/redis-cache', '339'),
+        path: '/OpenLeakedDocs/docs/Database/Cache',
+        component: ComponentCreator('/OpenLeakedDocs/docs/Database/Cache', '7b8'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/OpenLeakedDocs/docs/Database/Introduction',
+        component: ComponentCreator('/OpenLeakedDocs/docs/Database/Introduction', '01b'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/OpenLeakedDocs/docs/Database/MariaDB',
+        component: ComponentCreator('/OpenLeakedDocs/docs/Database/MariaDB', '800'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
@@ -191,20 +203,8 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/OpenLeakedDocs/docs/Docker-setup',
-        component: ComponentCreator('/OpenLeakedDocs/docs/Docker-setup', '580'),
-        exact: true,
-        sidebar: "tutorialSidebar"
-      },
-      {
         path: '/OpenLeakedDocs/docs/intro',
         component: ComponentCreator('/OpenLeakedDocs/docs/intro', '90d'),
-        exact: true,
-        sidebar: "tutorialSidebar"
-      },
-      {
-        path: '/OpenLeakedDocs/docs/srces/sources',
-        component: ComponentCreator('/OpenLeakedDocs/docs/srces/sources', 'c0f'),
         exact: true,
         sidebar: "tutorialSidebar"
       }

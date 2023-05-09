@@ -1,0 +1,226 @@
+---
+sidebar_position: 1
+---
+
+#  MariaDB - Persistent storage
+In this section we aim to provide usefull insight into the design decisions for the databases. 
+We also here define basic schematics used to deploy the project. 
+
+The database is based on a SQL database in MariaDB. 
+Therefor the entity relationships are important. If improperly design they would slow down the application and vice versa. 
+
+The database evolves around 1 ```SCHEME```. 
+
+The entity relationships are freely available here for the interrested users:
+
+> 1. [![Entity Relationship diagram for users]](/img/ERD/users_ERD.pdf)
+>
+> 2. [![Entity Relationship diagram for data]](/img/ERD/ERD_diagram.drawio.pdf)
+
+
+## Loading the schematics
+
+To start the Docker containers the SCHEME of the database is important. 
+To get you started we have provided that in SQL form here.
+
+Essentially the following snippet creates the tables in the database and adds constraints to values, assigns primary keys and foregin keys.  
+
+```sql
+create table breach
+(
+    id            bigint unsigned auto_increment
+        primary key,
+    date          date         null,
+    inserted_date date         not null,
+    name          varchar(255) not null,
+    source        varchar(255) null,
+    verified      tinyint(1)   not null,
+    iconURL       varchar(255) null,
+    summary       text         null,
+    description   text         null
+);
+
+create table email
+(
+    id     bigint unsigned not null,
+    domain varchar(255)    not null,
+    local  varchar(255)    not null,
+    primary key (domain, local),
+    constraint domain
+        unique (domain, local),
+    constraint domain_2
+        unique (domain, local),
+    constraint id
+        unique (id),
+    constraint id_2
+        unique (id)
+);
+
+create table email_breaches
+(
+    email_id    bigint unsigned not null,
+    breaches_id bigint unsigned not null,
+    primary key (email_id, breaches_id),
+    constraint email_id
+        unique (email_id, breaches_id),
+    constraint email_breaches_ibfk_1
+        foreign key (breaches_id) references breach (id),
+    constraint email_breaches_ibfk_2
+        foreign key (email_id) references email (id)
+);
+
+create index breaches_id
+    on email_breaches (breaches_id);
+
+create table password
+(
+    id    bigint unsigned not null,
+    value varchar(255)    not null
+        primary key,
+    constraint id
+        unique (id),
+    constraint id_2
+        unique (id),
+    constraint value
+        unique (value),
+    constraint value_2
+        unique (value)
+);
+
+create table password_breaches
+(
+    password_id bigint unsigned not null,
+    breaches_id bigint unsigned not null,
+    primary key (password_id, breaches_id),
+    constraint password_id
+        unique (password_id, breaches_id),
+    constraint password_breaches_ibfk_1
+        foreign key (breaches_id) references breach (id),
+    constraint password_breaches_ibfk_2
+        foreign key (breaches_id) references breach (id)
+);
+
+create index breaches_id
+    on password_breaches (breaches_id);
+
+create table subscription
+(
+    domain varchar(255) not null,
+    local  varchar(255) not null,
+    primary key (domain, local)
+);
+
+create table tip
+(
+    magnet_link varchar(255) not null
+        primary key,
+    description varchar(255) null,
+    size        int          null,
+    unit        varchar(255) null,
+    breach_date date         null
+);
+
+create table username
+(
+    id    bigint unsigned not null,
+    value varchar(255)    not null
+        primary key,
+    constraint id
+        unique (id),
+    constraint value
+        unique (value)
+);
+
+create table username_breaches
+(
+    username_id bigint unsigned not null,
+    breaches_id bigint unsigned not null,
+    primary key (username_id, breaches_id),
+    constraint username_id
+        unique (username_id, breaches_id),
+    constraint username_breaches_ibfk_1
+        foreign key (username_id) references email (id),
+    constraint username_breaches_ibfk_2
+        foreign key (breaches_id) references breach (id)
+);
+
+create index breaches_id
+    on username_breaches (breaches_id);
+
+create table users
+(
+    username   varchar(50)       not null
+        primary key,
+    password   varchar(100)      not null,
+    full_name  varchar(100)      not null,
+    student_no varchar(50)       not null,
+    enabled    tinyint default 1 not null
+);
+
+create table authorities
+(
+    username  varchar(50) not null,
+    authority varchar(50) not null,
+    constraint ix_auth_username
+        unique (username, authority),
+    constraint authorities_ibfk_1
+        foreign key (username) references users (username)
+);
+```
+:::tip
+The following assumes that you've created the ```SCHEME```
+If not enter the following containerized
+```sql
+CREATE SCHEMA IF NOT EXISTS OPEN_LEAKED
+
+use OPEN_LEAKED
+```
+:::
+
+## Design thoughts
+The design of the database evolves around the idea that each breach in the real world is unique, however their associated data is not. 
+An ```searchable``` can be found in multiple databases. This help us set up the different entity relationships that are required. 
+
+### Data
+During pre-processing each ```searchable``` gets an ID assigned by MariaDB. The same goes for each indiviudal breach. 
+Large tables are then created containing an id for an ```searchable``` and an id for a breach. 
+If a ```searchable``` is found in multiple breaches the ID would be duplicated in that table. However the primary key with be unique as the associated breach ID would differ from the remainder. 
+
+By splitting up entity types we can avoid looking through more records than nessesary - resulting in faster speeds. 
+
+
+### Authorisations
+There are two disctinct tables from the data tables even though they are contained in the same schematics. 
+This is ```user``` and ```authorities``` a base schematic from [JDBC Authentication](https://docs.spring.io/spring-security/reference/servlet/authentication/passwords/jdbc.html)
+
+Here they define the *default* user schematics as:
+```sql
+create table users(
+	username varchar_ignorecase(50) not null primary key,
+	password varchar_ignorecase(500) not null,
+	enabled boolean not null
+);
+
+create table authorities (
+	username varchar_ignorecase(50) not null,
+	authority varchar_ignorecase(50) not null,
+	constraint fk_authorities_users foreign key(username) references users(username)
+);
+create unique index ix_auth_username on authorities (username,authority);
+```
+
+To define our much the same way, however we accomodate a bit more information to simulate the info that we possibly would have utilizing the Single-Sign On System from DTU. 
+:::info
+Single sign on allows users to be authentication across sites by sending a special type of authentication token. 
+This can both be a vulnerability and a security boost based on the application. 
+By using the two-factor authentication from DTU, SSO could help in further securing this application 
+:::
+
+## Connections
+
+MariaDB is run through the containerzied image. Thus mounting of volumes and ports are listed in the ```Docker compose``` files. 
+All connections from the backend to mariaDB is done through [*Spring Boot*](https://spring.io/) and the ```JPA Connection Pool```
+
+
+
+

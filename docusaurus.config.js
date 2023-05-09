@@ -13,14 +13,12 @@ const config = {
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
-
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "peetzie", // Usually your GitHub org/user name.
   projectName: "OpenLeakedDocs", // Usually your repo name.
   deploymentBranch: "deployment",
   trailingSlash: false,
-
   presets: [
     [
       "classic",
@@ -68,7 +66,7 @@ const config = {
             type: "doc",
             docId: "intro",
             position: "left",
-            label: "Tutorial"
+            label: "Documentation"
           },
           {
             label:  "API Docs",
@@ -89,7 +87,7 @@ const config = {
             title: "Docs",
             items: [
               {
-                label: "Tutorial",
+                label: "Documentation",
                 to: "/docs/intro"
               },
               {
@@ -108,12 +106,12 @@ const config = {
             ]
           }
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`
+        // copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ["ruby", "csharp", "php"]
+        additionalLanguages: ["ruby", "csharp", "php", "java"]
       }
     }),
 
@@ -138,6 +136,7 @@ const config = {
   ],
 
   themes: ["docusaurus-theme-openapi-docs"]
+
 };
 
 module.exports = config;

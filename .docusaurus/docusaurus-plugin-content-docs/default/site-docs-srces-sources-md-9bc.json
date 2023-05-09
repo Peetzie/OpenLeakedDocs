@@ -14,7 +14,7 @@
   "frontMatter": {},
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Redis cache",
-    "permalink": "/OpenLeakedDocs/docs/database-design/redis-cache"
+    "title": "Docker setup",
+    "permalink": "/OpenLeakedDocs/docs/Docker-setup"
   }
 }

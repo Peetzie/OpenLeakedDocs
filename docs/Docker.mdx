@@ -7,24 +7,53 @@ sidebar_position: 2
 <img src="https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png" alt="drawing" width="40%" height="200"/>
 </p>
 
-## Used ports
+[Docker](https://www.docker.com/) containers are used to manage the application. In the following section we briefly descripe the containerized aspect of our applicaiton design.
 
-- 3306: MariaDB - The port for the database
-- 3000: Docusaurus: Port used for the documentation site that you are currently visiting.
-- 8000: Frontend: Port used for the website of Open-Leaked.
-- 8080: Backend: Port used for the backend of the project. 
+There are three different types of docker-compose nessesary for the application. 
+1. ```docker-compose-production```
+    - Used to manage the production level containers. Some of which are simplified by making use of server packages. 
+    This reduces the space and complexity. 
+2. ```docker-compose```
+    - This docker compose file is used throughout development. It utilises Docker images that are not all server based.
+    This allows the images to contain tools that could be used for development. 
+3. ```docker-compose-import-database``` 
+    - A usefull container containing the images requred to import data into the database. 
+
+:::info
+A great example of the different images is the Redis Image, where the development image contains RedisStack. 
+This is a usefull tool to manage the Redis Cache database
+:::
+
+## Versioning
+
+| Container     | Images                                | default ports
+|---------------|---------------------------------------|------------------                 
+| Nginx         | nginx:latest                          | 80
+| Backend       | maven:3.8.7-amazoncorretto-17         | 8080
+| MariaDB       | mariadb:latest                        | 3306
+| Redis         | redis-stack:latest                    | 6379
+
+:::info
+The front end is not containerized but rendered client side in HTML send by HTTP from Nginx. 
+However Nginx is listening for HTTP traffic on port 5173 for the Frontend
+:::
 
 :::tip
 
 You can change the required ports if you have a service already running by editing the [docker-compose.yml](#) file
-
+The same can be done for the deployment Docker compose file. 
 :::
 
-## 📚 Tech stack 📚
+## Why containerized architecture?
+This is simply to accomodate different development enviroments and to ensure that the final application is compatible with the server. 
 
-| Part          |  Technologies        |
-|---------------|----------------------|
-| Frontend      | React, vite, docker  |
-| Backend       | Springboot, docker   |
-| Database      | Mariadb, docker      |
-| Documentation | Docusarus, docker    |
+The same goal is achievable by the use of Virtual Machines - But at the cost of resources. 
+
+Containers allows us to use the same host-os and avoid duplicating the OS by packagig the required binaries and libraries to each container. 
+
+Communication is done through the reverse proxy and network bridges between containers. 
+
+:::caution
+The containers will by default not inerhit any system files from the host-os. This includes the timezone files. 
+If the server(s) are deployed to regions out of the ```TZ=Europe/Copenhagen``` timezone please change that in the compose file. 
+:::

@@ -2,7 +2,7 @@
   "unversionedId": "Docker",
   "id": "Docker",
   "title": "Docker containers",
-  "description": "Used ports",
+  "description": "Docker containers are used to manage the application. In the following section we briefly descripe the containerized aspect of our applicaiton design.",
   "source": "@site/docs/Docker.mdx",
   "sourceDirName": ".",
   "slug": "/Docker",
@@ -17,7 +17,7 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Documentation introduction",
+    "title": "Introduction",
     "permalink": "/OpenLeakedDocs/docs/intro"
   },
   "next": {

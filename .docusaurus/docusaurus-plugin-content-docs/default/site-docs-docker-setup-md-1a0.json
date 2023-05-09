@@ -14,11 +14,7 @@
   "frontMatter": {},
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Verify user",
-    "permalink": "/OpenLeakedDocs/docs/API/verify-user"
-  },
-  "next": {
-    "title": "Datagen",
-    "permalink": "/OpenLeakedDocs/docs/database-design/design"
+    "title": "Redis - BloomFilter",
+    "permalink": "/OpenLeakedDocs/docs/Database/BloomFilter"
   }
 }
