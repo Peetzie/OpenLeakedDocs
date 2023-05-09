@@ -1,0 +1,25 @@
+{
+  "unversionedId": "Database/BloomFilter",
+  "id": "Database/BloomFilter",
+  "title": "Redis - BloomFilter",
+  "description": "A brief introduction",
+  "source": "@site/docs/02-Database/BloomFilter.mdx",
+  "sourceDirName": "02-Database",
+  "slug": "/Database/BloomFilter",
+  "permalink": "/OpenLeakedDocs/docs/Database/BloomFilter",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "sidebar-position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Redis - Cache",
+    "permalink": "/OpenLeakedDocs/docs/Database/Cache"
+  },
+  "next": {
+    "title": "Introduction",
+    "permalink": "/OpenLeakedDocs/docs/API/open-leaked-yaml"
+  }
+}

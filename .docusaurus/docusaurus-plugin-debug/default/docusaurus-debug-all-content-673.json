@@ -11,8 +11,6 @@
           "className": "docs-version-current",
           "path": "/OpenLeakedDocs/docs",
           "tagsPath": "/OpenLeakedDocs/docs/tags",
-          "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs",
-          "editUrlLocalized": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/i18n/en/docusaurus-plugin-content-docs/current",
           "isLast": true,
           "routePriority": -1,
           "sidebarFilePath": "/home/peetz/Documents/GitHub/OpenLeakedDocs/sidebars.js",
@@ -55,19 +53,32 @@
                               "type": "object",
                               "properties": {
                                 "desc": {
-                                  "type": "string"
+                                  "minLength": 0,
+                                  "type": "string",
+                                  "description": "Any discription for the data leak. Could be context, types of data or perhabs any password if compressed with password.",
+                                  "example": "Description Example"
                                 },
                                 "size": {
-                                  "type": "integer"
+                                  "type": "integer",
+                                  "description": "The size of the databreach.",
+                                  "example": 114,
+                                  "default": 0
                                 },
                                 "unit": {
-                                  "type": "string"
+                                  "type": "string",
+                                  "description": "The unit of the previously entered size. This might be GB | No. of records or Unknown.",
+                                  "example": "No. of Records",
+                                  "default": "Unknown"
                                 },
                                 "date": {
-                                  "type": "number"
+                                  "type": "number",
+                                  "description": "The date in float",
+                                  "example": 1683577685
                                 },
                                 "magnetLink": {
-                                  "type": "string"
+                                  "type": "string",
+                                  "description": "Unique identifier for the database. Cannot be left empty - No default value. Can be any type of link, not only magnetLinks are allowed.",
+                                  "example": "magnet:?xt=urn:btih:d136b1adde531f38311fbf43fb96fc26df1a34cd&dn=Collection+%232-%235+%26+Antipublic"
                                 }
                               },
                               "example": {
@@ -140,7 +151,7 @@
                       "name": "Apache 2.0",
                       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
                     },
-                    "version": "1.0.0",
+                    "version": "1.5.1",
                     "x-logo": {
                       "url": "https://redocly.github.io/redoc/petstore-logo.png",
                       "altText": "Petstore logo"
@@ -330,7 +341,7 @@
                       "name": "Apache 2.0",
                       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
                     },
-                    "version": "1.0.0",
+                    "version": "1.5.1",
                     "x-logo": {
                       "url": "https://redocly.github.io/redoc/petstore-logo.png",
                       "altText": "Petstore logo"
@@ -453,7 +464,7 @@
                       "name": "Apache 2.0",
                       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
                     },
-                    "version": "1.0.0",
+                    "version": "1.5.1",
                     "x-logo": {
                       "url": "https://redocly.github.io/redoc/petstore-logo.png",
                       "altText": "Petstore logo"
@@ -525,19 +536,29 @@
                           "type": "object",
                           "properties": {
                             "email": {
-                              "type": "string"
+                              "type": "string",
+                              "description": "Email in string format",
+                              "example": "example@example.com"
                             },
                             "password": {
-                              "type": "string"
+                              "minLength": 8,
+                              "pattern": "/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/",
+                              "type": "string",
+                              "description": "User password, MUST contain a mix of upper and lower case letters, as well as digits and special characters",
+                              "example": "drowssaP123#"
                             },
                             "cPassword": {
-                              "type": "string"
+                              "minLength": 8,
+                              "pattern": "/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/",
+                              "type": "string",
+                              "description": "User password, MUST contain a mix of upper and lower case letters, as well as digits and special characters",
+                              "example": "drowssaP123#"
                             }
                           },
                           "example": {
                             "email": "johndoe@example.com",
-                            "password": "password",
-                            "cPassword": "password"
+                            "password": "!password123!",
+                            "cPassword": "!password123!"
                           },
                           "title": "userNewPassword"
                         }
@@ -577,8 +598,8 @@
                   },
                   "jsonRequestBodyExample": {
                     "email": "johndoe@example.com",
-                    "password": "password",
-                    "cPassword": "password"
+                    "password": "!password123!",
+                    "cPassword": "!password123!"
                   },
                   "info": {
                     "title": "Open Leaked YAML",
@@ -592,7 +613,7 @@
                       "name": "Apache 2.0",
                       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
                     },
-                    "version": "1.0.0",
+                    "version": "1.5.1",
                     "x-logo": {
                       "url": "https://redocly.github.io/redoc/petstore-logo.png",
                       "altText": "Petstore logo"
@@ -758,7 +779,7 @@
                       "name": "Apache 2.0",
                       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
                     },
-                    "version": "1.0.0",
+                    "version": "1.5.1",
                     "x-logo": {
                       "url": "https://redocly.github.io/redoc/petstore-logo.png",
                       "altText": "Petstore logo"
@@ -851,7 +872,9 @@
                               "type": "object",
                               "properties": {
                                 "value": {
-                                  "type": "string"
+                                  "minLength": 1,
+                                  "type": "string",
+                                  "example": "username"
                                 }
                               },
                               "example": {
@@ -915,7 +938,7 @@
                       "name": "Apache 2.0",
                       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
                     },
-                    "version": "1.0.0",
+                    "version": "1.5.1",
                     "x-logo": {
                       "url": "https://redocly.github.io/redoc/petstore-logo.png",
                       "altText": "Petstore logo"
@@ -1047,15 +1070,19 @@
                           "type": "object",
                           "properties": {
                             "Domain": {
-                              "type": "string"
+                              "type": "string",
+                              "description": "Second part of the email post-@",
+                              "example": "example.com"
                             },
                             "Local": {
-                              "type": "string"
+                              "type": "string",
+                              "description": "First part of the email pre-@",
+                              "example": "johndoe"
                             }
                           },
                           "example": {
-                            "Local": "johndoe",
-                            "Domain": "example.com"
+                            "Domain": "example.com",
+                            "Local": "johndoe"
                           },
                           "title": "Recover"
                         }
@@ -1094,8 +1121,8 @@
                     }
                   },
                   "jsonRequestBodyExample": {
-                    "Local": "johndoe",
-                    "Domain": "example.com"
+                    "Domain": "example.com",
+                    "Local": "johndoe"
                   },
                   "info": {
                     "title": "Open Leaked YAML",
@@ -1109,7 +1136,7 @@
                       "name": "Apache 2.0",
                       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
                     },
-                    "version": "1.0.0",
+                    "version": "1.5.1",
                     "x-logo": {
                       "url": "https://redocly.github.io/redoc/petstore-logo.png",
                       "altText": "Petstore logo"
@@ -1186,13 +1213,12 @@
                 "sidebar_label": "Introduction",
                 "sidebar_position": 0,
                 "hide_title": true,
-                "custom_edit_url": null,
-                "sidebar.collapsed": true
+                "custom_edit_url": null
               },
               "sidebar": "openApiSidebar",
               "previous": {
                 "title": "API Documentation",
-                "permalink": "/OpenLeakedDocs/docs/category/petstore-api"
+                "permalink": "/OpenLeakedDocs/docs/category/api-documentation"
               },
               "next": {
                 "title": "HealthCheck",
@@ -1265,7 +1291,9 @@
                               "type": "object",
                               "properties": {
                                 "value": {
-                                  "type": "string"
+                                  "minLength": 1,
+                                  "type": "string",
+                                  "example": "username"
                                 }
                               },
                               "example": {
@@ -1329,7 +1357,7 @@
                       "name": "Apache 2.0",
                       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
                     },
-                    "version": "1.0.0",
+                    "version": "1.5.1",
                     "x-logo": {
                       "url": "https://redocly.github.io/redoc/petstore-logo.png",
                       "altText": "Petstore logo"
@@ -1436,11 +1464,15 @@
                             {
                               "type": "object",
                               "properties": {
-                                "local": {
-                                  "type": "string"
+                                "Local": {
+                                  "type": "string",
+                                  "description": "First part of the email pre-@",
+                                  "example": "johndoe"
                                 },
-                                "domain": {
-                                  "type": "string"
+                                "Domain": {
+                                  "type": "string",
+                                  "description": "Second part of the email post-@",
+                                  "example": "example.com"
                                 }
                               },
                               "example": {
@@ -1509,7 +1541,7 @@
                       "name": "Apache 2.0",
                       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
                     },
-                    "version": "1.0.0",
+                    "version": "1.5.1",
                     "x-logo": {
                       "url": "https://redocly.github.io/redoc/petstore-logo.png",
                       "altText": "Petstore logo"
@@ -1674,11 +1706,15 @@
                             {
                               "type": "object",
                               "properties": {
-                                "local": {
-                                  "type": "string"
+                                "Local": {
+                                  "type": "string",
+                                  "description": "First part of the email pre-@",
+                                  "example": "johndoe"
                                 },
-                                "domain": {
-                                  "type": "string"
+                                "Domain": {
+                                  "type": "string",
+                                  "description": "Second part of the email post-@",
+                                  "example": "example.com"
                                 }
                               },
                               "example": {
@@ -1744,7 +1780,7 @@
                       "name": "Apache 2.0",
                       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
                     },
-                    "version": "1.0.0",
+                    "version": "1.5.1",
                     "x-logo": {
                       "url": "https://redocly.github.io/redoc/petstore-logo.png",
                       "altText": "Petstore logo"
@@ -1875,19 +1911,27 @@
                           "type": "object",
                           "properties": {
                             "Local": {
-                              "type": "string"
+                              "type": "string",
+                              "description": "First part of the email pre-@",
+                              "example": "johndoe"
                             },
                             "Domain": {
-                              "type": "string"
+                              "type": "string",
+                              "description": "Second part of the email post-@",
+                              "example": "example.com"
                             },
                             "verifyCode": {
-                              "type": "integer"
+                              "maxLength": 6,
+                              "minLength": 6,
+                              "type": "integer",
+                              "description": "6-Digit randomly generated code",
+                              "example": 123456
                             }
                           },
                           "example": {
                             "Local": "johndoe",
                             "Domain": "example.com",
-                            "verifyCode": 999999
+                            "verifyCode": 123456
                           },
                           "title": "Verify"
                         }
@@ -1929,7 +1973,7 @@
                   "jsonRequestBodyExample": {
                     "Local": "johndoe",
                     "Domain": "example.com",
-                    "verifyCode": 999999
+                    "verifyCode": 123456
                   },
                   "info": {
                     "title": "Open Leaked YAML",
@@ -1943,7 +1987,7 @@
                       "name": "Apache 2.0",
                       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
                     },
-                    "version": "1.0.0",
+                    "version": "1.5.1",
                     "x-logo": {
                       "url": "https://redocly.github.io/redoc/petstore-logo.png",
                       "altText": "Petstore logo"
@@ -2034,14 +2078,22 @@
                             {
                               "type": "object",
                               "properties": {
-                                "local": {
-                                  "type": "string"
+                                "Local": {
+                                  "type": "string",
+                                  "description": "First part of the email pre-@",
+                                  "example": "johndoe"
                                 },
-                                "domain": {
-                                  "type": "string"
+                                "Domain": {
+                                  "type": "string",
+                                  "description": "Second part of the email post-@",
+                                  "example": "example.com"
                                 },
                                 "verifyCode": {
-                                  "type": "string"
+                                  "maxLength": 6,
+                                  "minLength": 6,
+                                  "type": "string",
+                                  "description": "6-Digit randomly generated code",
+                                  "example": "123456"
                                 }
                               },
                               "example": {
@@ -2109,7 +2161,7 @@
                       "name": "Apache 2.0",
                       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
                     },
-                    "version": "1.0.0",
+                    "version": "1.5.1",
                     "x-logo": {
                       "url": "https://redocly.github.io/redoc/petstore-logo.png",
                       "altText": "Petstore logo"
@@ -2185,12 +2237,11 @@
               "id": "Database/BloomFilter",
               "title": "Redis - BloomFilter",
               "description": "A brief introduction",
-              "source": "@site/docs/Database/BloomFilter.mdx",
-              "sourceDirName": "Database",
+              "source": "@site/docs/02-Database/BloomFilter.mdx",
+              "sourceDirName": "02-Database",
               "slug": "/Database/BloomFilter",
               "permalink": "/OpenLeakedDocs/docs/Database/BloomFilter",
               "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/Database/BloomFilter.mdx",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -2200,6 +2251,10 @@
               "previous": {
                 "title": "Redis - Cache",
                 "permalink": "/OpenLeakedDocs/docs/Database/Cache"
+              },
+              "next": {
+                "title": "Introduction",
+                "permalink": "/OpenLeakedDocs/docs/API/open-leaked-yaml"
               }
             },
             {
@@ -2207,12 +2262,11 @@
               "id": "Database/Cache",
               "title": "Redis - Cache",
               "description": "We implement caching as a means to improve the overall performance of our database. It is a requirement for fulfilling the constraints of a RESTful API.",
-              "source": "@site/docs/Database/Cache.mdx",
-              "sourceDirName": "Database",
+              "source": "@site/docs/02-Database/Cache.mdx",
+              "sourceDirName": "02-Database",
               "slug": "/Database/Cache",
               "permalink": "/OpenLeakedDocs/docs/Database/Cache",
               "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/Database/Cache.mdx",
               "tags": [],
               "version": "current",
               "sidebarPosition": 2,
@@ -2234,12 +2288,11 @@
               "id": "Database/Introduction",
               "title": "Introduction",
               "description": "This section aims to cover the different subjects of our CORE database design.",
-              "source": "@site/docs/Database/Introduction.md",
-              "sourceDirName": "Database",
+              "source": "@site/docs/02-Database/Introduction.md",
+              "sourceDirName": "02-Database",
               "slug": "/Database/Introduction",
               "permalink": "/OpenLeakedDocs/docs/Database/Introduction",
               "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/Database/Introduction.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 1,
@@ -2248,8 +2301,8 @@
               },
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "Verify user",
-                "permalink": "/OpenLeakedDocs/docs/API/verify-user"
+                "title": "Docker containers",
+                "permalink": "/OpenLeakedDocs/docs/Docker"
               },
               "next": {
                 "title": "MariaDB - Persistent storage",
@@ -2261,12 +2314,11 @@
               "id": "Database/MariaDB",
               "title": "MariaDB - Persistent storage",
               "description": "In this section we aim to provide usefull insight into the design decisions for the databases.",
-              "source": "@site/docs/Database/MariaDB.mdx",
-              "sourceDirName": "Database",
+              "source": "@site/docs/02-Database/MariaDB.mdx",
+              "sourceDirName": "02-Database",
               "slug": "/Database/MariaDB",
               "permalink": "/OpenLeakedDocs/docs/Database/MariaDB",
               "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/Database/MariaDB.mdx",
               "tags": [],
               "version": "current",
               "sidebarPosition": 1,
@@ -2288,12 +2340,11 @@
               "id": "Docker",
               "title": "Docker containers",
               "description": "Docker containers are used to manage the application. In the following section we briefly descripe the containerized aspect of our applicaiton design.",
-              "source": "@site/docs/Docker.mdx",
+              "source": "@site/docs/01-Docker.mdx",
               "sourceDirName": ".",
               "slug": "/Docker",
               "permalink": "/OpenLeakedDocs/docs/Docker",
               "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/Docker.mdx",
               "tags": [],
               "version": "current",
               "sidebarPosition": 2,
@@ -2307,7 +2358,7 @@
               },
               "next": {
                 "title": "Introduction",
-                "permalink": "/OpenLeakedDocs/docs/API/open-leaked-yaml"
+                "permalink": "/OpenLeakedDocs/docs/Database/Introduction"
               }
             },
             {
@@ -2315,12 +2366,11 @@
               "id": "intro",
               "title": "Introduction",
               "description": "This is the official site for documentation related to the Open-Leaked project.",
-              "source": "@site/docs/intro.md",
+              "source": "@site/docs/00-intro.md",
               "sourceDirName": ".",
               "slug": "/intro",
               "permalink": "/OpenLeakedDocs/docs/intro",
               "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/intro.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 1,
@@ -2344,6 +2394,30 @@
               {
                 "type": "doc",
                 "id": "Docker"
+              },
+              {
+                "type": "category",
+                "label": "Database",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "Database/Introduction"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "Database/MariaDB"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "Database/Cache"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "Database/BloomFilter"
+                  }
+                ]
               },
               {
                 "type": "category",
@@ -2455,30 +2529,6 @@
                     "className": "post api-method"
                   }
                 ]
-              },
-              {
-                "type": "category",
-                "label": "Database",
-                "collapsible": true,
-                "collapsed": true,
-                "items": [
-                  {
-                    "type": "doc",
-                    "id": "Database/Introduction"
-                  },
-                  {
-                    "type": "doc",
-                    "id": "Database/MariaDB"
-                  },
-                  {
-                    "type": "doc",
-                    "id": "Database/Cache"
-                  },
-                  {
-                    "type": "doc",
-                    "id": "Database/BloomFilter"
-                  }
-                ]
               }
             ],
             "openApiSidebar": [
@@ -2488,9 +2538,8 @@
                 "link": {
                   "type": "generated-index",
                   "title": "API Docs",
-                  "description": "This is a sample server Petstore server. You can find out more about Swagger at http://swagger.io or on irc.freenode.net, #swagger. For this sample, you can use the api key special-key to test the authorization filters.",
-                  "slug": "/category/petstore-api",
-                  "permalink": "/OpenLeakedDocs/docs/category/petstore-api"
+                  "slug": "/category/api-documentation",
+                  "permalink": "/OpenLeakedDocs/docs/category/api-documentation"
                 },
                 "items": [
                   {

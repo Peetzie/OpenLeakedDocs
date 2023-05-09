@@ -1,0 +1,26 @@
+{
+  "unversionedId": "Docker",
+  "id": "Docker",
+  "title": "Docker containers",
+  "description": "Docker containers are used to manage the application. In the following section we briefly descripe the containerized aspect of our applicaiton design.",
+  "source": "@site/docs/01-Docker.mdx",
+  "sourceDirName": ".",
+  "slug": "/Docker",
+  "permalink": "/OpenLeakedDocs/docs/Docker",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Introduction",
+    "permalink": "/OpenLeakedDocs/docs/intro"
+  },
+  "next": {
+    "title": "Introduction",
+    "permalink": "/OpenLeakedDocs/docs/Database/Introduction"
+  }
+}

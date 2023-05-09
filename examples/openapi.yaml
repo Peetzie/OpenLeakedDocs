@@ -10,7 +10,7 @@ info:
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
-  version: 1.0.0
+  version: 1.5.1
   x-logo:
     url: https://redocly.github.io/redoc/petstore-logo.png
     altText: Petstore logo
@@ -326,18 +326,28 @@ components:
       type: object
       properties:
         value:
+          minLength: 1
           type: string
+          example: username
       example:
         value: username
     Subscribe:
       type: object
       properties:
-        local:
+        Local:
           type: string
-        domain:
+          description: First part of the email pre-@
+          example: johndoe
+        Domain:
           type: string
+          description: Second part of the email post-@
+          example: example.com
         verifyCode:
+          maxLength: 6
+          minLength: 6
           type: string
+          description: 6-Digit randomly generated code
+          example: "123456"
       example:
         local: example
         domain: example.com
@@ -346,16 +356,23 @@ components:
       type: object
       properties:
         value:
+          minLength: 1
           type: string
+          description: Unhashed password
+          example: password
       example:
         value: password
     Email:
       type: object
       properties:
-        local:
+        Local:
           type: string
-        domain:
+          description: First part of the email pre-@
+          example: johndoe
+        Domain:
           type: string
+          description: Second part of the email post-@
+          example: example.com
       example:
         local: example
         domain: example.com
@@ -363,15 +380,28 @@ components:
       type: object
       properties:
         desc:
+          minLength: 0
           type: string
+          description: "Any discription for the data leak. Could be context, types of data or perhabs any password if compressed with password."
+          example: Description Example
         size:
           type: integer
+          description: The size of the databreach.
+          example: 114
+          default: 0
         unit:
           type: string
+          description: The unit of the previously entered size. This might be GB | No. of records or Unknown.
+          example: No. of Records
+          default: Unknown
         date:
           type: number
+          description: The date in float
+          example: 1683577685
         magnetLink:
           type: string
+          description: "Unique identifier for the database. Cannot be left empty - No default value. Can be any type of link, not only magnetLinks are allowed."
+          example: magnet:?xt=urn:btih:d136b1adde531f38311fbf43fb96fc26df1a34cd&dn=Collection+%232-%235+%26+Antipublic
       example:
         desc: description
         size: 114
@@ -384,13 +414,27 @@ components:
         emailID:
           $ref: '#/components/schemas/RegisterNewUser_emailID'
         password:
+          minLength: 8
+          pattern: "/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/"
           type: string
+          description: "User password, MUST contain a mix of upper and lower case letters, as well as digits and special characters"
+          example: drowssaP123#
         cPassword:
+          minLength: 8
+          pattern: "/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/"
           type: string
+          description: "User password, MUST contain a mix of upper and lower case letters, as well as digits and special characters."
+          example: drowssaP123#
         fullName:
+          minLength: 1
           type: string
+          description: Full name of the user
+          example: John Doe
         studentNo:
+          minLength: 1
           type: string
+          description: Student number or Employee initials - no constraints (proof of concept)
+          example: s1741XX
       example:
         emailID:
           local: example
@@ -404,61 +448,72 @@ components:
       properties:
         email:
           type: string
-        password:
-          type: string
-        cPassword:
-          type: string
-      example:
-        email: johndoe@example.com
-        password: password
-        cPassword: password
-    Verify:
-      type: object
-      properties:
-        Local:
-          type: string
-        Domain:
-          type: string
-        verifyCode:
-          type: integer
-      example:
-        Local: johndoe
-        Domain: example.com
-        verifyCode: 999999
-    Recover:
-      type: object
-      properties:
-        Domain:
-          type: string
-        Local:
-          type: string
-      example:
-        Local: johndoe
-        Domain: example.com
-    User:
-      type: object
-      properties:
-        email:
-          minLength: 4
-          type: string
-          description: User supplied username
-          example: johndoe@example.com
+          description: Email in string format
+          example: example@example.com
         password:
           minLength: 8
           pattern: "/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/"
           type: string
           description: "User password, MUST contain a mix of upper and lower case letters, as well as digits and special characters"
-          format: password
           example: drowssaP123#
-      xml:
-        name: User
+        cPassword:
+          minLength: 8
+          pattern: "/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/"
+          type: string
+          description: "User password, MUST contain a mix of upper and lower case letters, as well as digits and special characters"
+          example: drowssaP123#
+      example:
+        email: johndoe@example.com
+        password: '!password123!'
+        cPassword: '!password123!'
+    Verify:
+      type: object
+      properties:
+        Local:
+          type: string
+          description: First part of the email pre-@
+          example: johndoe
+        Domain:
+          type: string
+          description: Second part of the email post-@
+          example: example.com
+        verifyCode:
+          maxLength: 6
+          minLength: 6
+          type: integer
+          description: 6-Digit randomly generated code
+          example: 123456
+      example:
+        Local: johndoe
+        Domain: example.com
+        verifyCode: 123456
+    Recover:
+      type: object
+      properties:
+        Domain:
+          type: string
+          description: Second part of the email post-@
+          example: example.com
+        Local:
+          type: string
+          description: First part of the email pre-@
+          example: johndoe
+      example:
+        Domain: example.com
+        Local: johndoe
     RegisterNewUser_emailID:
       type: object
       properties:
-        local:
+        Local:
+          minLength: 1
           type: string
-        domain:
+          description: First part of the email pre-@
+          example: johndoe
+        Domain:
+          minLength: 1
           type: string
+          description: Second part of the email post-@
+          example: example.com
   responses:
     UnauthorizedError:
       description: Authentication information is missing or invalid

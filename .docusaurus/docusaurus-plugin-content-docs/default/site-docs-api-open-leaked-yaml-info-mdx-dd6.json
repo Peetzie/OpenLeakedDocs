@@ -19,13 +19,12 @@
     "sidebar_label": "Introduction",
     "sidebar_position": 0,
     "hide_title": true,
-    "custom_edit_url": null,
-    "sidebar.collapsed": true
+    "custom_edit_url": null
   },
   "sidebar": "openApiSidebar",
   "previous": {
     "title": "API Documentation",
-    "permalink": "/OpenLeakedDocs/docs/category/petstore-api"
+    "permalink": "/OpenLeakedDocs/docs/category/api-documentation"
   },
   "next": {
     "title": "HealthCheck",

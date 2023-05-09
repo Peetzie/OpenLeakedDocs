@@ -34,14 +34,22 @@
                 {
                   "type": "object",
                   "properties": {
-                    "local": {
-                      "type": "string"
+                    "Local": {
+                      "type": "string",
+                      "description": "First part of the email pre-@",
+                      "example": "johndoe"
                     },
-                    "domain": {
-                      "type": "string"
+                    "Domain": {
+                      "type": "string",
+                      "description": "Second part of the email post-@",
+                      "example": "example.com"
                     },
                     "verifyCode": {
-                      "type": "string"
+                      "maxLength": 6,
+                      "minLength": 6,
+                      "type": "string",
+                      "description": "6-Digit randomly generated code",
+                      "example": "123456"
                     }
                   },
                   "example": {
@@ -109,7 +117,7 @@
           "name": "Apache 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
         },
-        "version": "1.0.0",
+        "version": "1.5.1",
         "x-logo": {
           "url": "https://redocly.github.io/redoc/petstore-logo.png",
           "altText": "Petstore logo"

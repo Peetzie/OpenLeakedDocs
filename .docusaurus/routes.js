@@ -3,48 +3,13 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 
 export default [
   {
-    path: '/OpenLeakedDocs/__docusaurus/debug',
-    component: ComponentCreator('/OpenLeakedDocs/__docusaurus/debug', '664'),
-    exact: true
-  },
-  {
-    path: '/OpenLeakedDocs/__docusaurus/debug/config',
-    component: ComponentCreator('/OpenLeakedDocs/__docusaurus/debug/config', '0c4'),
-    exact: true
-  },
-  {
-    path: '/OpenLeakedDocs/__docusaurus/debug/content',
-    component: ComponentCreator('/OpenLeakedDocs/__docusaurus/debug/content', '800'),
-    exact: true
-  },
-  {
-    path: '/OpenLeakedDocs/__docusaurus/debug/globalData',
-    component: ComponentCreator('/OpenLeakedDocs/__docusaurus/debug/globalData', '4ab'),
-    exact: true
-  },
-  {
-    path: '/OpenLeakedDocs/__docusaurus/debug/metadata',
-    component: ComponentCreator('/OpenLeakedDocs/__docusaurus/debug/metadata', 'f77'),
-    exact: true
-  },
-  {
-    path: '/OpenLeakedDocs/__docusaurus/debug/registry',
-    component: ComponentCreator('/OpenLeakedDocs/__docusaurus/debug/registry', '298'),
-    exact: true
-  },
-  {
-    path: '/OpenLeakedDocs/__docusaurus/debug/routes',
-    component: ComponentCreator('/OpenLeakedDocs/__docusaurus/debug/routes', 'd80'),
-    exact: true
-  },
-  {
     path: '/OpenLeakedDocs/markdown-page',
     component: ComponentCreator('/OpenLeakedDocs/markdown-page', '63a'),
     exact: true
   },
   {
     path: '/OpenLeakedDocs/docs',
-    component: ComponentCreator('/OpenLeakedDocs/docs', '881'),
+    component: ComponentCreator('/OpenLeakedDocs/docs', '8d3'),
     routes: [
       {
         path: '/OpenLeakedDocs/docs/API/allows-a-user-to-tip-the-maintainers-with-additional-breaches',
@@ -167,44 +132,44 @@ export default [
         sidebar: "openApiSidebar"
       },
       {
-        path: '/OpenLeakedDocs/docs/category/petstore-api',
-        component: ComponentCreator('/OpenLeakedDocs/docs/category/petstore-api', 'a75'),
+        path: '/OpenLeakedDocs/docs/category/api-documentation',
+        component: ComponentCreator('/OpenLeakedDocs/docs/category/api-documentation', 'ad1'),
         exact: true,
         sidebar: "openApiSidebar"
       },
       {
         path: '/OpenLeakedDocs/docs/Database/BloomFilter',
-        component: ComponentCreator('/OpenLeakedDocs/docs/Database/BloomFilter', 'b77'),
+        component: ComponentCreator('/OpenLeakedDocs/docs/Database/BloomFilter', 'ec7'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
         path: '/OpenLeakedDocs/docs/Database/Cache',
-        component: ComponentCreator('/OpenLeakedDocs/docs/Database/Cache', '7b8'),
+        component: ComponentCreator('/OpenLeakedDocs/docs/Database/Cache', '999'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
         path: '/OpenLeakedDocs/docs/Database/Introduction',
-        component: ComponentCreator('/OpenLeakedDocs/docs/Database/Introduction', '01b'),
+        component: ComponentCreator('/OpenLeakedDocs/docs/Database/Introduction', '3c7'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
         path: '/OpenLeakedDocs/docs/Database/MariaDB',
-        component: ComponentCreator('/OpenLeakedDocs/docs/Database/MariaDB', '800'),
+        component: ComponentCreator('/OpenLeakedDocs/docs/Database/MariaDB', 'f36'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
         path: '/OpenLeakedDocs/docs/Docker',
-        component: ComponentCreator('/OpenLeakedDocs/docs/Docker', '6aa'),
+        component: ComponentCreator('/OpenLeakedDocs/docs/Docker', '588'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
         path: '/OpenLeakedDocs/docs/intro',
-        component: ComponentCreator('/OpenLeakedDocs/docs/intro', '90d'),
+        component: ComponentCreator('/OpenLeakedDocs/docs/intro', '279'),
         exact: true,
         sidebar: "tutorialSidebar"
       }

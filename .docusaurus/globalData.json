@@ -141,8 +141,8 @@
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "/category/petstore-api",
-              "path": "/OpenLeakedDocs/docs/category/petstore-api",
+              "id": "/category/api-documentation",
+              "path": "/OpenLeakedDocs/docs/category/api-documentation",
               "sidebar": "openApiSidebar"
             }
           ],
@@ -156,7 +156,7 @@
             },
             "openApiSidebar": {
               "link": {
-                "path": "/OpenLeakedDocs/docs/category/petstore-api",
+                "path": "/OpenLeakedDocs/docs/category/api-documentation",
                 "label": "API Documentation"
               }
             }

@@ -23,6 +23,38 @@
       },
       {
         "type": "category",
+        "label": "Database",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "Introduction",
+            "href": "/OpenLeakedDocs/docs/Database/Introduction",
+            "docId": "Database/Introduction"
+          },
+          {
+            "type": "link",
+            "label": "MariaDB - Persistent storage",
+            "href": "/OpenLeakedDocs/docs/Database/MariaDB",
+            "docId": "Database/MariaDB"
+          },
+          {
+            "type": "link",
+            "label": "Redis - Cache",
+            "href": "/OpenLeakedDocs/docs/Database/Cache",
+            "docId": "Database/Cache"
+          },
+          {
+            "type": "link",
+            "label": "Redis - BloomFilter",
+            "href": "/OpenLeakedDocs/docs/Database/BloomFilter",
+            "docId": "Database/BloomFilter"
+          }
+        ]
+      },
+      {
+        "type": "category",
         "label": "API",
         "collapsible": true,
         "collapsed": true,
@@ -157,38 +189,6 @@
             "href": "/OpenLeakedDocs/docs/API/verify-user",
             "className": "post api-method",
             "docId": "API/verify-user"
-          }
-        ]
-      },
-      {
-        "type": "category",
-        "label": "Database",
-        "collapsible": true,
-        "collapsed": true,
-        "items": [
-          {
-            "type": "link",
-            "label": "Introduction",
-            "href": "/OpenLeakedDocs/docs/Database/Introduction",
-            "docId": "Database/Introduction"
-          },
-          {
-            "type": "link",
-            "label": "MariaDB - Persistent storage",
-            "href": "/OpenLeakedDocs/docs/Database/MariaDB",
-            "docId": "Database/MariaDB"
-          },
-          {
-            "type": "link",
-            "label": "Redis - Cache",
-            "href": "/OpenLeakedDocs/docs/Database/Cache",
-            "docId": "Database/Cache"
-          },
-          {
-            "type": "link",
-            "label": "Redis - BloomFilter",
-            "href": "/OpenLeakedDocs/docs/Database/BloomFilter",
-            "docId": "Database/BloomFilter"
           }
         ]
       }
@@ -389,7 +389,7 @@
         ],
         "collapsed": true,
         "collapsible": true,
-        "href": "/OpenLeakedDocs/docs/category/petstore-api"
+        "href": "/OpenLeakedDocs/docs/category/api-documentation"
       }
     ]
   },

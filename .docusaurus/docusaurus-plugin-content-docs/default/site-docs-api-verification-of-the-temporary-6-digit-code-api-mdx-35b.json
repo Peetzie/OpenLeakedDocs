@@ -29,19 +29,27 @@
               "type": "object",
               "properties": {
                 "Local": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "First part of the email pre-@",
+                  "example": "johndoe"
                 },
                 "Domain": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Second part of the email post-@",
+                  "example": "example.com"
                 },
                 "verifyCode": {
-                  "type": "integer"
+                  "maxLength": 6,
+                  "minLength": 6,
+                  "type": "integer",
+                  "description": "6-Digit randomly generated code",
+                  "example": 123456
                 }
               },
               "example": {
                 "Local": "johndoe",
                 "Domain": "example.com",
-                "verifyCode": 999999
+                "verifyCode": 123456
               },
               "title": "Verify"
             }
@@ -83,7 +91,7 @@
       "jsonRequestBodyExample": {
         "Local": "johndoe",
         "Domain": "example.com",
-        "verifyCode": 999999
+        "verifyCode": 123456
       },
       "info": {
         "title": "Open Leaked YAML",
@@ -97,7 +105,7 @@
           "name": "Apache 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
         },
-        "version": "1.0.0",
+        "version": "1.5.1",
         "x-logo": {
           "url": "https://redocly.github.io/redoc/petstore-logo.png",
           "altText": "Petstore logo"

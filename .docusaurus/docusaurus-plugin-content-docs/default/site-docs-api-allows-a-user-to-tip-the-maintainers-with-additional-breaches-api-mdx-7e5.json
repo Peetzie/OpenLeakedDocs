@@ -34,19 +34,32 @@
                   "type": "object",
                   "properties": {
                     "desc": {
-                      "type": "string"
+                      "minLength": 0,
+                      "type": "string",
+                      "description": "Any discription for the data leak. Could be context, types of data or perhabs any password if compressed with password.",
+                      "example": "Description Example"
                     },
                     "size": {
-                      "type": "integer"
+                      "type": "integer",
+                      "description": "The size of the databreach.",
+                      "example": 114,
+                      "default": 0
                     },
                     "unit": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The unit of the previously entered size. This might be GB | No. of records or Unknown.",
+                      "example": "No. of Records",
+                      "default": "Unknown"
                     },
                     "date": {
-                      "type": "number"
+                      "type": "number",
+                      "description": "The date in float",
+                      "example": 1683577685
                     },
                     "magnetLink": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "Unique identifier for the database. Cannot be left empty - No default value. Can be any type of link, not only magnetLinks are allowed.",
+                      "example": "magnet:?xt=urn:btih:d136b1adde531f38311fbf43fb96fc26df1a34cd&dn=Collection+%232-%235+%26+Antipublic"
                     }
                   },
                   "example": {
@@ -119,7 +132,7 @@
           "name": "Apache 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
         },
-        "version": "1.0.0",
+        "version": "1.5.1",
         "x-logo": {
           "url": "https://redocly.github.io/redoc/petstore-logo.png",
           "altText": "Petstore logo"

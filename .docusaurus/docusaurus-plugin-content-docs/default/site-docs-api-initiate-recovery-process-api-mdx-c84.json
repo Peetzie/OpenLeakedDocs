@@ -30,15 +30,19 @@
               "type": "object",
               "properties": {
                 "Domain": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Second part of the email post-@",
+                  "example": "example.com"
                 },
                 "Local": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "First part of the email pre-@",
+                  "example": "johndoe"
                 }
               },
               "example": {
-                "Local": "johndoe",
-                "Domain": "example.com"
+                "Domain": "example.com",
+                "Local": "johndoe"
               },
               "title": "Recover"
             }
@@ -77,8 +81,8 @@
         }
       },
       "jsonRequestBodyExample": {
-        "Local": "johndoe",
-        "Domain": "example.com"
+        "Domain": "example.com",
+        "Local": "johndoe"
       },
       "info": {
         "title": "Open Leaked YAML",
@@ -92,7 +96,7 @@
           "name": "Apache 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
         },
-        "version": "1.0.0",
+        "version": "1.5.1",
         "x-logo": {
           "url": "https://redocly.github.io/redoc/petstore-logo.png",
           "altText": "Petstore logo"

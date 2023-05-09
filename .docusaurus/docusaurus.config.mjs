@@ -21,13 +21,8 @@ export default {
       {
         "docs": {
           "sidebarPath": "/home/peetz/Documents/GitHub/OpenLeakedDocs/sidebars.js",
-          "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
           "docLayoutComponent": "@theme/DocPage",
           "docItemComponent": "@theme/ApiItem"
-        },
-        "blog": {
-          "showReadingTime": true,
-          "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/"
         },
         "theme": {
           "customCss": "/home/peetz/Documents/GitHub/OpenLeakedDocs/src/css/custom.css"
