@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://peetzie.github.io/OpenLeakedDocs/blog</id>
-    <title>Open-Leaked Blog</title>
+    <title>An open source approach to leaked account credentials Blog</title>
     <updated>2021-08-26T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://peetzie.github.io/OpenLeakedDocs/blog"/>
-    <subtitle>Open-Leaked Blog</subtitle>
+    <subtitle>An open source approach to leaked account credentials Blog</subtitle>
     <icon>https://peetzie.github.io/OpenLeakedDocs/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
