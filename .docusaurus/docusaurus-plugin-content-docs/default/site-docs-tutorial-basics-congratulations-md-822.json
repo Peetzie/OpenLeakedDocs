@@ -1,0 +1,35 @@
+{
+  "unversionedId": "tutorial-basics/congratulations",
+  "id": "tutorial-basics/congratulations",
+  "title": "Congratulations!",
+  "description": "You have just learned the basics of Docusaurus and made some changes to the initial template.",
+  "source": "@site/docs/tutorial-basics/congratulations.md",
+  "sourceDirName": "tutorial-basics",
+  "slug": "/tutorial-basics/congratulations",
+  "permalink": "/OpenLeakedDocs/docs/tutorial-basics/congratulations",
+  "draft": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/tutorial-basics/congratulations.md",
+  "tags": [
+    {
+      "label": "test",
+      "permalink": "/OpenLeakedDocs/docs/tags/test"
+    }
+  ],
+  "version": "current",
+  "sidebarPosition": 6,
+  "frontMatter": {
+    "sidebar_position": 6,
+    "tags": [
+      "test"
+    ]
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Deploy your site",
+    "permalink": "/OpenLeakedDocs/docs/tutorial-basics/deploy-your-site"
+  },
+  "next": {
+    "title": "Tutorial - Extras",
+    "permalink": "/OpenLeakedDocs/docs/category/tutorial---extras"
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "unversionedId": "API/verification-of-the-temporary-6-digit-code",
+  "id": "API/verification-of-the-temporary-6-digit-code",
+  "title": "Verification of the temporary 6-digit code.",
+  "description": "Verification of the temporary 6-digit code.",
+  "source": "@site/docs/API/verification-of-the-temporary-6-digit-code.api.mdx",
+  "sourceDirName": "API",
+  "slug": "/API/verification-of-the-temporary-6-digit-code",
+  "permalink": "/OpenLeakedDocs/docs/API/verification-of-the-temporary-6-digit-code",
+  "draft": false,
+  "editUrl": null,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "verification-of-the-temporary-6-digit-code",
+    "title": "Verification of the temporary 6-digit code.",
+    "description": "Verification of the temporary 6-digit code.",
+    "sidebar_label": "Verification of the temporary 6-digit code.",
+    "hide_title": true,
+    "hide_table_of_contents": true,
+    "api": {
+      "tags": [
+        "authorisations"
+      ],
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Local": {
+                  "type": "string"
+                },
+                "Domain": {
+                  "type": "string"
+                },
+                "verifyCode": {
+                  "type": "integer"
+                }
+              },
+              "example": {
+                "Local": "johndoe",
+                "Domain": "example.com",
+                "verifyCode": 999999
+              },
+              "title": "Verify"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "description": "OK"
+        },
+        "400": {
+          "description": "Failed"
+        }
+      },
+      "description": "Verification of the temporary 6-digit code.",
+      "method": "post",
+      "path": "/api/login/verify",
+      "servers": [
+        {
+          "url": "https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.0.0",
+          "description": "SwaggerHub API Auto Mocking"
+        },
+        {
+          "url": "openleaked.compute.dtu.dk",
+          "description": "Default server"
+        },
+        {
+          "url": "localhost",
+          "description": "Local running server"
+        }
+      ],
+      "jsonRequestBodyExample": {
+        "Local": "johndoe",
+        "Domain": "example.com",
+        "verifyCode": 999999
+      },
+      "info": {
+        "title": "Open Leaked YAML",
+        "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\nIt was **extended** to illustrate features of [generator-openapi-repo](https://github.com/Rebilly/generator-openapi-repo)\ntool and [ReDoc](https://github.com/Redocly/redoc) documentation. In addition to standard\nOpenAPI syntax we use a few [vendor extensions](https://github.com/Redocly/redoc/blob/master/docs/redoc-vendor-extensions.md).\n\n## Cross-Origin Resource Sharing\nThis API features Cross-Origin Resource Sharing (CORS) implemented in compliance with  [W3C spec](https://www.w3.org/TR/cors/).\nAnd that allows cross-domain communication from the browser.\nAll responses have a wildcard same-origin which makes them completely public and accessible to everyone, including any code on any site.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. A local API key may be optained from the vendor\n",
+        "contact": {
+          "name": "Open Leaked",
+          "url": "https://github.com/Open-Leaked/Monorepo",
+          "email": "openleaked@gmail.com"
+        },
+        "license": {
+          "name": "Apache 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0",
+        "x-logo": {
+          "url": "https://redocly.github.io/redoc/petstore-logo.png",
+          "altText": "Petstore logo"
+        }
+      },
+      "postman": {
+        "name": "Verification of the temporary 6-digit code.",
+        "description": {
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "api",
+            "login",
+            "verify"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "body": {
+          "mode": "raw",
+          "raw": "\"\"",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    "sidebar_class_name": "post api-method",
+    "info_path": "docs/API/open-leaked-yaml",
+    "custom_edit_url": null
+  },
+  "sidebar": "openApiSidebar",
+  "previous": {
+    "title": "Ends current the current",
+    "permalink": "/OpenLeakedDocs/docs/API/ends-current-the-current"
+  },
+  "next": {
+    "title": "Initiate recovery process",
+    "permalink": "/OpenLeakedDocs/docs/API/initiate-recovery-process"
+  }
+}

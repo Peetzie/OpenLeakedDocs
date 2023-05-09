@@ -1,0 +1,33 @@
+{
+  "unversionedId": "API/open-leaked-yaml",
+  "id": "API/open-leaked-yaml",
+  "title": "Open Leaked YAML",
+  "description": "## Introduction",
+  "source": "@site/docs/API/open-leaked-yaml.info.mdx",
+  "sourceDirName": "API",
+  "slug": "/API/open-leaked-yaml",
+  "permalink": "/OpenLeakedDocs/docs/API/open-leaked-yaml",
+  "draft": false,
+  "editUrl": null,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 0,
+  "frontMatter": {
+    "id": "open-leaked-yaml",
+    "title": "Open Leaked YAML",
+    "description": "## Introduction",
+    "sidebar_label": "Introduction",
+    "sidebar_position": 0,
+    "hide_title": true,
+    "custom_edit_url": null
+  },
+  "sidebar": "openApiSidebar",
+  "previous": {
+    "title": "API Documentation",
+    "permalink": "/OpenLeakedDocs/docs/category/petstore-api"
+  },
+  "next": {
+    "title": "HealthCheck",
+    "permalink": "/OpenLeakedDocs/docs/API/healthcheck"
+  }
+}

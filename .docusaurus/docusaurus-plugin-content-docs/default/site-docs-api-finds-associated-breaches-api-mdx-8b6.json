@@ -1,0 +1,161 @@
+{
+  "unversionedId": "API/finds-associated-breaches",
+  "id": "API/finds-associated-breaches",
+  "title": "Finds associated breaches",
+  "description": "Takes a username RequestBody, performs the lookup and retrieves breaches associated with that breach if any. Might return an empty set.",
+  "source": "@site/docs/API/finds-associated-breaches.api.mdx",
+  "sourceDirName": "API",
+  "slug": "/API/finds-associated-breaches",
+  "permalink": "/OpenLeakedDocs/docs/API/finds-associated-breaches",
+  "draft": false,
+  "editUrl": null,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "finds-associated-breaches",
+    "title": "Finds associated breaches",
+    "description": "Takes a username RequestBody, performs the lookup and retrieves breaches associated with that breach if any. Might return an empty set.",
+    "sidebar_label": "Finds associated breaches",
+    "hide_title": true,
+    "hide_table_of_contents": true,
+    "api": {
+      "tags": [
+        "username"
+      ],
+      "description": "Takes a username RequestBody, performs the lookup and retrieves breaches associated with that breach if any. Might return an empty set.",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "title": "UsernameRequestBody"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "array",
+                      "items": {}
+                    }
+                  },
+                  "example": [
+                    "u",
+                    "s",
+                    "e",
+                    "r",
+                    "n",
+                    "a",
+                    "m",
+                    "e"
+                  ],
+                  "title": "Username"
+                }
+              ]
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "description": "sucess"
+        },
+        "401": {
+          "description": "Could not find username in database"
+        }
+      },
+      "method": "post",
+      "path": "/api/username/breaches",
+      "servers": [
+        {
+          "url": "https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.0.0",
+          "description": "SwaggerHub API Auto Mocking"
+        },
+        {
+          "url": "openleaked.compute.dtu.dk",
+          "description": "Default server"
+        },
+        {
+          "url": "localhost",
+          "description": "Local running server"
+        }
+      ],
+      "jsonRequestBodyExample": [
+        "u",
+        "s",
+        "e",
+        "r",
+        "n",
+        "a",
+        "m",
+        "e"
+      ],
+      "info": {
+        "title": "Open Leaked YAML",
+        "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\nIt was **extended** to illustrate features of [generator-openapi-repo](https://github.com/Rebilly/generator-openapi-repo)\ntool and [ReDoc](https://github.com/Redocly/redoc) documentation. In addition to standard\nOpenAPI syntax we use a few [vendor extensions](https://github.com/Redocly/redoc/blob/master/docs/redoc-vendor-extensions.md).\n\n## Cross-Origin Resource Sharing\nThis API features Cross-Origin Resource Sharing (CORS) implemented in compliance with  [W3C spec](https://www.w3.org/TR/cors/).\nAnd that allows cross-domain communication from the browser.\nAll responses have a wildcard same-origin which makes them completely public and accessible to everyone, including any code on any site.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. A local API key may be optained from the vendor\n",
+        "contact": {
+          "name": "Open Leaked",
+          "url": "https://github.com/Open-Leaked/Monorepo",
+          "email": "openleaked@gmail.com"
+        },
+        "license": {
+          "name": "Apache 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0",
+        "x-logo": {
+          "url": "https://redocly.github.io/redoc/petstore-logo.png",
+          "altText": "Petstore logo"
+        }
+      },
+      "postman": {
+        "name": "Finds associated breaches",
+        "description": {
+          "content": "Takes a username RequestBody, performs the lookup and retrieves breaches associated with that breach if any. Might return an empty set.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "api",
+            "username",
+            "breaches"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "body": {
+          "mode": "raw",
+          "raw": "\"\"",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    "sidebar_class_name": "post api-method",
+    "info_path": "docs/API/open-leaked-yaml",
+    "custom_edit_url": null
+  },
+  "sidebar": "openApiSidebar",
+  "previous": {
+    "title": "Retrieves the ID of an email",
+    "permalink": "/OpenLeakedDocs/docs/API/retrieves-the-id-of-an-email"
+  },
+  "next": {
+    "title": "Simple lookup in the database",
+    "permalink": "/OpenLeakedDocs/docs/API/simple-lookup-in-the-database"
+  }
+}

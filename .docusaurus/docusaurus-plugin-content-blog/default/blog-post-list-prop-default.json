@@ -1,0 +1,21 @@
+{
+  "title": "Recent posts",
+  "items": [
+    {
+      "title": "Welcome",
+      "permalink": "/OpenLeakedDocs/blog/welcome"
+    },
+    {
+      "title": "MDX Blog Post",
+      "permalink": "/OpenLeakedDocs/blog/mdx-blog-post"
+    },
+    {
+      "title": "Long Blog Post",
+      "permalink": "/OpenLeakedDocs/blog/long-blog-post"
+    },
+    {
+      "title": "First Blog Post",
+      "permalink": "/OpenLeakedDocs/blog/first-blog-post"
+    }
+  ]
+}

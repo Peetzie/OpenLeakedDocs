@@ -1,0 +1,529 @@
+---
+openapi: 3.0.0
+info:
+  title: Open Leaked YAML
+  description: "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\nIt was **extended** to illustrate features of [generator-openapi-repo](https://github.com/Rebilly/generator-openapi-repo)\ntool and [ReDoc](https://github.com/Redocly/redoc) documentation. In addition to standard\nOpenAPI syntax we use a few [vendor extensions](https://github.com/Redocly/redoc/blob/master/docs/redoc-vendor-extensions.md).\n\n## Cross-Origin Resource Sharing\nThis API features Cross-Origin Resource Sharing (CORS) implemented in compliance with  [W3C spec](https://www.w3.org/TR/cors/).\nAnd that allows cross-domain communication from the browser.\nAll responses have a wildcard same-origin which makes them completely public and accessible to everyone, including any code on any site.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. A local API key may be optained from the vendor\n"
+  contact:
+    name: Open Leaked
+    url: https://github.com/Open-Leaked/Monorepo
+    email: openleaked@gmail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+  x-logo:
+    url: https://redocly.github.io/redoc/petstore-logo.png
+    altText: Petstore logo
+servers:
+- url: https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.0.0
+  description: SwaggerHub API Auto Mocking
+- url: openleaked.compute.dtu.dk
+  description: Default server
+- url: localhost
+  description: Local running server
+tags:
+- name: healthcheck
+  description: Healthcheck to check backend us running
+  x-displayName: HealthCheck
+- name: authorisations
+  description: Operations about user
+  x-displayName: Authorisations
+- name: tip
+  description: Endpoints for all functionality related to tipping the system maintainers
+  x-displayName: Tip
+- name: email
+  description: All endpoints associated with email lookup
+  x-displayname: Searchables
+- name: password
+  description: All endpoints associated with password lookup
+  x-displayname: Searchables
+- name: subscribe
+  description: All endpoints associated with the subscribe service
+  x-displayname: Subscribe
+- name: username
+  description: All endpoints associated with the username service
+  x-displayname: Searcheables
+paths:
+  /api/Username/exists:
+    post:
+      tags:
+      - username
+      summary: Simple lookup in the database
+      description: Checks whether or not the username is existing in the database.
+      requestBody:
+        $ref: '#/components/requestBodies/Username'
+      responses:
+        "200":
+          description: success
+        "401":
+          description: No breaches found
+  /api/username/breaches:
+    post:
+      tags:
+      - username
+      summary: Finds associated breaches
+      description: "Takes a username RequestBody, performs the lookup and retrieves breaches associated with that breach if any. Might return an empty set."
+      requestBody:
+        $ref: '#/components/requestBodies/Username'
+      responses:
+        "200":
+          description: sucess
+        "401":
+          description: Could not find username in database
+  /api/subscribe/verify:
+    post:
+      tags:
+      - subscribe
+      summary: Verify user
+      description: Authenticate the user by checking the entered verification code.
+      requestBody:
+        $ref: '#/components/requestBodies/Subscribe'
+      responses:
+        "200":
+          description: Sucess
+        "401":
+          description: Failed to verify user
+  /api/subscribe/signup:
+    post:
+      tags:
+      - subscribe
+      summary: Subscribe
+      description: Adds the user to the subscribed users table
+      requestBody:
+        $ref: '#/components/requestBodies/Email'
+      responses:
+        "200":
+          description: Sucess
+        "401":
+          description: Failed to successfully adding user to the subscribe table
+  /api/subscribe/unsubscribe:
+    post:
+      tags:
+      - subscribe
+      summary: Unsubscribe
+      description: Removes the user from the subscribed users table
+      requestBody:
+        $ref: '#/components/requestBodies/Email'
+      responses:
+        "200":
+          description: Sucess
+        "401":
+          description: Failed to remove subscribers users
+  /api/password/exists:
+    post:
+      tags:
+      - password
+      summary: Simple lookup in the database
+      description: Checks whether or not the password is existing in the database.
+      requestBody:
+        $ref: '#/components/requestBodies/Password'
+      responses:
+        "200":
+          description: success
+        "401":
+          description: No breaches found
+  /api/password/breaches:
+    post:
+      tags:
+      - password
+      summary: Finds associated breaches
+      description: "Takes a password RequestBody, performs the lookup and retrieves breaches associated with that breach if any. Might return an empty set."
+      requestBody:
+        $ref: '#/components/requestBodies/Password'
+      responses:
+        "200":
+          description: sucess
+        "401":
+          description: Could not find password in database
+  /api/email/id:
+    post:
+      tags:
+      - email
+      summary: Retrieves the ID of an email
+      description: Takes an emailID (see the requestbody) and retrieves the unique identifier from the database.
+      requestBody:
+        $ref: '#/components/requestBodies/Email'
+      responses:
+        "200":
+          description: sucess
+        "401":
+          description: Could not find email in the database.
+  /api/email/breaches:
+    post:
+      tags:
+      - email
+      summary: Finds associated breaches
+      description: "Takes an email requestbody, performs lookup in the databases and retrieves the breaches associated with that email if any. Might be an empty set returned."
+      requestBody:
+        $ref: '#/components/requestBodies/Email'
+      responses:
+        "200":
+          description: sucess
+        "401":
+          description: No breaches found or email was not found
+  /api/email/exists:
+    post:
+      tags:
+      - email
+      summary: Simple lookup in the database
+      description: Checks whether or not the email is existing in the database.
+      requestBody:
+        $ref: '#/components/requestBodies/Email'
+      responses:
+        "200":
+          description: success
+        "401":
+          description: No breaches found
+  /api/healthcheck:
+    get:
+      tags:
+      - healthcheck
+      summary: Checks that the service is currently running
+      description: "Simple benefecial healthcheck, no further use."
+      responses:
+        "200":
+          description: successful operation
+        "401":
+          description: Bad request - Server not running
+  /api/tip/send:
+    post:
+      tags:
+      - tip
+      summary: Allows a user to tip the maintainers with additional breaches
+      requestBody:
+        $ref: '#/components/requestBodies/Tip'
+      responses:
+        "200":
+          description: Successfully tipped us
+        "401":
+          description: Request did not go through
+  /api/login/login:
+    post:
+      tags:
+      - authorisations
+      summary: Authorise an existing user
+      description: This action can be performed by anyone. If the user is currently already in an active session the session is extended.
+      requestBody:
+        description: HTTP basic user authentication requestbody
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+        required: true
+      responses:
+        "200":
+          description: Sucess
+          headers:
+            X-Rate-Limit:
+              description: calls per hour allowed by the user
+              style: simple
+              explode: false
+              schema:
+                type: integer
+                format: int32
+            X-Expires-After:
+              description: date in UTC when token expires
+              style: simple
+              explode: false
+              schema:
+                type: string
+                format: date-time
+        "401":
+          description: Unauthorised
+  /api/login/logout:
+    post:
+      tags:
+      - authorisations
+      summary: Ends current the current
+      description: This action can be performed by any user currently in an active session (authorized). If sucessfull the session token will be revoked
+      requestBody:
+        description: HTTP basic authentication requestbody
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+        required: true
+      responses:
+        "200":
+          description: successful operation
+        "400":
+          description: Failed
+  /api/login/verify:
+    post:
+      tags:
+      - authorisations
+      summary: Verification of the temporary 6-digit code.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Verify'
+        required: true
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Failed
+  /api/login/recover:
+    post:
+      tags:
+      - authorisations
+      summary: Initiate recovery process
+      description: Initiates the recovery process by sending an email to the entered email adress
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Recover'
+        required: true
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Failed
+  /api/login/newPassword:
+    post:
+      tags:
+      - authorisations
+      summary: Create a new password
+      description: Allows the user to create a new password after verification if previous was forgotton. Is a part of the recovery process
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/userNewPassword'
+        required: true
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Failed
+  /api/login/register:
+    post:
+      tags:
+      - authorisations
+      summary: Authorise an existing user
+      description: Uses the HTTP basic protocol to authenticate a user at the SecurityFilterChain
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterNewUser'
+        required: true
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Failed
+components:
+  schemas:
+    Username:
+      type: object
+      properties:
+        value:
+          type: array
+          items: {}
+      example:
+      - u
+      - s
+      - e
+      - r
+      - "n"
+      - a
+      - m
+      - e
+    Subscribe:
+      type: object
+      properties:
+        local:
+          type: string
+        domain:
+          type: string
+        verifyCode:
+          type: string
+      example:
+        local: example
+        domain: example.com
+        verifycode: 123456
+    Password:
+      type: object
+      properties:
+        value:
+          type: array
+          items: {}
+      example:
+      - p
+      - a
+      - s
+      - s
+      - w
+      - o
+      - r
+      - d
+    Email:
+      type: object
+      properties:
+        local:
+          type: string
+        domain:
+          type: string
+      example:
+        local: example
+        domain: example.com
+    Tip:
+      type: object
+      properties:
+        desc:
+          type: string
+        size:
+          type: integer
+        unit:
+          type: string
+        date:
+          type: number
+        magnetLink:
+          type: string
+      example:
+        desc: description
+        size: 114
+        unit: GB
+        date: 1683577685
+        magnetLink: magnet:?xt=urn:btih:d136b1adde531f38311fbf43fb96fc26df1a34cd&dn=Collection+%232-%235+%26+Antipublic
+    RegisterNewUser:
+      type: object
+      properties:
+        emailID:
+          $ref: '#/components/schemas/RegisterNewUser_emailID'
+        password:
+          type: string
+        cPassword:
+          type: string
+        fullName:
+          type: string
+        studentNo:
+          type: string
+      example:
+        emailID:
+          local: example
+          domain: example.com
+        password: password123
+        cPassword: password123
+        fullName: John Doe
+        studentNo: SXXXXXX
+    userNewPassword:
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+        cPassword:
+          type: string
+      example:
+        email: johndoe@example.com
+        password: password
+        cPassword: password
+    Verify:
+      type: object
+      properties:
+        Local:
+          type: string
+        Domain:
+          type: string
+        verifyCode:
+          type: integer
+      example:
+        Local: johndoe
+        Domain: example.com
+        verifyCode: 999999
+    Recover:
+      type: object
+      properties:
+        Domain:
+          type: string
+        Local:
+          type: string
+      example:
+        Local: johndoe
+        Domain: example.com
+    User:
+      type: object
+      properties:
+        email:
+          minLength: 4
+          type: string
+          description: User supplied username
+          example: johndoe@example.com
+        password:
+          minLength: 8
+          pattern: "/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/"
+          type: string
+          description: "User password, MUST contain a mix of upper and lower case letters, as well as digits and special characters"
+          format: password
+          example: drowssaP123#
+      xml:
+        name: User
+    RegisterNewUser_emailID:
+      type: object
+      properties:
+        local:
+          type: string
+        domain:
+          type: string
+  requestBodies:
+    Username:
+      content:
+        application/json:
+          schema:
+            allOf:
+            - title: UsernameRequestBody
+            - $ref: '#/components/schemas/Username'
+      required: true
+    Subscribe:
+      content:
+        application/json:
+          schema:
+            allOf:
+            - title: VerifySubscribeRequestBody
+            - $ref: '#/components/schemas/Subscribe'
+      required: true
+    Password:
+      content:
+        application/json:
+          schema:
+            allOf:
+            - title: Password RequestBody
+            - $ref: '#/components/schemas/Password'
+      required: true
+    Email:
+      content:
+        application/json:
+          schema:
+            allOf:
+            - title: Email Request Body
+            - $ref: '#/components/schemas/Email'
+      required: true
+    Tip:
+      content:
+        application/json:
+          schema:
+            allOf:
+            - title: Tip rqeust Body
+            - $ref: '#/components/schemas/Tip'
+      required: true
+x-tagGroups:
+- name: General
+  tags:
+  - HealthCheck
+  - Subscribe
+- name: User Management
+  tags:
+  - authorisations
+- name: Maintainance
+  tags:
+  - Tip
+- name: Searchables
+  tags:
+  - email
+  - password
+  - username

@@ -1,0 +1,50 @@
+---
+id: authorise-an-existing-user
+title: "Authorise an existing user"
+description: "This action can be performed by anyone. If the user is currently already in an active session the session is extended."
+sidebar_label: "Authorise an existing user"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["authorisations"],"description":"This action can be performed by anyone. If the user is currently already in an active session the session is extended.","requestBody":{"description":"HTTP basic user authentication requestbody","content":{"application/json":{"schema":{"type":"object","properties":{"email":{"minLength":4,"type":"string","description":"User supplied username","example":"johndoe@example.com"},"password":{"minLength":8,"pattern":"/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/","type":"string","description":"User password, MUST contain a mix of upper and lower case letters, as well as digits and special characters","format":"password","example":"drowssaP123#"}},"xml":{"name":"User"},"title":"User"}}},"required":true},"responses":{"200":{"description":"Sucess","headers":{"X-Rate-Limit":{"description":"calls per hour allowed by the user","style":"simple","explode":false,"schema":{"type":"integer","format":"int32"}},"X-Expires-After":{"description":"date in UTC when token expires","style":"simple","explode":false,"schema":{"type":"string","format":"date-time"}}}},"401":{"description":"Unauthorised"}},"method":"post","path":"/api/login/login","servers":[{"url":"https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.0.0","description":"SwaggerHub API Auto Mocking"},{"url":"openleaked.compute.dtu.dk","description":"Default server"},{"url":"localhost","description":"Local running server"}],"jsonRequestBodyExample":{"email":"johndoe@example.com","password":"drowssaP123#"},"info":{"title":"Open Leaked YAML","description":"## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\nIt was **extended** to illustrate features of [generator-openapi-repo](https://github.com/Rebilly/generator-openapi-repo)\ntool and [ReDoc](https://github.com/Redocly/redoc) documentation. In addition to standard\nOpenAPI syntax we use a few [vendor extensions](https://github.com/Redocly/redoc/blob/master/docs/redoc-vendor-extensions.md).\n\n## Cross-Origin Resource Sharing\nThis API features Cross-Origin Resource Sharing (CORS) implemented in compliance with  [W3C spec](https://www.w3.org/TR/cors/).\nAnd that allows cross-domain communication from the browser.\nAll responses have a wildcard same-origin which makes them completely public and accessible to everyone, including any code on any site.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. A local API key may be optained from the vendor\n","contact":{"name":"Open Leaked","url":"https://github.com/Open-Leaked/Monorepo","email":"openleaked@gmail.com"},"license":{"name":"Apache 2.0","url":"http://www.apache.org/licenses/LICENSE-2.0.html"},"version":"1.0.0","x-logo":{"url":"https://redocly.github.io/redoc/petstore-logo.png","altText":"Petstore logo"}},"postman":{"name":"Authorise an existing user","description":{"content":"This action can be performed by anyone. If the user is currently already in an active session the session is extended.","type":"text/plain"},"url":{"path":["api","login","login"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Content-Type","value":"application/json"}],"method":"POST","body":{"mode":"raw","raw":"\"\"","options":{"raw":{"language":"json"}}}}}
+sidebar_class_name: "post api-method"
+info_path: docs/API/open-leaked-yaml
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import TabItem from "@theme/TabItem";
+
+## Authorise an existing user
+
+
+
+This action can be performed by anyone. If the user is currently already in an active session the session is extended.
+
+<MimeTabs><TabItem label={"application/json"} value={"application/json-schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Request Body</strong><strong style={{"fontSize":"var(--ifm-code-font-size)","color":"var(--openapi-required)"}}> required</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}><div style={{"marginTop":"1rem","marginBottom":"1rem"}}>
+
+HTTP basic user authentication requestbody
+
+</div></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"email"} required={false} schemaName={"string"} qualifierMessage={"**Possible values:** `>= 4 characters`"} schema={{"minLength":4,"type":"string","description":"User supplied username","example":"johndoe@example.com"}}></SchemaItem><SchemaItem collapsible={false} name={"password"} required={false} schemaName={"password"} qualifierMessage={"**Possible values:** `>= 8 characters`, Value must match regular expression `/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/`"} schema={{"minLength":8,"pattern":"/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/","type":"string","description":"User password, MUST contain a mix of upper and lower case letters, as well as digits and special characters","format":"password","example":"drowssaP123#"}}></SchemaItem></ul></details></TabItem></MimeTabs><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+Sucess
+
+</div><details style={{"textAlign":"left","marginBottom":"1rem"}} data-collaposed={true} open={false}><summary style={{}}><strong>Response Headers</strong></summary><ul style={{"marginLeft":"1rem"}}><li className={"schemaItem"}><summary style={{}}><strong>X-Rate-Limit</strong><span style={{"opacity":"0.6"}}> integer</span></summary><div><div style={{"marginTop":".5rem","marginBottom":".5rem"}}>
+
+calls per hour allowed by the user
+
+</div></div></li><li className={"schemaItem"}><summary style={{}}><strong>X-Expires-After</strong><span style={{"opacity":"0.6"}}> string</span></summary><div><div style={{"marginTop":".5rem","marginBottom":".5rem"}}>
+
+date in UTC when token expires
+
+</div></div></li></ul></details><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+Unauthorised
+
+</div><div></div></TabItem></ApiTabs></div>
+      

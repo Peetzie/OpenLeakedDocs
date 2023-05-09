@@ -1,0 +1,329 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/OpenLeakedDocs/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/OpenLeakedDocs/docs",
+          "mainDocId": "intro",
+          "docs": [
+            {
+              "id": "API/allows-a-user-to-tip-the-maintainers-with-additional-breaches",
+              "path": "/OpenLeakedDocs/docs/API/allows-a-user-to-tip-the-maintainers-with-additional-breaches",
+              "sidebar": "openApiSidebar"
+            },
+            {
+              "id": "API/authorisations",
+              "path": "/OpenLeakedDocs/docs/API/authorisations",
+              "sidebar": "openApiSidebar"
+            },
+            {
+              "id": "API/authorise-an-existing-user",
+              "path": "/OpenLeakedDocs/docs/API/authorise-an-existing-user",
+              "sidebar": "openApiSidebar"
+            },
+            {
+              "id": "API/checks-that-the-service-is-currently-running",
+              "path": "/OpenLeakedDocs/docs/API/checks-that-the-service-is-currently-running",
+              "sidebar": "openApiSidebar"
+            },
+            {
+              "id": "API/create-a-new-password",
+              "path": "/OpenLeakedDocs/docs/API/create-a-new-password",
+              "sidebar": "openApiSidebar"
+            },
+            {
+              "id": "API/email",
+              "path": "/OpenLeakedDocs/docs/API/email",
+              "sidebar": "openApiSidebar"
+            },
+            {
+              "id": "API/ends-current-the-current",
+              "path": "/OpenLeakedDocs/docs/API/ends-current-the-current",
+              "sidebar": "openApiSidebar"
+            },
+            {
+              "id": "API/finds-associated-breaches",
+              "path": "/OpenLeakedDocs/docs/API/finds-associated-breaches",
+              "sidebar": "openApiSidebar"
+            },
+            {
+              "id": "API/healthcheck",
+              "path": "/OpenLeakedDocs/docs/API/healthcheck",
+              "sidebar": "openApiSidebar"
+            },
+            {
+              "id": "API/initiate-recovery-process",
+              "path": "/OpenLeakedDocs/docs/API/initiate-recovery-process",
+              "sidebar": "openApiSidebar"
+            },
+            {
+              "id": "API/open-leaked-yaml",
+              "path": "/OpenLeakedDocs/docs/API/open-leaked-yaml",
+              "sidebar": "openApiSidebar"
+            },
+            {
+              "id": "API/password",
+              "path": "/OpenLeakedDocs/docs/API/password",
+              "sidebar": "openApiSidebar"
+            },
+            {
+              "id": "API/retrieves-the-id-of-an-email",
+              "path": "/OpenLeakedDocs/docs/API/retrieves-the-id-of-an-email",
+              "sidebar": "openApiSidebar"
+            },
+            {
+              "id": "API/simple-lookup-in-the-database",
+              "path": "/OpenLeakedDocs/docs/API/simple-lookup-in-the-database",
+              "sidebar": "openApiSidebar"
+            },
+            {
+              "id": "API/subscribe",
+              "path": "/OpenLeakedDocs/docs/API/subscribe",
+              "sidebar": "openApiSidebar"
+            },
+            {
+              "id": "API/subscribe",
+              "path": "/OpenLeakedDocs/docs/API/subscribe",
+              "sidebar": "openApiSidebar"
+            },
+            {
+              "id": "API/tip",
+              "path": "/OpenLeakedDocs/docs/API/tip",
+              "sidebar": "openApiSidebar"
+            },
+            {
+              "id": "API/unsubscribe",
+              "path": "/OpenLeakedDocs/docs/API/unsubscribe",
+              "sidebar": "openApiSidebar"
+            },
+            {
+              "id": "API/username",
+              "path": "/OpenLeakedDocs/docs/API/username",
+              "sidebar": "openApiSidebar"
+            },
+            {
+              "id": "API/verification-of-the-temporary-6-digit-code",
+              "path": "/OpenLeakedDocs/docs/API/verification-of-the-temporary-6-digit-code",
+              "sidebar": "openApiSidebar"
+            },
+            {
+              "id": "API/verify-user",
+              "path": "/OpenLeakedDocs/docs/API/verify-user",
+              "sidebar": "openApiSidebar"
+            },
+            {
+              "id": "intro",
+              "path": "/OpenLeakedDocs/docs/intro",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "petstore/add-pet",
+              "path": "/OpenLeakedDocs/docs/petstore/add-pet",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "petstore/create-user",
+              "path": "/OpenLeakedDocs/docs/petstore/create-user",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "petstore/create-users-with-array-input",
+              "path": "/OpenLeakedDocs/docs/petstore/create-users-with-array-input",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "petstore/create-users-with-list-input",
+              "path": "/OpenLeakedDocs/docs/petstore/create-users-with-list-input",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "petstore/delete-order",
+              "path": "/OpenLeakedDocs/docs/petstore/delete-order",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "petstore/delete-pet",
+              "path": "/OpenLeakedDocs/docs/petstore/delete-pet",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "petstore/delete-user",
+              "path": "/OpenLeakedDocs/docs/petstore/delete-user",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "petstore/find-pets-by-status",
+              "path": "/OpenLeakedDocs/docs/petstore/find-pets-by-status",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "petstore/find-pets-by-tags",
+              "path": "/OpenLeakedDocs/docs/petstore/find-pets-by-tags",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "petstore/get-inventory",
+              "path": "/OpenLeakedDocs/docs/petstore/get-inventory",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "petstore/get-order-by-id",
+              "path": "/OpenLeakedDocs/docs/petstore/get-order-by-id",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "petstore/get-pet-by-id",
+              "path": "/OpenLeakedDocs/docs/petstore/get-pet-by-id",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "petstore/get-user-by-name",
+              "path": "/OpenLeakedDocs/docs/petstore/get-user-by-name",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "petstore/login-user",
+              "path": "/OpenLeakedDocs/docs/petstore/login-user",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "petstore/logout-user",
+              "path": "/OpenLeakedDocs/docs/petstore/logout-user",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "petstore/new-pet",
+              "path": "/OpenLeakedDocs/docs/petstore/new-pet",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "petstore/pet",
+              "path": "/OpenLeakedDocs/docs/petstore/pet",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "petstore/place-order",
+              "path": "/OpenLeakedDocs/docs/petstore/place-order",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "petstore/store",
+              "path": "/OpenLeakedDocs/docs/petstore/store",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "petstore/subscribe-to-the-store-events",
+              "path": "/OpenLeakedDocs/docs/petstore/subscribe-to-the-store-events",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "petstore/swagger-petstore-yaml",
+              "path": "/OpenLeakedDocs/docs/petstore/swagger-petstore-yaml",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "petstore/update-pet",
+              "path": "/OpenLeakedDocs/docs/petstore/update-pet",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "petstore/update-pet-with-form",
+              "path": "/OpenLeakedDocs/docs/petstore/update-pet-with-form",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "petstore/update-user",
+              "path": "/OpenLeakedDocs/docs/petstore/update-user",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "petstore/upload-file",
+              "path": "/OpenLeakedDocs/docs/petstore/upload-file",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "petstore/user",
+              "path": "/OpenLeakedDocs/docs/petstore/user",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "tutorial-basics/congratulations",
+              "path": "/OpenLeakedDocs/docs/tutorial-basics/congratulations",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "tutorial-basics/create-a-blog-post",
+              "path": "/OpenLeakedDocs/docs/tutorial-basics/create-a-blog-post",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "tutorial-basics/create-a-document",
+              "path": "/OpenLeakedDocs/docs/tutorial-basics/create-a-document",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "tutorial-basics/create-a-page",
+              "path": "/OpenLeakedDocs/docs/tutorial-basics/create-a-page",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "tutorial-basics/deploy-your-site",
+              "path": "/OpenLeakedDocs/docs/tutorial-basics/deploy-your-site",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "tutorial-basics/markdown-features",
+              "path": "/OpenLeakedDocs/docs/tutorial-basics/markdown-features",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "tutorial-extras/manage-docs-versions",
+              "path": "/OpenLeakedDocs/docs/tutorial-extras/manage-docs-versions",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "tutorial-extras/translate-your-site",
+              "path": "/OpenLeakedDocs/docs/tutorial-extras/translate-your-site",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/tutorial---basics",
+              "path": "/OpenLeakedDocs/docs/category/tutorial---basics",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/tutorial---extras",
+              "path": "/OpenLeakedDocs/docs/category/tutorial---extras",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/petstore-api",
+              "path": "/OpenLeakedDocs/docs/category/petstore-api",
+              "sidebar": "openApiSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "tutorialSidebar": {
+              "link": {
+                "path": "/OpenLeakedDocs/docs/intro",
+                "label": "intro"
+              }
+            },
+            "openApiSidebar": {
+              "link": {
+                "path": "/OpenLeakedDocs/docs/category/petstore-api",
+                "label": "API Documentation"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}
