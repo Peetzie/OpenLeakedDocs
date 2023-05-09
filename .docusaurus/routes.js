@@ -3,78 +3,113 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 
 export default [
   {
+    path: '/OpenLeakedDocs/__docusaurus/debug',
+    component: ComponentCreator('/OpenLeakedDocs/__docusaurus/debug', '664'),
+    exact: true
+  },
+  {
+    path: '/OpenLeakedDocs/__docusaurus/debug/config',
+    component: ComponentCreator('/OpenLeakedDocs/__docusaurus/debug/config', '0c4'),
+    exact: true
+  },
+  {
+    path: '/OpenLeakedDocs/__docusaurus/debug/content',
+    component: ComponentCreator('/OpenLeakedDocs/__docusaurus/debug/content', '800'),
+    exact: true
+  },
+  {
+    path: '/OpenLeakedDocs/__docusaurus/debug/globalData',
+    component: ComponentCreator('/OpenLeakedDocs/__docusaurus/debug/globalData', '4ab'),
+    exact: true
+  },
+  {
+    path: '/OpenLeakedDocs/__docusaurus/debug/metadata',
+    component: ComponentCreator('/OpenLeakedDocs/__docusaurus/debug/metadata', 'f77'),
+    exact: true
+  },
+  {
+    path: '/OpenLeakedDocs/__docusaurus/debug/registry',
+    component: ComponentCreator('/OpenLeakedDocs/__docusaurus/debug/registry', '298'),
+    exact: true
+  },
+  {
+    path: '/OpenLeakedDocs/__docusaurus/debug/routes',
+    component: ComponentCreator('/OpenLeakedDocs/__docusaurus/debug/routes', 'd80'),
+    exact: true
+  },
+  {
     path: '/OpenLeakedDocs/blog',
-    component: ComponentCreator('/OpenLeakedDocs/blog', '02a'),
+    component: ComponentCreator('/OpenLeakedDocs/blog', 'c96'),
     exact: true
   },
   {
     path: '/OpenLeakedDocs/blog/archive',
-    component: ComponentCreator('/OpenLeakedDocs/blog/archive', 'e1f'),
+    component: ComponentCreator('/OpenLeakedDocs/blog/archive', '52d'),
     exact: true
   },
   {
     path: '/OpenLeakedDocs/blog/first-blog-post',
-    component: ComponentCreator('/OpenLeakedDocs/blog/first-blog-post', '65f'),
+    component: ComponentCreator('/OpenLeakedDocs/blog/first-blog-post', 'ebc'),
     exact: true
   },
   {
     path: '/OpenLeakedDocs/blog/long-blog-post',
-    component: ComponentCreator('/OpenLeakedDocs/blog/long-blog-post', 'ebc'),
+    component: ComponentCreator('/OpenLeakedDocs/blog/long-blog-post', '50f'),
     exact: true
   },
   {
     path: '/OpenLeakedDocs/blog/mdx-blog-post',
-    component: ComponentCreator('/OpenLeakedDocs/blog/mdx-blog-post', '407'),
+    component: ComponentCreator('/OpenLeakedDocs/blog/mdx-blog-post', 'fdb'),
     exact: true
   },
   {
     path: '/OpenLeakedDocs/blog/tags',
-    component: ComponentCreator('/OpenLeakedDocs/blog/tags', '01e'),
+    component: ComponentCreator('/OpenLeakedDocs/blog/tags', 'ccc'),
     exact: true
   },
   {
     path: '/OpenLeakedDocs/blog/tags/docusaurus',
-    component: ComponentCreator('/OpenLeakedDocs/blog/tags/docusaurus', '2f8'),
+    component: ComponentCreator('/OpenLeakedDocs/blog/tags/docusaurus', '1a7'),
     exact: true
   },
   {
     path: '/OpenLeakedDocs/blog/tags/facebook',
-    component: ComponentCreator('/OpenLeakedDocs/blog/tags/facebook', '7eb'),
+    component: ComponentCreator('/OpenLeakedDocs/blog/tags/facebook', '551'),
     exact: true
   },
   {
     path: '/OpenLeakedDocs/blog/tags/hello',
-    component: ComponentCreator('/OpenLeakedDocs/blog/tags/hello', '06a'),
+    component: ComponentCreator('/OpenLeakedDocs/blog/tags/hello', 'd4d'),
     exact: true
   },
   {
     path: '/OpenLeakedDocs/blog/tags/hola',
-    component: ComponentCreator('/OpenLeakedDocs/blog/tags/hola', '4d2'),
+    component: ComponentCreator('/OpenLeakedDocs/blog/tags/hola', 'add'),
     exact: true
   },
   {
     path: '/OpenLeakedDocs/blog/welcome',
-    component: ComponentCreator('/OpenLeakedDocs/blog/welcome', 'c24'),
+    component: ComponentCreator('/OpenLeakedDocs/blog/welcome', '52c'),
     exact: true
   },
   {
     path: '/OpenLeakedDocs/docs/tags',
-    component: ComponentCreator('/OpenLeakedDocs/docs/tags', '694'),
+    component: ComponentCreator('/OpenLeakedDocs/docs/tags', '8a1'),
     exact: true
   },
   {
     path: '/OpenLeakedDocs/docs/tags/test',
-    component: ComponentCreator('/OpenLeakedDocs/docs/tags/test', 'fa9'),
+    component: ComponentCreator('/OpenLeakedDocs/docs/tags/test', 'f79'),
     exact: true
   },
   {
     path: '/OpenLeakedDocs/markdown-page',
-    component: ComponentCreator('/OpenLeakedDocs/markdown-page', '9c0'),
+    component: ComponentCreator('/OpenLeakedDocs/markdown-page', '63a'),
     exact: true
   },
   {
     path: '/OpenLeakedDocs/docs',
-    component: ComponentCreator('/OpenLeakedDocs/docs', '835'),
+    component: ComponentCreator('/OpenLeakedDocs/docs', '18d'),
     routes: [
       {
         path: '/OpenLeakedDocs/docs/API/allows-a-user-to-tip-the-maintainers-with-additional-breaches',
@@ -434,7 +469,7 @@ export default [
   },
   {
     path: '/OpenLeakedDocs/',
-    component: ComponentCreator('/OpenLeakedDocs/', '612'),
+    component: ComponentCreator('/OpenLeakedDocs/', 'e8d'),
     exact: true
   },
   {

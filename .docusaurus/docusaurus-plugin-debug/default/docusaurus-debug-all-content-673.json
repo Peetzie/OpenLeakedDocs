@@ -15,9 +15,9 @@
           "editUrlLocalized": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/i18n/en/docusaurus-plugin-content-docs/current",
           "isLast": true,
           "routePriority": -1,
-          "sidebarFilePath": "/home/frederik/Desktop/OpenLeakedDocs/sidebars.js",
-          "contentPath": "/home/frederik/Desktop/OpenLeakedDocs/docs",
-          "contentPathLocalized": "/home/frederik/Desktop/OpenLeakedDocs/i18n/en/docusaurus-plugin-content-docs/current",
+          "sidebarFilePath": "/home/peetz/Documents/GitHub/OpenLeakedDocs/sidebars.js",
+          "contentPath": "/home/peetz/Documents/GitHub/OpenLeakedDocs/docs",
+          "contentPathLocalized": "/home/peetz/Documents/GitHub/OpenLeakedDocs/i18n/en/docusaurus-plugin-content-docs/current",
           "docs": [
             {
               "unversionedId": "API/allows-a-user-to-tip-the-maintainers-with-additional-breaches",

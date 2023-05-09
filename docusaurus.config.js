@@ -6,8 +6,8 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Open-Leaked",
-  tagline: "Dinosaurs are cool",
+  title: "An open source approach to leaked account credentials",
+  tagline: "Leaked credentials are uncool, expensive and a hassle",
   url: "https://peetzie.github.io",
   baseUrl: "/OpenLeakedDocs",
   onBrokenLinks: "warn",
@@ -58,7 +58,7 @@ const config = {
         }
       },
       navbar: {
-        title: "My Site",
+        title: "Open Leaked",
         logo: {
           alt: "My Site Logo",
           src: "img/logo.svg"
@@ -77,7 +77,7 @@ const config = {
             to: "/docs/api/open-leaked-yaml"
           },
           {
-            href: "https://github.com/facebook/docusaurus",
+            href: "https://github.com/Open-Leaked/Monorepo",
             label: "GitHub",
             position: "right"
           }
@@ -96,23 +96,6 @@ const config = {
             ]
           },
           {
-            title: "Community",
-            items: [
-              {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus"
-              },
-              {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus"
-              },
-              {
-                label: "Twitter",
-                href: "https://twitter.com/docusaurus"
-              }
-            ]
-          },
-          {
             title: "More",
             items: [
               {
@@ -121,7 +104,7 @@ const config = {
               },
               {
                 label: "GitHub",
-                href: "https://github.com/facebook/docusaurus"
+                href: "https://github.com/Open-Leaked/Monorepo"
               }
             ]
           }

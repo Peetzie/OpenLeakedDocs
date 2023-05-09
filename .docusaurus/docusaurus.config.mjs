@@ -4,8 +4,8 @@
  * Modify the docusaurus.config.js file at your site's root instead.
  */
 export default {
-  "title": "Open-Leaked",
-  "tagline": "Dinosaurs are cool",
+  "title": "An open source approach to leaked account credentials",
+  "tagline": "Leaked credentials are uncool, expensive and a hassle",
   "url": "https://peetzie.github.io",
   "baseUrl": "/OpenLeakedDocs/",
   "onBrokenLinks": "warn",
@@ -20,7 +20,7 @@ export default {
       "classic",
       {
         "docs": {
-          "sidebarPath": "/home/frederik/Desktop/OpenLeakedDocs/sidebars.js",
+          "sidebarPath": "/home/peetz/Documents/GitHub/OpenLeakedDocs/sidebars.js",
           "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
           "docLayoutComponent": "@theme/DocPage",
           "docItemComponent": "@theme/ApiItem"
@@ -30,7 +30,7 @@ export default {
           "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/"
         },
         "theme": {
-          "customCss": "/home/frederik/Desktop/OpenLeakedDocs/src/css/custom.css"
+          "customCss": "/home/peetz/Documents/GitHub/OpenLeakedDocs/src/css/custom.css"
         }
       }
     ]
@@ -44,7 +44,7 @@ export default {
       "versionPersistence": "localStorage"
     },
     "navbar": {
-      "title": "My Site",
+      "title": "Open Leaked",
       "logo": {
         "alt": "My Site Logo",
         "src": "img/logo.svg"
@@ -67,7 +67,7 @@ export default {
           "to": "/docs/api/open-leaked-yaml"
         },
         {
-          "href": "https://github.com/facebook/docusaurus",
+          "href": "https://github.com/Open-Leaked/Monorepo",
           "label": "GitHub",
           "position": "right"
         }
@@ -87,23 +87,6 @@ export default {
           ]
         },
         {
-          "title": "Community",
-          "items": [
-            {
-              "label": "Stack Overflow",
-              "href": "https://stackoverflow.com/questions/tagged/docusaurus"
-            },
-            {
-              "label": "Discord",
-              "href": "https://discordapp.com/invite/docusaurus"
-            },
-            {
-              "label": "Twitter",
-              "href": "https://twitter.com/docusaurus"
-            }
-          ]
-        },
-        {
           "title": "More",
           "items": [
             {
@@ -112,7 +95,7 @@ export default {
             },
             {
               "label": "GitHub",
-              "href": "https://github.com/facebook/docusaurus"
+              "href": "https://github.com/Open-Leaked/Monorepo"
             }
           ]
         }
