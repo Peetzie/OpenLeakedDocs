@@ -34,7 +34,6 @@
                   "type": "object",
                   "properties": {
                     "desc": {
-                      "minLength": 0,
                       "type": "string",
                       "description": "Any discription for the data leak. Could be context, types of data or perhabs any password if compressed with password.",
                       "example": "Description Example"
@@ -79,10 +78,10 @@
       },
       "responses": {
         "200": {
-          "description": "OK"
+          "description": "Successfully send tip to maintainers"
         },
-        "400": {
-          "description": "Bad Request"
+        "409": {
+          "description": "Breach already exists in database"
         }
       },
       "security": [
@@ -95,16 +94,16 @@
       "path": "/api/tip/send",
       "servers": [
         {
-          "url": "https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.0.0",
+          "url": "https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.7.1",
           "description": "SwaggerHub API Auto Mocking"
-        },
-        {
-          "url": "openleaked.compute.dtu.dk",
-          "description": "Default server"
         },
         {
           "url": "localhost",
           "description": "Local running server"
+        },
+        {
+          "url": "open-leaked.compute.dtu.dk",
+          "description": "DTU Compute VPN Required"
         }
       ],
       "securitySchemes": {
@@ -122,7 +121,7 @@
       },
       "info": {
         "title": "Open Leaked YAML",
-        "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\nIt was **extended** to illustrate features of [generator-openapi-repo](https://github.com/Rebilly/generator-openapi-repo)\ntool and [ReDoc](https://github.com/Redocly/redoc) documentation. In addition to standard\nOpenAPI syntax we use a few [vendor extensions](https://github.com/Redocly/redoc/blob/master/docs/redoc-vendor-extensions.md).\n\n## Cross-Origin Resource Sharing\nThis API features Cross-Origin Resource Sharing (CORS) implemented in compliance with  [W3C spec](https://www.w3.org/TR/cors/).\nAnd that allows cross-domain communication from the browser.\nAll responses have a wildcard same-origin which makes them completely public and accessible to everyone, including any code on any site.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. A local API key may be optained from the vendor\n",
+        "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. Use the HTTP basic form to authorize. ",
         "contact": {
           "name": "Open Leaked",
           "url": "https://github.com/Open-Leaked/Monorepo",
@@ -132,10 +131,10 @@
           "name": "Apache 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
         },
-        "version": "1.5.1",
+        "version": "1.7.1",
         "x-logo": {
-          "url": "https://redocly.github.io/redoc/petstore-logo.png",
-          "altText": "Petstore logo"
+          "url": "https://raw.githubusercontent.com/Open-Leaked/Monorepo/main/Assets/logo/png/logo-white.png?token=GHSAT0AAAAAACB2FNOUZBLHC6LN6IMED47EZC3SB3Q",
+          "altText": "Open-Leaked Logo"
         }
       },
       "postman": {

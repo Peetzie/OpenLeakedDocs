@@ -57,3 +57,25 @@ Communication is done through the reverse proxy and network bridges between cont
 The containers will by default not inerhit any system files from the host-os. This includes the timezone files. 
 If the server(s) are deployed to regions out of the ```TZ=Europe/Copenhagen``` timezone please change that in the compose file. 
 :::
+
+
+## Deployment
+
+In order to run the application choose either of the versions of the software first clone the [GitHub Repository](https://github.com/Open-Leaked/Monorepo).
+
+Select either of the 3 ```Docker Compose files``` and type in the following command
+
+```bash
+docker compose build all
+```
+
+To build individual images use 
+```bash
+docker compose build <image>
+```
+:::info
+The development compose file also contains a ```frontend``` image. This is to enable automatic change update in React. 
+This feature is disbled in production where it is simply rendered HTML
+::::
+
+

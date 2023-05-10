@@ -1,0 +1,106 @@
+{
+  "unversionedId": "API/checks-that-the-backend-service-is-running",
+  "id": "API/checks-that-the-backend-service-is-running",
+  "title": "Checks that the backend service is running",
+  "description": "Checks that the backend service is running",
+  "source": "@site/docs/API/checks-that-the-backend-service-is-running.api.mdx",
+  "sourceDirName": "API",
+  "slug": "/API/checks-that-the-backend-service-is-running",
+  "permalink": "/OpenLeakedDocs/docs/API/checks-that-the-backend-service-is-running",
+  "draft": false,
+  "editUrl": null,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "checks-that-the-backend-service-is-running",
+    "title": "Checks that the backend service is running",
+    "description": "Checks that the backend service is running",
+    "sidebar_label": "Checks that the backend service is running",
+    "hide_title": true,
+    "hide_table_of_contents": true,
+    "api": {
+      "tags": [
+        "healthcheck"
+      ],
+      "responses": {
+        "200": {
+          "description": "Backend server is running"
+        },
+        "503": {
+          "description": "Backend server is currently not up"
+        }
+      },
+      "description": "Checks that the backend service is running",
+      "method": "get",
+      "path": "/api/healthcheck",
+      "servers": [
+        {
+          "url": "https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.7.1",
+          "description": "SwaggerHub API Auto Mocking"
+        },
+        {
+          "url": "localhost",
+          "description": "Local running server"
+        },
+        {
+          "url": "open-leaked.compute.dtu.dk",
+          "description": "DTU Compute VPN Required"
+        }
+      ],
+      "securitySchemes": {
+        "basicAuth": {
+          "type": "http",
+          "scheme": "basic"
+        }
+      },
+      "info": {
+        "title": "Open Leaked YAML",
+        "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. Use the HTTP basic form to authorize. ",
+        "contact": {
+          "name": "Open Leaked",
+          "url": "https://github.com/Open-Leaked/Monorepo",
+          "email": "openleaked@gmail.com"
+        },
+        "license": {
+          "name": "Apache 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.7.1",
+        "x-logo": {
+          "url": "https://raw.githubusercontent.com/Open-Leaked/Monorepo/main/Assets/logo/png/logo-white.png?token=GHSAT0AAAAAACB2FNOUZBLHC6LN6IMED47EZC3SB3Q",
+          "altText": "Open-Leaked Logo"
+        }
+      },
+      "postman": {
+        "name": "Checks that the backend service is running",
+        "description": {
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "api",
+            "healthcheck"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "method": "GET"
+      }
+    },
+    "sidebar_class_name": "get api-method",
+    "info_path": "docs/API/open-leaked-yaml",
+    "custom_edit_url": null
+  },
+  "sidebar": "openApiSidebar",
+  "previous": {
+    "title": "HealthCheck",
+    "permalink": "/OpenLeakedDocs/docs/API/healthcheck"
+  },
+  "next": {
+    "title": "Authorisations",
+    "permalink": "/OpenLeakedDocs/docs/API/authorisations"
+  }
+}

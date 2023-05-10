@@ -17,9 +17,9 @@
       "name": "@docusaurus/plugin-content-pages",
       "version": "2.2.0"
     },
-    "docusaurus-plugin-sitemap": {
+    "docusaurus-plugin-debug": {
       "type": "package",
-      "name": "@docusaurus/plugin-sitemap",
+      "name": "@docusaurus/plugin-debug",
       "version": "2.2.0"
     },
     "docusaurus-theme-classic": {
@@ -30,12 +30,12 @@
     "docusaurus-plugin-openapi-docs": {
       "type": "package",
       "name": "docusaurus-plugin-openapi-docs",
-      "version": "1.7.3"
+      "version": "1.7.0"
     },
     "docusaurus-theme-openapi": {
       "type": "package",
       "name": "docusaurus-theme-openapi-docs",
-      "version": "1.7.3"
+      "version": "1.7.0"
     }
   }
 }

@@ -1,0 +1,38 @@
+---
+id: signs-out-the-current-user
+title: "Signs out the current user"
+description: "This action can be performed by any authorized user. Once successfull the session cookie will be removed"
+sidebar_label: "Signs out the current user"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["authorisations"],"description":"This action can be performed by any authorized user. Once successfull the session cookie will be removed","responses":{"200":{"description":"Successfully signed out current user"},"401":{"description":"Could not end session for current user","headers":{"X-CUSTOM-AUTHENTICATE":{"style":"simple","explode":false,"schema":{"type":"string"}}}}},"security":[{"basicAuth":[]}],"method":"post","path":"/api/auth/logout","servers":[{"url":"https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.7.1","description":"SwaggerHub API Auto Mocking"},{"url":"localhost","description":"Local running server"},{"url":"open-leaked.compute.dtu.dk","description":"DTU Compute VPN Required"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"Open Leaked YAML","description":"## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. Use the HTTP basic form to authorize. ","contact":{"name":"Open Leaked","url":"https://github.com/Open-Leaked/Monorepo","email":"openleaked@gmail.com"},"license":{"name":"Apache 2.0","url":"http://www.apache.org/licenses/LICENSE-2.0.html"},"version":"1.7.1","x-logo":{"url":"https://raw.githubusercontent.com/Open-Leaked/Monorepo/main/Assets/logo/png/logo-white.png?token=GHSAT0AAAAAACB2FNOUZBLHC6LN6IMED47EZC3SB3Q","altText":"Open-Leaked Logo"}},"postman":{"name":"Signs out the current user","description":{"content":"This action can be performed by any authorized user. Once successfull the session cookie will be removed","type":"text/plain"},"url":{"path":["api","auth","logout"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"method":"POST","auth":{"type":"basic","basic":[{"type":"any","value":"<Basic Auth Username>","key":"username"},{"type":"any","value":"<Basic Auth Password>","key":"password"}]}}}
+sidebar_class_name: "post api-method"
+info_path: docs/API/open-leaked-yaml
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import TabItem from "@theme/TabItem";
+
+## Signs out the current user
+
+
+
+This action can be performed by any authorized user. Once successfull the session cookie will be removed
+
+<div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+Successfully signed out current user
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+Could not end session for current user
+
+</div><details style={{"textAlign":"left","marginBottom":"1rem"}} data-collaposed={true} open={false}><summary style={{}}><strong>Response Headers</strong></summary><ul style={{"marginLeft":"1rem"}}><li className={"schemaItem"}><summary style={{}}><strong>X-CUSTOM-AUTHENTICATE</strong><span style={{"opacity":"0.6"}}> string</span></summary><div></div></li></ul></details><div></div></TabItem></ApiTabs></div>
+      

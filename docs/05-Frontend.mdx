@@ -1,0 +1,62 @@
+# Frontend 
+
+The frontend, a userinterface written in Typescript -- a programming language build on JavaScript.
+Just like the backend we make use of a framework to aid building the user interface. 
+The choise of framework for this project is React. 
+
+React is a free and open source library for building interfaces with the use of components. 
+
+To further customize the implementation we use Mantine, a library containing styled components to modernise the Application. 
+
+## Layout
+
+The front end layout is paged on a page and navigation setup. 
+In the left the user is able to use the navigation menu, much like the one you see on this page. 
+
+Items placed in the sidebar is controlled within the ```Navigator.tsx``` file. 
+
+Adding additional functionality should be added here to ensure proper navigation. 
+
+## Lazy loading
+To improve UI responsiveness we make use of [Lazy loading](https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading). 
+Essenially setting certain values to non-critical for loading and waiting with loading until required use. 
+
+In the ```Navigator.tsx``` we define the following functionality with lazy loading
+> - SearchEmailUserName
+> - SearchPassword
+> - Subscribe
+> - Unsubscribe
+> - Tip
+
+This essentially markes all functionality to be loaded as requried. Meaning that a user that only searches for an email will never spend resources loading the Tip services. 
+
+This can be customized to any liking by the removal or adding additional functions. 
+
+## Folder Strucutre
+The folder strucuture follows a hieracy, where components are stored by functionality, elements that are not components stored seperately. 
+We strongly advice to contiunue this style of code hieracy as it helps keeping the code clean. 
+
+
+```bash
+.
+└── src/
+    ├── api/
+    ├── Components/
+    │   ├── appShell/
+    │   ├── contexts/
+    │   ├── general/
+    │   ├── searching/
+    │   ├── subscription/
+    │   ├── userverification/
+    │   ├── hooks/
+    │   └── types/
+    ├── app.tsx
+    ├── main.tsx
+    └── Dockerfile
+```
+
+## RESTful API 
+The frontend sends HTTP requess using the [Axios](https://axios-http.com/docs/intro) HTTP client. 
+
+All API endpoints are located within the ```src/api/``` folder. 
+Specifically we define the configuration of Axios in ```axiosClient.ts``` and further redefine the endpoints in ```rawApiCalls.ts```.

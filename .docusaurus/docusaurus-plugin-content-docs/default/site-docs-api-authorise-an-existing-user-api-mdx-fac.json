@@ -2,7 +2,7 @@
   "unversionedId": "API/authorise-an-existing-user",
   "id": "API/authorise-an-existing-user",
   "title": "Authorise an existing user",
-  "description": "This action can be performed by anyone. If the user is currently already in an active session the session is extended.",
+  "description": "This action can be performed by anyone with valid credentials. Session is active until logout or closing the browser",
   "source": "@site/docs/API/authorise-an-existing-user.api.mdx",
   "sourceDirName": "API",
   "slug": "/API/authorise-an-existing-user",
@@ -14,7 +14,7 @@
   "frontMatter": {
     "id": "authorise-an-existing-user",
     "title": "Authorise an existing user",
-    "description": "This action can be performed by anyone. If the user is currently already in an active session the session is extended.",
+    "description": "This action can be performed by anyone with valid credentials. Session is active until logout or closing the browser",
     "sidebar_label": "Authorise an existing user",
     "hide_title": true,
     "hide_table_of_contents": true,
@@ -22,7 +22,7 @@
       "tags": [
         "authorisations"
       ],
-      "description": "This action can be performed by anyone. If the user is currently already in an active session the session is extended.",
+      "description": "This action can be performed by anyone with valid credentials. Session is active until logout or closing the browser",
       "responses": {
         "200": {
           "description": "Success",
@@ -56,19 +56,19 @@
         }
       ],
       "method": "post",
-      "path": "/api/login/login",
+      "path": "/api/auth/login",
       "servers": [
         {
-          "url": "https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.0.0",
+          "url": "https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.7.1",
           "description": "SwaggerHub API Auto Mocking"
-        },
-        {
-          "url": "openleaked.compute.dtu.dk",
-          "description": "Default server"
         },
         {
           "url": "localhost",
           "description": "Local running server"
+        },
+        {
+          "url": "open-leaked.compute.dtu.dk",
+          "description": "DTU Compute VPN Required"
         }
       ],
       "securitySchemes": {
@@ -79,7 +79,7 @@
       },
       "info": {
         "title": "Open Leaked YAML",
-        "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\nIt was **extended** to illustrate features of [generator-openapi-repo](https://github.com/Rebilly/generator-openapi-repo)\ntool and [ReDoc](https://github.com/Redocly/redoc) documentation. In addition to standard\nOpenAPI syntax we use a few [vendor extensions](https://github.com/Redocly/redoc/blob/master/docs/redoc-vendor-extensions.md).\n\n## Cross-Origin Resource Sharing\nThis API features Cross-Origin Resource Sharing (CORS) implemented in compliance with  [W3C spec](https://www.w3.org/TR/cors/).\nAnd that allows cross-domain communication from the browser.\nAll responses have a wildcard same-origin which makes them completely public and accessible to everyone, including any code on any site.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. A local API key may be optained from the vendor\n",
+        "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. Use the HTTP basic form to authorize. ",
         "contact": {
           "name": "Open Leaked",
           "url": "https://github.com/Open-Leaked/Monorepo",
@@ -89,22 +89,22 @@
           "name": "Apache 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
         },
-        "version": "1.5.1",
+        "version": "1.7.1",
         "x-logo": {
-          "url": "https://redocly.github.io/redoc/petstore-logo.png",
-          "altText": "Petstore logo"
+          "url": "https://raw.githubusercontent.com/Open-Leaked/Monorepo/main/Assets/logo/png/logo-white.png?token=GHSAT0AAAAAACB2FNOUZBLHC6LN6IMED47EZC3SB3Q",
+          "altText": "Open-Leaked Logo"
         }
       },
       "postman": {
         "name": "Authorise an existing user",
         "description": {
-          "content": "This action can be performed by anyone. If the user is currently already in an active session the session is extended.",
+          "content": "This action can be performed by anyone with valid credentials. Session is active until logout or closing the browser",
           "type": "text/plain"
         },
         "url": {
           "path": [
             "api",
-            "login",
+            "auth",
             "login"
           ],
           "host": [
@@ -141,7 +141,7 @@
     "permalink": "/OpenLeakedDocs/docs/API/authorisations"
   },
   "next": {
-    "title": "Ends current the current",
-    "permalink": "/OpenLeakedDocs/docs/API/ends-current-the-current"
+    "title": "Signs out the current user",
+    "permalink": "/OpenLeakedDocs/docs/API/signs-out-the-current-user"
   }
 }

@@ -1,0 +1,24 @@
+{
+  "unversionedId": "Backend",
+  "id": "Backend",
+  "title": "Backend",
+  "description": "Folder Strucutre",
+  "source": "@site/docs/03-Backend.mdx",
+  "sourceDirName": ".",
+  "slug": "/Backend",
+  "permalink": "/OpenLeakedDocs/docs/Backend",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Redis - BloomFilter",
+    "permalink": "/OpenLeakedDocs/docs/Database/BloomFilter"
+  },
+  "next": {
+    "title": "Authentication",
+    "permalink": "/OpenLeakedDocs/docs/Authentication"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "unversionedId": "Frontend",
+  "id": "Frontend",
+  "title": "Frontend",
+  "description": "The frontend, a userinterface written in Typescript -- a programming language build on JavaScript.",
+  "source": "@site/docs/04-Frontend.mdx",
+  "sourceDirName": ".",
+  "slug": "/Frontend",
+  "permalink": "/OpenLeakedDocs/docs/Frontend",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Authentication",
+    "permalink": "/OpenLeakedDocs/docs/Authentication"
+  },
+  "next": {
+    "title": "Introduction",
+    "permalink": "/OpenLeakedDocs/docs/API/open-leaked-yaml"
+  }
+}

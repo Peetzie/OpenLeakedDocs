@@ -3,17 +3,58 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 
 export default [
   {
+    path: '/OpenLeakedDocs/__docusaurus/debug',
+    component: ComponentCreator('/OpenLeakedDocs/__docusaurus/debug', '664'),
+    exact: true
+  },
+  {
+    path: '/OpenLeakedDocs/__docusaurus/debug/config',
+    component: ComponentCreator('/OpenLeakedDocs/__docusaurus/debug/config', '0c4'),
+    exact: true
+  },
+  {
+    path: '/OpenLeakedDocs/__docusaurus/debug/content',
+    component: ComponentCreator('/OpenLeakedDocs/__docusaurus/debug/content', '800'),
+    exact: true
+  },
+  {
+    path: '/OpenLeakedDocs/__docusaurus/debug/globalData',
+    component: ComponentCreator('/OpenLeakedDocs/__docusaurus/debug/globalData', '4ab'),
+    exact: true
+  },
+  {
+    path: '/OpenLeakedDocs/__docusaurus/debug/metadata',
+    component: ComponentCreator('/OpenLeakedDocs/__docusaurus/debug/metadata', 'f77'),
+    exact: true
+  },
+  {
+    path: '/OpenLeakedDocs/__docusaurus/debug/registry',
+    component: ComponentCreator('/OpenLeakedDocs/__docusaurus/debug/registry', '298'),
+    exact: true
+  },
+  {
+    path: '/OpenLeakedDocs/__docusaurus/debug/routes',
+    component: ComponentCreator('/OpenLeakedDocs/__docusaurus/debug/routes', 'd80'),
+    exact: true
+  },
+  {
     path: '/OpenLeakedDocs/markdown-page',
     component: ComponentCreator('/OpenLeakedDocs/markdown-page', '63a'),
     exact: true
   },
   {
     path: '/OpenLeakedDocs/docs',
-    component: ComponentCreator('/OpenLeakedDocs/docs', '8d3'),
+    component: ComponentCreator('/OpenLeakedDocs/docs', '623'),
     routes: [
       {
         path: '/OpenLeakedDocs/docs/API/allows-a-user-to-tip-the-maintainers-with-additional-breaches',
         component: ComponentCreator('/OpenLeakedDocs/docs/API/allows-a-user-to-tip-the-maintainers-with-additional-breaches', '40c'),
+        exact: true,
+        sidebar: "openApiSidebar"
+      },
+      {
+        path: '/OpenLeakedDocs/docs/API/authenticationstatus',
+        component: ComponentCreator('/OpenLeakedDocs/docs/API/authenticationstatus', '054'),
         exact: true,
         sidebar: "openApiSidebar"
       },
@@ -30,8 +71,38 @@ export default [
         sidebar: "openApiSidebar"
       },
       {
-        path: '/OpenLeakedDocs/docs/API/checks-that-the-service-is-currently-running',
-        component: ComponentCreator('/OpenLeakedDocs/docs/API/checks-that-the-service-is-currently-running', '331'),
+        path: '/OpenLeakedDocs/docs/API/checks-that-the-backend-service-is-running',
+        component: ComponentCreator('/OpenLeakedDocs/docs/API/checks-that-the-backend-service-is-running', 'd9b'),
+        exact: true,
+        sidebar: "openApiSidebar"
+      },
+      {
+        path: '/OpenLeakedDocs/docs/API/checks-whether-or-not-the-current-client-is-authorized',
+        component: ComponentCreator('/OpenLeakedDocs/docs/API/checks-whether-or-not-the-current-client-is-authorized', '5c0'),
+        exact: true,
+        sidebar: "openApiSidebar"
+      },
+      {
+        path: '/OpenLeakedDocs/docs/API/checks-whether-or-not-the-domain-is-existing-in-a-breach',
+        component: ComponentCreator('/OpenLeakedDocs/docs/API/checks-whether-or-not-the-domain-is-existing-in-a-breach', 'c78'),
+        exact: true,
+        sidebar: "openApiSidebar"
+      },
+      {
+        path: '/OpenLeakedDocs/docs/API/checks-whether-or-not-the-email-is-existing-in-a-breach',
+        component: ComponentCreator('/OpenLeakedDocs/docs/API/checks-whether-or-not-the-email-is-existing-in-a-breach', '00c'),
+        exact: true,
+        sidebar: "openApiSidebar"
+      },
+      {
+        path: '/OpenLeakedDocs/docs/API/checks-whether-or-not-the-password-is-existing-in-a-breach',
+        component: ComponentCreator('/OpenLeakedDocs/docs/API/checks-whether-or-not-the-password-is-existing-in-a-breach', 'ea0'),
+        exact: true,
+        sidebar: "openApiSidebar"
+      },
+      {
+        path: '/OpenLeakedDocs/docs/API/checks-whether-or-not-the-username-is-existing-in-a-breach',
+        component: ComponentCreator('/OpenLeakedDocs/docs/API/checks-whether-or-not-the-username-is-existing-in-a-breach', '81b'),
         exact: true,
         sidebar: "openApiSidebar"
       },
@@ -42,14 +113,20 @@ export default [
         sidebar: "openApiSidebar"
       },
       {
-        path: '/OpenLeakedDocs/docs/API/email',
-        component: ComponentCreator('/OpenLeakedDocs/docs/API/email', '378'),
+        path: '/OpenLeakedDocs/docs/API/creates-a-new-user-in-the-users-database',
+        component: ComponentCreator('/OpenLeakedDocs/docs/API/creates-a-new-user-in-the-users-database', '375'),
         exact: true,
         sidebar: "openApiSidebar"
       },
       {
-        path: '/OpenLeakedDocs/docs/API/ends-current-the-current',
-        component: ComponentCreator('/OpenLeakedDocs/docs/API/ends-current-the-current', 'e40'),
+        path: '/OpenLeakedDocs/docs/API/domain',
+        component: ComponentCreator('/OpenLeakedDocs/docs/API/domain', 'af6'),
+        exact: true,
+        sidebar: "openApiSidebar"
+      },
+      {
+        path: '/OpenLeakedDocs/docs/API/email',
+        component: ComponentCreator('/OpenLeakedDocs/docs/API/email', '378'),
         exact: true,
         sidebar: "openApiSidebar"
       },
@@ -84,14 +161,8 @@ export default [
         sidebar: "openApiSidebar"
       },
       {
-        path: '/OpenLeakedDocs/docs/API/simple-lookup-in-the-database',
-        component: ComponentCreator('/OpenLeakedDocs/docs/API/simple-lookup-in-the-database', '529'),
-        exact: true,
-        sidebar: "openApiSidebar"
-      },
-      {
-        path: '/OpenLeakedDocs/docs/API/subscribe',
-        component: ComponentCreator('/OpenLeakedDocs/docs/API/subscribe', '030'),
+        path: '/OpenLeakedDocs/docs/API/signs-out-the-current-user',
+        component: ComponentCreator('/OpenLeakedDocs/docs/API/signs-out-the-current-user', 'aaa'),
         exact: true,
         sidebar: "openApiSidebar"
       },
@@ -102,14 +173,20 @@ export default [
         sidebar: "openApiSidebar"
       },
       {
+        path: '/OpenLeakedDocs/docs/API/subscribe-to-notifications',
+        component: ComponentCreator('/OpenLeakedDocs/docs/API/subscribe-to-notifications', '734'),
+        exact: true,
+        sidebar: "openApiSidebar"
+      },
+      {
         path: '/OpenLeakedDocs/docs/API/tip',
         component: ComponentCreator('/OpenLeakedDocs/docs/API/tip', 'c86'),
         exact: true,
         sidebar: "openApiSidebar"
       },
       {
-        path: '/OpenLeakedDocs/docs/API/unsubscribe',
-        component: ComponentCreator('/OpenLeakedDocs/docs/API/unsubscribe', '15a'),
+        path: '/OpenLeakedDocs/docs/API/unsubscribe-from-notificatons',
+        component: ComponentCreator('/OpenLeakedDocs/docs/API/unsubscribe-from-notificatons', '600'),
         exact: true,
         sidebar: "openApiSidebar"
       },
@@ -120,16 +197,22 @@ export default [
         sidebar: "openApiSidebar"
       },
       {
-        path: '/OpenLeakedDocs/docs/API/verification-of-the-temporary-6-digit-code',
-        component: ComponentCreator('/OpenLeakedDocs/docs/API/verification-of-the-temporary-6-digit-code', '743'),
-        exact: true,
-        sidebar: "openApiSidebar"
-      },
-      {
         path: '/OpenLeakedDocs/docs/API/verify-user',
         component: ComponentCreator('/OpenLeakedDocs/docs/API/verify-user', '96f'),
         exact: true,
         sidebar: "openApiSidebar"
+      },
+      {
+        path: '/OpenLeakedDocs/docs/Authentication',
+        component: ComponentCreator('/OpenLeakedDocs/docs/Authentication', '90b'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/OpenLeakedDocs/docs/Backend',
+        component: ComponentCreator('/OpenLeakedDocs/docs/Backend', '8c0'),
+        exact: true,
+        sidebar: "tutorialSidebar"
       },
       {
         path: '/OpenLeakedDocs/docs/category/api-documentation',
@@ -164,6 +247,12 @@ export default [
       {
         path: '/OpenLeakedDocs/docs/Docker',
         component: ComponentCreator('/OpenLeakedDocs/docs/Docker', '588'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/OpenLeakedDocs/docs/Frontend',
+        component: ComponentCreator('/OpenLeakedDocs/docs/Frontend', '9ae'),
         exact: true,
         sidebar: "tutorialSidebar"
       },

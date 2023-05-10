@@ -13,11 +13,11 @@ import SchemaTabs from "@theme/SchemaTabs";
 import TabItem from "@theme/TabItem";
 import Export from "@theme/ApiDemoPanel/Export";
 
-<span className={"theme-doc-version-badge badge badge--secondary"}>Version: 1.5.1</span>
+<span className={"theme-doc-version-badge badge badge--secondary"}>Version: 1.7.1</span>
 
 # Open Leaked YAML
 
-<ApiLogo logo={{"url":"https://raw.githubusercontent.com/Peetzie/OpenLeakedDocs/main/static/img/openleaked.png","altText":"Petstore logo"}} darkLogo={undefined}></ApiLogo>
+<ApiLogo logo={{"url":"https://raw.githubusercontent.com/Open-Leaked/Monorepo/main/Assets/logo/png/logo-white.png?token=GHSAT0AAAAAACB2FNOUZBLHC6LN6IMED47EZC3SB3Q","altText":"Open-Leaked Logo"}} darkLogo={undefined}></ApiLogo>
 
 ## Introduction
 This API is documented in **OpenAPI** format. 
@@ -26,15 +26,8 @@ This API is documented in **OpenAPI** format.
 This API is documented in **OpenAPI format** and is based on
 [Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.
 
-
-## Cross-Origin Resource Sharing
-This API features Cross-Origin Resource Sharing (CORS) implemented in compliance with  [W3C spec](https://www.w3.org/TR/cors/).
-And that allows cross-domain communication from the browser.
-All responses have a wildcard same-origin which makes them completely public and accessible to everyone, including any code on any site.
-
 ## Authentication
-The application makes uses of build in authentication. Some of the client calls will be restricted. A local API key may be optained from the vendor
-
+The application makes uses of build in authentication. Some of the client calls will be restricted. Use the HTTP basic form to authorize. 
 
 <div style={{"marginBottom":"2rem"}}><h2 id={"authentication"} style={{"marginBottom":"1rem"}}>Authentication</h2><SchemaTabs className={"openapi-tabs__security-schemes"}><TabItem label={"HTTP: Basic Auth"} value={"basicAuth"}><div><table><tbody><tr><th>Security Scheme Type:</th><td>http</td></tr><tr><th>HTTP Authorization Scheme:</th><td>basic</td></tr></tbody></table></div></TabItem></SchemaTabs></div><div style={{"display":"flex","flexDirection":"column","marginBottom":"var(--ifm-paragraph-margin-bottom)"}}><h3 style={{"marginBottom":"0.25rem"}}>Contact</h3><span>Open Leaked: <a href={"mailto:openleaked@gmail.com"}>openleaked@gmail.com</a></span><span>URL: <a href={"https://github.com/Open-Leaked/Monorepo"}>https://github.com/Open-Leaked/Monorepo</a></span></div><div style={{"marginBottom":"var(--ifm-paragraph-margin-bottom)"}}><h3 style={{"marginBottom":"0.25rem"}}>License</h3><a href={"http://www.apache.org/licenses/LICENSE-2.0.html"}>Apache 2.0</a></div>
       

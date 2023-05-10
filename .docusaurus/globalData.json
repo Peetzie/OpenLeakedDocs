@@ -16,6 +16,11 @@
               "sidebar": "openApiSidebar"
             },
             {
+              "id": "API/authenticationstatus",
+              "path": "/OpenLeakedDocs/docs/API/authenticationstatus",
+              "sidebar": "openApiSidebar"
+            },
+            {
               "id": "API/authorisations",
               "path": "/OpenLeakedDocs/docs/API/authorisations",
               "sidebar": "openApiSidebar"
@@ -26,8 +31,33 @@
               "sidebar": "openApiSidebar"
             },
             {
-              "id": "API/checks-that-the-service-is-currently-running",
-              "path": "/OpenLeakedDocs/docs/API/checks-that-the-service-is-currently-running",
+              "id": "API/checks-that-the-backend-service-is-running",
+              "path": "/OpenLeakedDocs/docs/API/checks-that-the-backend-service-is-running",
+              "sidebar": "openApiSidebar"
+            },
+            {
+              "id": "API/checks-whether-or-not-the-current-client-is-authorized",
+              "path": "/OpenLeakedDocs/docs/API/checks-whether-or-not-the-current-client-is-authorized",
+              "sidebar": "openApiSidebar"
+            },
+            {
+              "id": "API/checks-whether-or-not-the-domain-is-existing-in-a-breach",
+              "path": "/OpenLeakedDocs/docs/API/checks-whether-or-not-the-domain-is-existing-in-a-breach",
+              "sidebar": "openApiSidebar"
+            },
+            {
+              "id": "API/checks-whether-or-not-the-email-is-existing-in-a-breach",
+              "path": "/OpenLeakedDocs/docs/API/checks-whether-or-not-the-email-is-existing-in-a-breach",
+              "sidebar": "openApiSidebar"
+            },
+            {
+              "id": "API/checks-whether-or-not-the-password-is-existing-in-a-breach",
+              "path": "/OpenLeakedDocs/docs/API/checks-whether-or-not-the-password-is-existing-in-a-breach",
+              "sidebar": "openApiSidebar"
+            },
+            {
+              "id": "API/checks-whether-or-not-the-username-is-existing-in-a-breach",
+              "path": "/OpenLeakedDocs/docs/API/checks-whether-or-not-the-username-is-existing-in-a-breach",
               "sidebar": "openApiSidebar"
             },
             {
@@ -36,13 +66,18 @@
               "sidebar": "openApiSidebar"
             },
             {
-              "id": "API/email",
-              "path": "/OpenLeakedDocs/docs/API/email",
+              "id": "API/creates-a-new-user-in-the-users-database",
+              "path": "/OpenLeakedDocs/docs/API/creates-a-new-user-in-the-users-database",
               "sidebar": "openApiSidebar"
             },
             {
-              "id": "API/ends-current-the-current",
-              "path": "/OpenLeakedDocs/docs/API/ends-current-the-current",
+              "id": "API/domain",
+              "path": "/OpenLeakedDocs/docs/API/domain",
+              "sidebar": "openApiSidebar"
+            },
+            {
+              "id": "API/email",
+              "path": "/OpenLeakedDocs/docs/API/email",
               "sidebar": "openApiSidebar"
             },
             {
@@ -71,8 +106,8 @@
               "sidebar": "openApiSidebar"
             },
             {
-              "id": "API/simple-lookup-in-the-database",
-              "path": "/OpenLeakedDocs/docs/API/simple-lookup-in-the-database",
+              "id": "API/signs-out-the-current-user",
+              "path": "/OpenLeakedDocs/docs/API/signs-out-the-current-user",
               "sidebar": "openApiSidebar"
             },
             {
@@ -81,8 +116,8 @@
               "sidebar": "openApiSidebar"
             },
             {
-              "id": "API/subscribe",
-              "path": "/OpenLeakedDocs/docs/API/subscribe",
+              "id": "API/subscribe-to-notifications",
+              "path": "/OpenLeakedDocs/docs/API/subscribe-to-notifications",
               "sidebar": "openApiSidebar"
             },
             {
@@ -91,8 +126,8 @@
               "sidebar": "openApiSidebar"
             },
             {
-              "id": "API/unsubscribe",
-              "path": "/OpenLeakedDocs/docs/API/unsubscribe",
+              "id": "API/unsubscribe-from-notificatons",
+              "path": "/OpenLeakedDocs/docs/API/unsubscribe-from-notificatons",
               "sidebar": "openApiSidebar"
             },
             {
@@ -101,14 +136,19 @@
               "sidebar": "openApiSidebar"
             },
             {
-              "id": "API/verification-of-the-temporary-6-digit-code",
-              "path": "/OpenLeakedDocs/docs/API/verification-of-the-temporary-6-digit-code",
-              "sidebar": "openApiSidebar"
-            },
-            {
               "id": "API/verify-user",
               "path": "/OpenLeakedDocs/docs/API/verify-user",
               "sidebar": "openApiSidebar"
+            },
+            {
+              "id": "Authentication",
+              "path": "/OpenLeakedDocs/docs/Authentication",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Backend",
+              "path": "/OpenLeakedDocs/docs/Backend",
+              "sidebar": "tutorialSidebar"
             },
             {
               "id": "Database/BloomFilter",
@@ -133,6 +173,11 @@
             {
               "id": "Docker",
               "path": "/OpenLeakedDocs/docs/Docker",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Frontend",
+              "path": "/OpenLeakedDocs/docs/Frontend",
               "sidebar": "tutorialSidebar"
             },
             {

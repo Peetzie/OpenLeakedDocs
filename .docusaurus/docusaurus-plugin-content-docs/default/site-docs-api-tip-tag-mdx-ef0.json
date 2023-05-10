@@ -19,8 +19,8 @@
   },
   "sidebar": "openApiSidebar",
   "previous": {
-    "title": "Authorise an existing user",
-    "permalink": "/OpenLeakedDocs/docs/API/authorise-an-existing-user"
+    "title": "Creates a new user in the users database",
+    "permalink": "/OpenLeakedDocs/docs/API/creates-a-new-user-in-the-users-database"
   },
   "next": {
     "title": "Allows a user to tip the maintainers with additional breaches",

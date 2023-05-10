@@ -19,8 +19,8 @@
   },
   "sidebar": "openApiSidebar",
   "previous": {
-    "title": "Checks that the service is currently running",
-    "permalink": "/OpenLeakedDocs/docs/API/checks-that-the-service-is-currently-running"
+    "title": "Checks that the backend service is running",
+    "permalink": "/OpenLeakedDocs/docs/API/checks-that-the-backend-service-is-running"
   },
   "next": {
     "title": "Authorise an existing user",

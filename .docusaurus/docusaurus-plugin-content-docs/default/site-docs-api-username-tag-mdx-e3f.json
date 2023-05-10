@@ -19,11 +19,11 @@
   },
   "sidebar": "openApiSidebar",
   "previous": {
-    "title": "Unsubscribe",
-    "permalink": "/OpenLeakedDocs/docs/API/unsubscribe"
+    "title": "Unsubscribe from notificatons",
+    "permalink": "/OpenLeakedDocs/docs/API/unsubscribe-from-notificatons"
   },
   "next": {
-    "title": "Simple lookup in the database",
-    "permalink": "/OpenLeakedDocs/docs/API/simple-lookup-in-the-database"
+    "title": "Checks whether or not the username is existing in a breach",
+    "permalink": "/OpenLeakedDocs/docs/API/checks-whether-or-not-the-username-is-existing-in-a-breach"
   }
 }

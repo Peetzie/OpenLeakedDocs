@@ -53,7 +53,6 @@
                               "type": "object",
                               "properties": {
                                 "desc": {
-                                  "minLength": 0,
                                   "type": "string",
                                   "description": "Any discription for the data leak. Could be context, types of data or perhabs any password if compressed with password.",
                                   "example": "Description Example"
@@ -98,10 +97,10 @@
                   },
                   "responses": {
                     "200": {
-                      "description": "OK"
+                      "description": "Successfully send tip to maintainers"
                     },
-                    "400": {
-                      "description": "Bad Request"
+                    "409": {
+                      "description": "Breach already exists in database"
                     }
                   },
                   "security": [
@@ -114,16 +113,16 @@
                   "path": "/api/tip/send",
                   "servers": [
                     {
-                      "url": "https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.0.0",
+                      "url": "https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.7.1",
                       "description": "SwaggerHub API Auto Mocking"
-                    },
-                    {
-                      "url": "openleaked.compute.dtu.dk",
-                      "description": "Default server"
                     },
                     {
                       "url": "localhost",
                       "description": "Local running server"
+                    },
+                    {
+                      "url": "open-leaked.compute.dtu.dk",
+                      "description": "DTU Compute VPN Required"
                     }
                   ],
                   "securitySchemes": {
@@ -141,7 +140,7 @@
                   },
                   "info": {
                     "title": "Open Leaked YAML",
-                    "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\nIt was **extended** to illustrate features of [generator-openapi-repo](https://github.com/Rebilly/generator-openapi-repo)\ntool and [ReDoc](https://github.com/Redocly/redoc) documentation. In addition to standard\nOpenAPI syntax we use a few [vendor extensions](https://github.com/Redocly/redoc/blob/master/docs/redoc-vendor-extensions.md).\n\n## Cross-Origin Resource Sharing\nThis API features Cross-Origin Resource Sharing (CORS) implemented in compliance with  [W3C spec](https://www.w3.org/TR/cors/).\nAnd that allows cross-domain communication from the browser.\nAll responses have a wildcard same-origin which makes them completely public and accessible to everyone, including any code on any site.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. A local API key may be optained from the vendor\n",
+                    "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. Use the HTTP basic form to authorize. ",
                     "contact": {
                       "name": "Open Leaked",
                       "url": "https://github.com/Open-Leaked/Monorepo",
@@ -151,10 +150,10 @@
                       "name": "Apache 2.0",
                       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
                     },
-                    "version": "1.5.1",
+                    "version": "1.7.1",
                     "x-logo": {
-                      "url": "https://redocly.github.io/redoc/petstore-logo.png",
-                      "altText": "Petstore logo"
+                      "url": "https://raw.githubusercontent.com/Open-Leaked/Monorepo/main/Assets/logo/png/logo-white.png?token=GHSAT0AAAAAACB2FNOUZBLHC6LN6IMED47EZC3SB3Q",
+                      "altText": "Open-Leaked Logo"
                     }
                   },
                   "postman": {
@@ -222,6 +221,35 @@
               }
             },
             {
+              "unversionedId": "API/authenticationstatus",
+              "id": "API/authenticationstatus",
+              "title": "authenticationstatus",
+              "description": "authenticationstatus",
+              "source": "@site/docs/API/authenticationstatus.tag.mdx",
+              "sourceDirName": "API",
+              "slug": "/API/authenticationstatus",
+              "permalink": "/OpenLeakedDocs/docs/API/authenticationstatus",
+              "draft": false,
+              "editUrl": null,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "authenticationstatus",
+                "title": "authenticationstatus",
+                "description": "authenticationstatus",
+                "custom_edit_url": null
+              },
+              "sidebar": "openApiSidebar",
+              "previous": {
+                "title": "Checks whether or not the domain is existing in a breach",
+                "permalink": "/OpenLeakedDocs/docs/API/checks-whether-or-not-the-domain-is-existing-in-a-breach"
+              },
+              "next": {
+                "title": "Checks whether or not the current client is authorized.",
+                "permalink": "/OpenLeakedDocs/docs/API/checks-whether-or-not-the-current-client-is-authorized"
+              }
+            },
+            {
               "unversionedId": "API/authorisations",
               "id": "API/authorisations",
               "title": "Authorisations",
@@ -242,8 +270,8 @@
               },
               "sidebar": "openApiSidebar",
               "previous": {
-                "title": "Checks that the service is currently running",
-                "permalink": "/OpenLeakedDocs/docs/API/checks-that-the-service-is-currently-running"
+                "title": "Checks that the backend service is running",
+                "permalink": "/OpenLeakedDocs/docs/API/checks-that-the-backend-service-is-running"
               },
               "next": {
                 "title": "Authorise an existing user",
@@ -254,7 +282,7 @@
               "unversionedId": "API/authorise-an-existing-user",
               "id": "API/authorise-an-existing-user",
               "title": "Authorise an existing user",
-              "description": "This action can be performed by anyone. If the user is currently already in an active session the session is extended.",
+              "description": "This action can be performed by anyone with valid credentials. Session is active until logout or closing the browser",
               "source": "@site/docs/API/authorise-an-existing-user.api.mdx",
               "sourceDirName": "API",
               "slug": "/API/authorise-an-existing-user",
@@ -266,7 +294,7 @@
               "frontMatter": {
                 "id": "authorise-an-existing-user",
                 "title": "Authorise an existing user",
-                "description": "This action can be performed by anyone. If the user is currently already in an active session the session is extended.",
+                "description": "This action can be performed by anyone with valid credentials. Session is active until logout or closing the browser",
                 "sidebar_label": "Authorise an existing user",
                 "hide_title": true,
                 "hide_table_of_contents": true,
@@ -274,7 +302,7 @@
                   "tags": [
                     "authorisations"
                   ],
-                  "description": "This action can be performed by anyone. If the user is currently already in an active session the session is extended.",
+                  "description": "This action can be performed by anyone with valid credentials. Session is active until logout or closing the browser",
                   "responses": {
                     "200": {
                       "description": "Success",
@@ -308,19 +336,19 @@
                     }
                   ],
                   "method": "post",
-                  "path": "/api/login/login",
+                  "path": "/api/auth/login",
                   "servers": [
                     {
-                      "url": "https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.0.0",
+                      "url": "https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.7.1",
                       "description": "SwaggerHub API Auto Mocking"
-                    },
-                    {
-                      "url": "openleaked.compute.dtu.dk",
-                      "description": "Default server"
                     },
                     {
                       "url": "localhost",
                       "description": "Local running server"
+                    },
+                    {
+                      "url": "open-leaked.compute.dtu.dk",
+                      "description": "DTU Compute VPN Required"
                     }
                   ],
                   "securitySchemes": {
@@ -331,7 +359,7 @@
                   },
                   "info": {
                     "title": "Open Leaked YAML",
-                    "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\nIt was **extended** to illustrate features of [generator-openapi-repo](https://github.com/Rebilly/generator-openapi-repo)\ntool and [ReDoc](https://github.com/Redocly/redoc) documentation. In addition to standard\nOpenAPI syntax we use a few [vendor extensions](https://github.com/Redocly/redoc/blob/master/docs/redoc-vendor-extensions.md).\n\n## Cross-Origin Resource Sharing\nThis API features Cross-Origin Resource Sharing (CORS) implemented in compliance with  [W3C spec](https://www.w3.org/TR/cors/).\nAnd that allows cross-domain communication from the browser.\nAll responses have a wildcard same-origin which makes them completely public and accessible to everyone, including any code on any site.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. A local API key may be optained from the vendor\n",
+                    "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. Use the HTTP basic form to authorize. ",
                     "contact": {
                       "name": "Open Leaked",
                       "url": "https://github.com/Open-Leaked/Monorepo",
@@ -341,22 +369,22 @@
                       "name": "Apache 2.0",
                       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
                     },
-                    "version": "1.5.1",
+                    "version": "1.7.1",
                     "x-logo": {
-                      "url": "https://redocly.github.io/redoc/petstore-logo.png",
-                      "altText": "Petstore logo"
+                      "url": "https://raw.githubusercontent.com/Open-Leaked/Monorepo/main/Assets/logo/png/logo-white.png?token=GHSAT0AAAAAACB2FNOUZBLHC6LN6IMED47EZC3SB3Q",
+                      "altText": "Open-Leaked Logo"
                     }
                   },
                   "postman": {
                     "name": "Authorise an existing user",
                     "description": {
-                      "content": "This action can be performed by anyone. If the user is currently already in an active session the session is extended.",
+                      "content": "This action can be performed by anyone with valid credentials. Session is active until logout or closing the browser",
                       "type": "text/plain"
                     },
                     "url": {
                       "path": [
                         "api",
-                        "login",
+                        "auth",
                         "login"
                       ],
                       "host": [
@@ -393,57 +421,57 @@
                 "permalink": "/OpenLeakedDocs/docs/API/authorisations"
               },
               "next": {
-                "title": "Ends current the current",
-                "permalink": "/OpenLeakedDocs/docs/API/ends-current-the-current"
+                "title": "Signs out the current user",
+                "permalink": "/OpenLeakedDocs/docs/API/signs-out-the-current-user"
               }
             },
             {
-              "unversionedId": "API/checks-that-the-service-is-currently-running",
-              "id": "API/checks-that-the-service-is-currently-running",
-              "title": "Checks that the service is currently running",
-              "description": "Simple benefecial healthcheck, no further use.",
-              "source": "@site/docs/API/checks-that-the-service-is-currently-running.api.mdx",
+              "unversionedId": "API/checks-that-the-backend-service-is-running",
+              "id": "API/checks-that-the-backend-service-is-running",
+              "title": "Checks that the backend service is running",
+              "description": "Checks that the backend service is running",
+              "source": "@site/docs/API/checks-that-the-backend-service-is-running.api.mdx",
               "sourceDirName": "API",
-              "slug": "/API/checks-that-the-service-is-currently-running",
-              "permalink": "/OpenLeakedDocs/docs/API/checks-that-the-service-is-currently-running",
+              "slug": "/API/checks-that-the-backend-service-is-running",
+              "permalink": "/OpenLeakedDocs/docs/API/checks-that-the-backend-service-is-running",
               "draft": false,
               "editUrl": null,
               "tags": [],
               "version": "current",
               "frontMatter": {
-                "id": "checks-that-the-service-is-currently-running",
-                "title": "Checks that the service is currently running",
-                "description": "Simple benefecial healthcheck, no further use.",
-                "sidebar_label": "Checks that the service is currently running",
+                "id": "checks-that-the-backend-service-is-running",
+                "title": "Checks that the backend service is running",
+                "description": "Checks that the backend service is running",
+                "sidebar_label": "Checks that the backend service is running",
                 "hide_title": true,
                 "hide_table_of_contents": true,
                 "api": {
                   "tags": [
                     "healthcheck"
                   ],
-                  "description": "Simple benefecial healthcheck, no further use.",
                   "responses": {
                     "200": {
-                      "description": "OK"
+                      "description": "Backend server is running"
                     },
                     "503": {
-                      "description": "Service Unavailable"
+                      "description": "Backend server is currently not up"
                     }
                   },
+                  "description": "Checks that the backend service is running",
                   "method": "get",
                   "path": "/api/healthcheck",
                   "servers": [
                     {
-                      "url": "https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.0.0",
+                      "url": "https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.7.1",
                       "description": "SwaggerHub API Auto Mocking"
-                    },
-                    {
-                      "url": "openleaked.compute.dtu.dk",
-                      "description": "Default server"
                     },
                     {
                       "url": "localhost",
                       "description": "Local running server"
+                    },
+                    {
+                      "url": "open-leaked.compute.dtu.dk",
+                      "description": "DTU Compute VPN Required"
                     }
                   ],
                   "securitySchemes": {
@@ -454,7 +482,7 @@
                   },
                   "info": {
                     "title": "Open Leaked YAML",
-                    "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\nIt was **extended** to illustrate features of [generator-openapi-repo](https://github.com/Rebilly/generator-openapi-repo)\ntool and [ReDoc](https://github.com/Redocly/redoc) documentation. In addition to standard\nOpenAPI syntax we use a few [vendor extensions](https://github.com/Redocly/redoc/blob/master/docs/redoc-vendor-extensions.md).\n\n## Cross-Origin Resource Sharing\nThis API features Cross-Origin Resource Sharing (CORS) implemented in compliance with  [W3C spec](https://www.w3.org/TR/cors/).\nAnd that allows cross-domain communication from the browser.\nAll responses have a wildcard same-origin which makes them completely public and accessible to everyone, including any code on any site.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. A local API key may be optained from the vendor\n",
+                    "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. Use the HTTP basic form to authorize. ",
                     "contact": {
                       "name": "Open Leaked",
                       "url": "https://github.com/Open-Leaked/Monorepo",
@@ -464,16 +492,15 @@
                       "name": "Apache 2.0",
                       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
                     },
-                    "version": "1.5.1",
+                    "version": "1.7.1",
                     "x-logo": {
-                      "url": "https://redocly.github.io/redoc/petstore-logo.png",
-                      "altText": "Petstore logo"
+                      "url": "https://raw.githubusercontent.com/Open-Leaked/Monorepo/main/Assets/logo/png/logo-white.png?token=GHSAT0AAAAAACB2FNOUZBLHC6LN6IMED47EZC3SB3Q",
+                      "altText": "Open-Leaked Logo"
                     }
                   },
                   "postman": {
-                    "name": "Checks that the service is currently running",
+                    "name": "Checks that the backend service is running",
                     "description": {
-                      "content": "Simple benefecial healthcheck, no further use.",
                       "type": "text/plain"
                     },
                     "url": {
@@ -502,6 +529,801 @@
               "next": {
                 "title": "Authorisations",
                 "permalink": "/OpenLeakedDocs/docs/API/authorisations"
+              }
+            },
+            {
+              "unversionedId": "API/checks-whether-or-not-the-current-client-is-authorized",
+              "id": "API/checks-whether-or-not-the-current-client-is-authorized",
+              "title": "Checks whether or not the current client is authorized.",
+              "description": "Checks whether or not the current client is authorized.",
+              "source": "@site/docs/API/checks-whether-or-not-the-current-client-is-authorized.api.mdx",
+              "sourceDirName": "API",
+              "slug": "/API/checks-whether-or-not-the-current-client-is-authorized",
+              "permalink": "/OpenLeakedDocs/docs/API/checks-whether-or-not-the-current-client-is-authorized",
+              "draft": false,
+              "editUrl": null,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "checks-whether-or-not-the-current-client-is-authorized",
+                "title": "Checks whether or not the current client is authorized.",
+                "description": "Checks whether or not the current client is authorized.",
+                "sidebar_label": "Checks whether or not the current client is authorized.",
+                "hide_title": true,
+                "hide_table_of_contents": true,
+                "api": {
+                  "tags": [
+                    "authenticationstatus"
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Currently connected as an authorized user"
+                    },
+                    "400": {
+                      "description": "Currently connected as an unauthorized user"
+                    }
+                  },
+                  "description": "Checks whether or not the current client is authorized.",
+                  "method": "post",
+                  "path": "/api/amiloggedin",
+                  "servers": [
+                    {
+                      "url": "https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.7.1",
+                      "description": "SwaggerHub API Auto Mocking"
+                    },
+                    {
+                      "url": "localhost",
+                      "description": "Local running server"
+                    },
+                    {
+                      "url": "open-leaked.compute.dtu.dk",
+                      "description": "DTU Compute VPN Required"
+                    }
+                  ],
+                  "securitySchemes": {
+                    "basicAuth": {
+                      "type": "http",
+                      "scheme": "basic"
+                    }
+                  },
+                  "info": {
+                    "title": "Open Leaked YAML",
+                    "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. Use the HTTP basic form to authorize. ",
+                    "contact": {
+                      "name": "Open Leaked",
+                      "url": "https://github.com/Open-Leaked/Monorepo",
+                      "email": "openleaked@gmail.com"
+                    },
+                    "license": {
+                      "name": "Apache 2.0",
+                      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+                    },
+                    "version": "1.7.1",
+                    "x-logo": {
+                      "url": "https://raw.githubusercontent.com/Open-Leaked/Monorepo/main/Assets/logo/png/logo-white.png?token=GHSAT0AAAAAACB2FNOUZBLHC6LN6IMED47EZC3SB3Q",
+                      "altText": "Open-Leaked Logo"
+                    }
+                  },
+                  "postman": {
+                    "name": "Checks whether or not the current client is authorized.",
+                    "description": {
+                      "type": "text/plain"
+                    },
+                    "url": {
+                      "path": [
+                        "api",
+                        "amiloggedin"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "method": "POST"
+                  }
+                },
+                "sidebar_class_name": "post api-method",
+                "info_path": "docs/API/open-leaked-yaml",
+                "custom_edit_url": null
+              },
+              "sidebar": "openApiSidebar",
+              "previous": {
+                "title": "authenticationstatus",
+                "permalink": "/OpenLeakedDocs/docs/API/authenticationstatus"
+              }
+            },
+            {
+              "unversionedId": "API/checks-whether-or-not-the-domain-is-existing-in-a-breach",
+              "id": "API/checks-whether-or-not-the-domain-is-existing-in-a-breach",
+              "title": "Checks whether or not the domain is existing in a breach",
+              "description": "Checks whether or not the domain is existing in a breach",
+              "source": "@site/docs/API/checks-whether-or-not-the-domain-is-existing-in-a-breach.api.mdx",
+              "sourceDirName": "API",
+              "slug": "/API/checks-whether-or-not-the-domain-is-existing-in-a-breach",
+              "permalink": "/OpenLeakedDocs/docs/API/checks-whether-or-not-the-domain-is-existing-in-a-breach",
+              "draft": false,
+              "editUrl": null,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "checks-whether-or-not-the-domain-is-existing-in-a-breach",
+                "title": "Checks whether or not the domain is existing in a breach",
+                "description": "Checks whether or not the domain is existing in a breach",
+                "sidebar_label": "Checks whether or not the domain is existing in a breach",
+                "hide_title": true,
+                "hide_table_of_contents": true,
+                "api": {
+                  "tags": [
+                    "domain"
+                  ],
+                  "requestBody": {
+                    "content": {
+                      "application/json": {
+                        "schema": {
+                          "allOf": [
+                            {
+                              "title": "DomainRequestBody"
+                            },
+                            {
+                              "type": "object",
+                              "properties": {
+                                "value": {
+                                  "type": "string",
+                                  "example": "example.com"
+                                }
+                              },
+                              "example": "example.com",
+                              "title": "Domain"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "required": true
+                  },
+                  "responses": {
+                    "200": {
+                      "description": "Domain was found in a breach"
+                    },
+                    "404": {
+                      "description": "Domain was not found in a breach"
+                    }
+                  },
+                  "security": [
+                    {
+                      "basicAuth": []
+                    }
+                  ],
+                  "description": "Checks whether or not the domain is existing in a breach",
+                  "method": "post",
+                  "path": "/api/domain/exists",
+                  "servers": [
+                    {
+                      "url": "https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.7.1",
+                      "description": "SwaggerHub API Auto Mocking"
+                    },
+                    {
+                      "url": "localhost",
+                      "description": "Local running server"
+                    },
+                    {
+                      "url": "open-leaked.compute.dtu.dk",
+                      "description": "DTU Compute VPN Required"
+                    }
+                  ],
+                  "securitySchemes": {
+                    "basicAuth": {
+                      "type": "http",
+                      "scheme": "basic"
+                    }
+                  },
+                  "jsonRequestBodyExample": "example.com",
+                  "info": {
+                    "title": "Open Leaked YAML",
+                    "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. Use the HTTP basic form to authorize. ",
+                    "contact": {
+                      "name": "Open Leaked",
+                      "url": "https://github.com/Open-Leaked/Monorepo",
+                      "email": "openleaked@gmail.com"
+                    },
+                    "license": {
+                      "name": "Apache 2.0",
+                      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+                    },
+                    "version": "1.7.1",
+                    "x-logo": {
+                      "url": "https://raw.githubusercontent.com/Open-Leaked/Monorepo/main/Assets/logo/png/logo-white.png?token=GHSAT0AAAAAACB2FNOUZBLHC6LN6IMED47EZC3SB3Q",
+                      "altText": "Open-Leaked Logo"
+                    }
+                  },
+                  "postman": {
+                    "name": "Checks whether or not the domain is existing in a breach",
+                    "description": {
+                      "type": "text/plain"
+                    },
+                    "url": {
+                      "path": [
+                        "api",
+                        "domain",
+                        "exists"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "\"\"",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "auth": {
+                      "type": "basic",
+                      "basic": [
+                        {
+                          "type": "any",
+                          "value": "<Basic Auth Username>",
+                          "key": "username"
+                        },
+                        {
+                          "type": "any",
+                          "value": "<Basic Auth Password>",
+                          "key": "password"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "sidebar_class_name": "post api-method",
+                "info_path": "docs/API/open-leaked-yaml",
+                "custom_edit_url": null
+              },
+              "sidebar": "openApiSidebar",
+              "previous": {
+                "title": "Finds associated breaches",
+                "permalink": "/OpenLeakedDocs/docs/API/finds-associated-breaches"
+              },
+              "next": {
+                "title": "authenticationstatus",
+                "permalink": "/OpenLeakedDocs/docs/API/authenticationstatus"
+              }
+            },
+            {
+              "unversionedId": "API/checks-whether-or-not-the-email-is-existing-in-a-breach",
+              "id": "API/checks-whether-or-not-the-email-is-existing-in-a-breach",
+              "title": "Checks whether or not the email is existing in a breach",
+              "description": "Checks whether or not the email is existing in a breach",
+              "source": "@site/docs/API/checks-whether-or-not-the-email-is-existing-in-a-breach.api.mdx",
+              "sourceDirName": "API",
+              "slug": "/API/checks-whether-or-not-the-email-is-existing-in-a-breach",
+              "permalink": "/OpenLeakedDocs/docs/API/checks-whether-or-not-the-email-is-existing-in-a-breach",
+              "draft": false,
+              "editUrl": null,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "checks-whether-or-not-the-email-is-existing-in-a-breach",
+                "title": "Checks whether or not the email is existing in a breach",
+                "description": "Checks whether or not the email is existing in a breach",
+                "sidebar_label": "Checks whether or not the email is existing in a breach",
+                "hide_title": true,
+                "hide_table_of_contents": true,
+                "api": {
+                  "tags": [
+                    "email"
+                  ],
+                  "requestBody": {
+                    "content": {
+                      "application/json": {
+                        "schema": {
+                          "allOf": [
+                            {
+                              "title": "Email Request Body"
+                            },
+                            {
+                              "type": "object",
+                              "properties": {
+                                "Local": {
+                                  "type": "string",
+                                  "description": "First part of the email pre-@",
+                                  "example": "johndoe"
+                                },
+                                "Domain": {
+                                  "type": "string",
+                                  "description": "Second part of the email post-@",
+                                  "example": "example.com"
+                                }
+                              },
+                              "example": {
+                                "local": "example",
+                                "domain": "example.com"
+                              },
+                              "title": "Email"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "required": true
+                  },
+                  "responses": {
+                    "200": {
+                      "description": "Email was found in a breach"
+                    },
+                    "404": {
+                      "description": "Email was not found in a breach"
+                    }
+                  },
+                  "security": [
+                    {
+                      "basicAuth": []
+                    }
+                  ],
+                  "description": "Checks whether or not the email is existing in a breach",
+                  "method": "post",
+                  "path": "/api/email/exists",
+                  "servers": [
+                    {
+                      "url": "https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.7.1",
+                      "description": "SwaggerHub API Auto Mocking"
+                    },
+                    {
+                      "url": "localhost",
+                      "description": "Local running server"
+                    },
+                    {
+                      "url": "open-leaked.compute.dtu.dk",
+                      "description": "DTU Compute VPN Required"
+                    }
+                  ],
+                  "securitySchemes": {
+                    "basicAuth": {
+                      "type": "http",
+                      "scheme": "basic"
+                    }
+                  },
+                  "jsonRequestBodyExample": {
+                    "local": "example",
+                    "domain": "example.com"
+                  },
+                  "info": {
+                    "title": "Open Leaked YAML",
+                    "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. Use the HTTP basic form to authorize. ",
+                    "contact": {
+                      "name": "Open Leaked",
+                      "url": "https://github.com/Open-Leaked/Monorepo",
+                      "email": "openleaked@gmail.com"
+                    },
+                    "license": {
+                      "name": "Apache 2.0",
+                      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+                    },
+                    "version": "1.7.1",
+                    "x-logo": {
+                      "url": "https://raw.githubusercontent.com/Open-Leaked/Monorepo/main/Assets/logo/png/logo-white.png?token=GHSAT0AAAAAACB2FNOUZBLHC6LN6IMED47EZC3SB3Q",
+                      "altText": "Open-Leaked Logo"
+                    }
+                  },
+                  "postman": {
+                    "name": "Checks whether or not the email is existing in a breach",
+                    "description": {
+                      "type": "text/plain"
+                    },
+                    "url": {
+                      "path": [
+                        "api",
+                        "email",
+                        "exists"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "\"\"",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "auth": {
+                      "type": "basic",
+                      "basic": [
+                        {
+                          "type": "any",
+                          "value": "<Basic Auth Username>",
+                          "key": "username"
+                        },
+                        {
+                          "type": "any",
+                          "value": "<Basic Auth Password>",
+                          "key": "password"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "sidebar_class_name": "post api-method",
+                "info_path": "docs/API/open-leaked-yaml",
+                "custom_edit_url": null
+              },
+              "sidebar": "openApiSidebar",
+              "previous": {
+                "title": "Finds associated breaches",
+                "permalink": "/OpenLeakedDocs/docs/API/finds-associated-breaches"
+              },
+              "next": {
+                "title": "password",
+                "permalink": "/OpenLeakedDocs/docs/API/password"
+              }
+            },
+            {
+              "unversionedId": "API/checks-whether-or-not-the-password-is-existing-in-a-breach",
+              "id": "API/checks-whether-or-not-the-password-is-existing-in-a-breach",
+              "title": "Checks whether or not the password is existing in a breach",
+              "description": "Checks whether or not the password is existing in a breach",
+              "source": "@site/docs/API/checks-whether-or-not-the-password-is-existing-in-a-breach.api.mdx",
+              "sourceDirName": "API",
+              "slug": "/API/checks-whether-or-not-the-password-is-existing-in-a-breach",
+              "permalink": "/OpenLeakedDocs/docs/API/checks-whether-or-not-the-password-is-existing-in-a-breach",
+              "draft": false,
+              "editUrl": null,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "checks-whether-or-not-the-password-is-existing-in-a-breach",
+                "title": "Checks whether or not the password is existing in a breach",
+                "description": "Checks whether or not the password is existing in a breach",
+                "sidebar_label": "Checks whether or not the password is existing in a breach",
+                "hide_title": true,
+                "hide_table_of_contents": true,
+                "api": {
+                  "tags": [
+                    "password"
+                  ],
+                  "requestBody": {
+                    "content": {
+                      "application/json": {
+                        "schema": {
+                          "allOf": [
+                            {
+                              "title": "Password RequestBody"
+                            },
+                            {
+                              "type": "object",
+                              "properties": {
+                                "value": {
+                                  "type": "string",
+                                  "description": "Unhashed password",
+                                  "example": "password"
+                                }
+                              },
+                              "example": {
+                                "value": "password"
+                              },
+                              "title": "Password"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "required": true
+                  },
+                  "responses": {
+                    "200": {
+                      "description": "Password was found in a breach"
+                    },
+                    "404": {
+                      "description": "Password was not found in a breach"
+                    }
+                  },
+                  "security": [
+                    {
+                      "basicAuth": []
+                    }
+                  ],
+                  "description": "Checks whether or not the password is existing in a breach",
+                  "method": "post",
+                  "path": "/api/password/exists",
+                  "servers": [
+                    {
+                      "url": "https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.7.1",
+                      "description": "SwaggerHub API Auto Mocking"
+                    },
+                    {
+                      "url": "localhost",
+                      "description": "Local running server"
+                    },
+                    {
+                      "url": "open-leaked.compute.dtu.dk",
+                      "description": "DTU Compute VPN Required"
+                    }
+                  ],
+                  "securitySchemes": {
+                    "basicAuth": {
+                      "type": "http",
+                      "scheme": "basic"
+                    }
+                  },
+                  "jsonRequestBodyExample": {
+                    "value": "password"
+                  },
+                  "info": {
+                    "title": "Open Leaked YAML",
+                    "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. Use the HTTP basic form to authorize. ",
+                    "contact": {
+                      "name": "Open Leaked",
+                      "url": "https://github.com/Open-Leaked/Monorepo",
+                      "email": "openleaked@gmail.com"
+                    },
+                    "license": {
+                      "name": "Apache 2.0",
+                      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+                    },
+                    "version": "1.7.1",
+                    "x-logo": {
+                      "url": "https://raw.githubusercontent.com/Open-Leaked/Monorepo/main/Assets/logo/png/logo-white.png?token=GHSAT0AAAAAACB2FNOUZBLHC6LN6IMED47EZC3SB3Q",
+                      "altText": "Open-Leaked Logo"
+                    }
+                  },
+                  "postman": {
+                    "name": "Checks whether or not the password is existing in a breach",
+                    "description": {
+                      "type": "text/plain"
+                    },
+                    "url": {
+                      "path": [
+                        "api",
+                        "password",
+                        "exists"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "\"\"",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "auth": {
+                      "type": "basic",
+                      "basic": [
+                        {
+                          "type": "any",
+                          "value": "<Basic Auth Username>",
+                          "key": "username"
+                        },
+                        {
+                          "type": "any",
+                          "value": "<Basic Auth Password>",
+                          "key": "password"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "sidebar_class_name": "post api-method",
+                "info_path": "docs/API/open-leaked-yaml",
+                "custom_edit_url": null
+              },
+              "sidebar": "openApiSidebar",
+              "previous": {
+                "title": "password",
+                "permalink": "/OpenLeakedDocs/docs/API/password"
+              },
+              "next": {
+                "title": "Finds associated breaches",
+                "permalink": "/OpenLeakedDocs/docs/API/finds-associated-breaches"
+              }
+            },
+            {
+              "unversionedId": "API/checks-whether-or-not-the-username-is-existing-in-a-breach",
+              "id": "API/checks-whether-or-not-the-username-is-existing-in-a-breach",
+              "title": "Checks whether or not the username is existing in a breach",
+              "description": "Checks whether or not the username is existing in a breach",
+              "source": "@site/docs/API/checks-whether-or-not-the-username-is-existing-in-a-breach.api.mdx",
+              "sourceDirName": "API",
+              "slug": "/API/checks-whether-or-not-the-username-is-existing-in-a-breach",
+              "permalink": "/OpenLeakedDocs/docs/API/checks-whether-or-not-the-username-is-existing-in-a-breach",
+              "draft": false,
+              "editUrl": null,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "checks-whether-or-not-the-username-is-existing-in-a-breach",
+                "title": "Checks whether or not the username is existing in a breach",
+                "description": "Checks whether or not the username is existing in a breach",
+                "sidebar_label": "Checks whether or not the username is existing in a breach",
+                "hide_title": true,
+                "hide_table_of_contents": true,
+                "api": {
+                  "tags": [
+                    "username"
+                  ],
+                  "requestBody": {
+                    "content": {
+                      "application/json": {
+                        "schema": {
+                          "allOf": [
+                            {
+                              "title": "UsernameRequestBody"
+                            },
+                            {
+                              "type": "object",
+                              "properties": {
+                                "value": {
+                                  "type": "string",
+                                  "example": "username"
+                                }
+                              },
+                              "example": {
+                                "value": "username"
+                              },
+                              "title": "Username"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "required": true
+                  },
+                  "responses": {
+                    "200": {
+                      "description": "Username was found in a breach"
+                    },
+                    "404": {
+                      "description": "Username was not found in a breach"
+                    }
+                  },
+                  "security": [
+                    {
+                      "basicAuth": []
+                    }
+                  ],
+                  "description": "Checks whether or not the username is existing in a breach",
+                  "method": "post",
+                  "path": "/api/Username/exists",
+                  "servers": [
+                    {
+                      "url": "https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.7.1",
+                      "description": "SwaggerHub API Auto Mocking"
+                    },
+                    {
+                      "url": "localhost",
+                      "description": "Local running server"
+                    },
+                    {
+                      "url": "open-leaked.compute.dtu.dk",
+                      "description": "DTU Compute VPN Required"
+                    }
+                  ],
+                  "securitySchemes": {
+                    "basicAuth": {
+                      "type": "http",
+                      "scheme": "basic"
+                    }
+                  },
+                  "jsonRequestBodyExample": {
+                    "value": "username"
+                  },
+                  "info": {
+                    "title": "Open Leaked YAML",
+                    "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. Use the HTTP basic form to authorize. ",
+                    "contact": {
+                      "name": "Open Leaked",
+                      "url": "https://github.com/Open-Leaked/Monorepo",
+                      "email": "openleaked@gmail.com"
+                    },
+                    "license": {
+                      "name": "Apache 2.0",
+                      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+                    },
+                    "version": "1.7.1",
+                    "x-logo": {
+                      "url": "https://raw.githubusercontent.com/Open-Leaked/Monorepo/main/Assets/logo/png/logo-white.png?token=GHSAT0AAAAAACB2FNOUZBLHC6LN6IMED47EZC3SB3Q",
+                      "altText": "Open-Leaked Logo"
+                    }
+                  },
+                  "postman": {
+                    "name": "Checks whether or not the username is existing in a breach",
+                    "description": {
+                      "type": "text/plain"
+                    },
+                    "url": {
+                      "path": [
+                        "api",
+                        "Username",
+                        "exists"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "\"\"",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "auth": {
+                      "type": "basic",
+                      "basic": [
+                        {
+                          "type": "any",
+                          "value": "<Basic Auth Username>",
+                          "key": "username"
+                        },
+                        {
+                          "type": "any",
+                          "value": "<Basic Auth Password>",
+                          "key": "password"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "sidebar_class_name": "post api-method",
+                "info_path": "docs/API/open-leaked-yaml",
+                "custom_edit_url": null
+              },
+              "sidebar": "openApiSidebar",
+              "previous": {
+                "title": "username",
+                "permalink": "/OpenLeakedDocs/docs/API/username"
+              },
+              "next": {
+                "title": "Finds associated breaches",
+                "permalink": "/OpenLeakedDocs/docs/API/finds-associated-breaches"
               }
             },
             {
@@ -568,26 +1390,26 @@
                   },
                   "responses": {
                     "200": {
-                      "description": "OK"
+                      "description": "Sucessfully updated the password"
                     },
                     "400": {
-                      "description": "Bad Request"
+                      "description": "Could not update password"
                     }
                   },
                   "method": "post",
-                  "path": "/api/login/newPassword",
+                  "path": "/api/auth/newPassword",
                   "servers": [
                     {
-                      "url": "https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.0.0",
+                      "url": "https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.7.1",
                       "description": "SwaggerHub API Auto Mocking"
-                    },
-                    {
-                      "url": "openleaked.compute.dtu.dk",
-                      "description": "Default server"
                     },
                     {
                       "url": "localhost",
                       "description": "Local running server"
+                    },
+                    {
+                      "url": "open-leaked.compute.dtu.dk",
+                      "description": "DTU Compute VPN Required"
                     }
                   ],
                   "securitySchemes": {
@@ -603,7 +1425,7 @@
                   },
                   "info": {
                     "title": "Open Leaked YAML",
-                    "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\nIt was **extended** to illustrate features of [generator-openapi-repo](https://github.com/Rebilly/generator-openapi-repo)\ntool and [ReDoc](https://github.com/Redocly/redoc) documentation. In addition to standard\nOpenAPI syntax we use a few [vendor extensions](https://github.com/Redocly/redoc/blob/master/docs/redoc-vendor-extensions.md).\n\n## Cross-Origin Resource Sharing\nThis API features Cross-Origin Resource Sharing (CORS) implemented in compliance with  [W3C spec](https://www.w3.org/TR/cors/).\nAnd that allows cross-domain communication from the browser.\nAll responses have a wildcard same-origin which makes them completely public and accessible to everyone, including any code on any site.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. A local API key may be optained from the vendor\n",
+                    "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. Use the HTTP basic form to authorize. ",
                     "contact": {
                       "name": "Open Leaked",
                       "url": "https://github.com/Open-Leaked/Monorepo",
@@ -613,10 +1435,10 @@
                       "name": "Apache 2.0",
                       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
                     },
-                    "version": "1.5.1",
+                    "version": "1.7.1",
                     "x-logo": {
-                      "url": "https://redocly.github.io/redoc/petstore-logo.png",
-                      "altText": "Petstore logo"
+                      "url": "https://raw.githubusercontent.com/Open-Leaked/Monorepo/main/Assets/logo/png/logo-white.png?token=GHSAT0AAAAAACB2FNOUZBLHC6LN6IMED47EZC3SB3Q",
+                      "altText": "Open-Leaked Logo"
                     }
                   },
                   "postman": {
@@ -628,7 +1450,7 @@
                     "url": {
                       "path": [
                         "api",
-                        "login",
+                        "auth",
                         "newPassword"
                       ],
                       "host": [
@@ -665,8 +1487,236 @@
                 "permalink": "/OpenLeakedDocs/docs/API/initiate-recovery-process"
               },
               "next": {
-                "title": "Authorise an existing user",
-                "permalink": "/OpenLeakedDocs/docs/API/authorise-an-existing-user"
+                "title": "Creates a new user in the users database",
+                "permalink": "/OpenLeakedDocs/docs/API/creates-a-new-user-in-the-users-database"
+              }
+            },
+            {
+              "unversionedId": "API/creates-a-new-user-in-the-users-database",
+              "id": "API/creates-a-new-user-in-the-users-database",
+              "title": "Creates a new user in the users database",
+              "description": "Creates a new user using JDBC and BCrypt in the users and authorities table",
+              "source": "@site/docs/API/creates-a-new-user-in-the-users-database.api.mdx",
+              "sourceDirName": "API",
+              "slug": "/API/creates-a-new-user-in-the-users-database",
+              "permalink": "/OpenLeakedDocs/docs/API/creates-a-new-user-in-the-users-database",
+              "draft": false,
+              "editUrl": null,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "creates-a-new-user-in-the-users-database",
+                "title": "Creates a new user in the users database",
+                "description": "Creates a new user using JDBC and BCrypt in the users and authorities table",
+                "sidebar_label": "Creates a new user in the users database",
+                "hide_title": true,
+                "hide_table_of_contents": true,
+                "api": {
+                  "tags": [
+                    "authorisations"
+                  ],
+                  "description": "Creates a new user using JDBC and BCrypt in the users and authorities table",
+                  "requestBody": {
+                    "content": {
+                      "application/json": {
+                        "schema": {
+                          "type": "object",
+                          "properties": {
+                            "emailID": {
+                              "type": "object",
+                              "properties": {
+                                "Local": {
+                                  "type": "string",
+                                  "description": "First part of the email pre-@",
+                                  "example": "johndoe"
+                                },
+                                "Domain": {
+                                  "type": "string",
+                                  "description": "Second part of the email post-@",
+                                  "example": "example.com"
+                                }
+                              },
+                              "title": "RegisterNewUser_emailID"
+                            },
+                            "password": {
+                              "minLength": 8,
+                              "pattern": "/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/",
+                              "type": "string",
+                              "description": "User password, MUST contain a mix of upper and lower case letters, as well as digits and special characters",
+                              "example": "drowssaP123#"
+                            },
+                            "cPassword": {
+                              "minLength": 8,
+                              "pattern": "/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/",
+                              "type": "string",
+                              "description": "User password, MUST contain a mix of upper and lower case letters, as well as digits and special characters.",
+                              "example": "drowssaP123#"
+                            },
+                            "fullName": {
+                              "type": "string",
+                              "description": "Full name of the user",
+                              "example": "John Doe"
+                            },
+                            "studentNo": {
+                              "type": "string",
+                              "description": "Student number or Employee initials - no constraints (proof of concept)",
+                              "example": "s1741XX"
+                            }
+                          },
+                          "example": {
+                            "emailID": {
+                              "local": "example",
+                              "domain": "example.com"
+                            },
+                            "password": "password123",
+                            "cPassword": "password123",
+                            "fullName": "John Doe",
+                            "studentNo": "SXXXXXX"
+                          },
+                          "title": "RegisterNewUser"
+                        }
+                      }
+                    },
+                    "required": true
+                  },
+                  "responses": {
+                    "200": {
+                      "description": "Successfully created a new user"
+                    },
+                    "400": {
+                      "description": "Could not create a new user"
+                    },
+                    "409": {
+                      "description": "Could not create a new user - Password has been found in a breach"
+                    }
+                  },
+                  "method": "post",
+                  "path": "/api/auth/register",
+                  "servers": [
+                    {
+                      "url": "https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.7.1",
+                      "description": "SwaggerHub API Auto Mocking"
+                    },
+                    {
+                      "url": "localhost",
+                      "description": "Local running server"
+                    },
+                    {
+                      "url": "open-leaked.compute.dtu.dk",
+                      "description": "DTU Compute VPN Required"
+                    }
+                  ],
+                  "securitySchemes": {
+                    "basicAuth": {
+                      "type": "http",
+                      "scheme": "basic"
+                    }
+                  },
+                  "jsonRequestBodyExample": {
+                    "emailID": {
+                      "local": "example",
+                      "domain": "example.com"
+                    },
+                    "password": "password123",
+                    "cPassword": "password123",
+                    "fullName": "John Doe",
+                    "studentNo": "SXXXXXX"
+                  },
+                  "info": {
+                    "title": "Open Leaked YAML",
+                    "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. Use the HTTP basic form to authorize. ",
+                    "contact": {
+                      "name": "Open Leaked",
+                      "url": "https://github.com/Open-Leaked/Monorepo",
+                      "email": "openleaked@gmail.com"
+                    },
+                    "license": {
+                      "name": "Apache 2.0",
+                      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+                    },
+                    "version": "1.7.1",
+                    "x-logo": {
+                      "url": "https://raw.githubusercontent.com/Open-Leaked/Monorepo/main/Assets/logo/png/logo-white.png?token=GHSAT0AAAAAACB2FNOUZBLHC6LN6IMED47EZC3SB3Q",
+                      "altText": "Open-Leaked Logo"
+                    }
+                  },
+                  "postman": {
+                    "name": "Creates a new user in the users database",
+                    "description": {
+                      "content": "Creates a new user using JDBC and BCrypt in the users and authorities table",
+                      "type": "text/plain"
+                    },
+                    "url": {
+                      "path": [
+                        "api",
+                        "auth",
+                        "register"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "\"\"",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  }
+                },
+                "sidebar_class_name": "post api-method",
+                "info_path": "docs/API/open-leaked-yaml",
+                "custom_edit_url": null
+              },
+              "sidebar": "openApiSidebar",
+              "previous": {
+                "title": "Create a new password",
+                "permalink": "/OpenLeakedDocs/docs/API/create-a-new-password"
+              },
+              "next": {
+                "title": "Tip",
+                "permalink": "/OpenLeakedDocs/docs/API/tip"
+              }
+            },
+            {
+              "unversionedId": "API/domain",
+              "id": "API/domain",
+              "title": "domain",
+              "description": "domain",
+              "source": "@site/docs/API/domain.tag.mdx",
+              "sourceDirName": "API",
+              "slug": "/API/domain",
+              "permalink": "/OpenLeakedDocs/docs/API/domain",
+              "draft": false,
+              "editUrl": null,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "domain",
+                "title": "domain",
+                "description": "domain",
+                "custom_edit_url": null
+              },
+              "sidebar": "openApiSidebar",
+              "previous": {
+                "title": "Finds associated breaches",
+                "permalink": "/OpenLeakedDocs/docs/API/finds-associated-breaches"
+              },
+              "next": {
+                "title": "Finds associated breaches",
+                "permalink": "/OpenLeakedDocs/docs/API/finds-associated-breaches"
               }
             },
             {
@@ -699,147 +1749,10 @@
               }
             },
             {
-              "unversionedId": "API/ends-current-the-current",
-              "id": "API/ends-current-the-current",
-              "title": "Ends current the current",
-              "description": "This action can be performed by any user currently in an active session (authorized). If sucessfull the session token will be revoked",
-              "source": "@site/docs/API/ends-current-the-current.api.mdx",
-              "sourceDirName": "API",
-              "slug": "/API/ends-current-the-current",
-              "permalink": "/OpenLeakedDocs/docs/API/ends-current-the-current",
-              "draft": false,
-              "editUrl": null,
-              "tags": [],
-              "version": "current",
-              "frontMatter": {
-                "id": "ends-current-the-current",
-                "title": "Ends current the current",
-                "description": "This action can be performed by any user currently in an active session (authorized). If sucessfull the session token will be revoked",
-                "sidebar_label": "Ends current the current",
-                "hide_title": true,
-                "hide_table_of_contents": true,
-                "api": {
-                  "tags": [
-                    "authorisations"
-                  ],
-                  "description": "This action can be performed by any user currently in an active session (authorized). If sucessfull the session token will be revoked",
-                  "responses": {
-                    "200": {
-                      "description": "OK"
-                    },
-                    "401": {
-                      "description": "Unauthorized",
-                      "headers": {
-                        "X-CUSTOM-AUTHENTICATE": {
-                          "style": "simple",
-                          "explode": false,
-                          "schema": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    }
-                  },
-                  "security": [
-                    {
-                      "basicAuth": []
-                    }
-                  ],
-                  "method": "post",
-                  "path": "/api/login/logout",
-                  "servers": [
-                    {
-                      "url": "https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.0.0",
-                      "description": "SwaggerHub API Auto Mocking"
-                    },
-                    {
-                      "url": "openleaked.compute.dtu.dk",
-                      "description": "Default server"
-                    },
-                    {
-                      "url": "localhost",
-                      "description": "Local running server"
-                    }
-                  ],
-                  "securitySchemes": {
-                    "basicAuth": {
-                      "type": "http",
-                      "scheme": "basic"
-                    }
-                  },
-                  "info": {
-                    "title": "Open Leaked YAML",
-                    "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\nIt was **extended** to illustrate features of [generator-openapi-repo](https://github.com/Rebilly/generator-openapi-repo)\ntool and [ReDoc](https://github.com/Redocly/redoc) documentation. In addition to standard\nOpenAPI syntax we use a few [vendor extensions](https://github.com/Redocly/redoc/blob/master/docs/redoc-vendor-extensions.md).\n\n## Cross-Origin Resource Sharing\nThis API features Cross-Origin Resource Sharing (CORS) implemented in compliance with  [W3C spec](https://www.w3.org/TR/cors/).\nAnd that allows cross-domain communication from the browser.\nAll responses have a wildcard same-origin which makes them completely public and accessible to everyone, including any code on any site.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. A local API key may be optained from the vendor\n",
-                    "contact": {
-                      "name": "Open Leaked",
-                      "url": "https://github.com/Open-Leaked/Monorepo",
-                      "email": "openleaked@gmail.com"
-                    },
-                    "license": {
-                      "name": "Apache 2.0",
-                      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
-                    },
-                    "version": "1.5.1",
-                    "x-logo": {
-                      "url": "https://redocly.github.io/redoc/petstore-logo.png",
-                      "altText": "Petstore logo"
-                    }
-                  },
-                  "postman": {
-                    "name": "Ends current the current",
-                    "description": {
-                      "content": "This action can be performed by any user currently in an active session (authorized). If sucessfull the session token will be revoked",
-                      "type": "text/plain"
-                    },
-                    "url": {
-                      "path": [
-                        "api",
-                        "login",
-                        "logout"
-                      ],
-                      "host": [
-                        "{{baseUrl}}"
-                      ],
-                      "query": [],
-                      "variable": []
-                    },
-                    "method": "POST",
-                    "auth": {
-                      "type": "basic",
-                      "basic": [
-                        {
-                          "type": "any",
-                          "value": "<Basic Auth Username>",
-                          "key": "username"
-                        },
-                        {
-                          "type": "any",
-                          "value": "<Basic Auth Password>",
-                          "key": "password"
-                        }
-                      ]
-                    }
-                  }
-                },
-                "sidebar_class_name": "post api-method",
-                "info_path": "docs/API/open-leaked-yaml",
-                "custom_edit_url": null
-              },
-              "sidebar": "openApiSidebar",
-              "previous": {
-                "title": "Authorise an existing user",
-                "permalink": "/OpenLeakedDocs/docs/API/authorise-an-existing-user"
-              },
-              "next": {
-                "title": "Verification of the temporary 6-digit code.",
-                "permalink": "/OpenLeakedDocs/docs/API/verification-of-the-temporary-6-digit-code"
-              }
-            },
-            {
               "unversionedId": "API/finds-associated-breaches",
               "id": "API/finds-associated-breaches",
               "title": "Finds associated breaches",
-              "description": "Takes a username RequestBody, performs the lookup and retrieves breaches associated with that breach if any. Might return an empty set.",
+              "description": "Takes a DomainRequestBody, and returns breaches associated with a domain.",
               "source": "@site/docs/API/finds-associated-breaches.api.mdx",
               "sourceDirName": "API",
               "slug": "/API/finds-associated-breaches",
@@ -851,36 +1764,33 @@
               "frontMatter": {
                 "id": "finds-associated-breaches",
                 "title": "Finds associated breaches",
-                "description": "Takes a username RequestBody, performs the lookup and retrieves breaches associated with that breach if any. Might return an empty set.",
+                "description": "Takes a DomainRequestBody, and returns breaches associated with a domain.",
                 "sidebar_label": "Finds associated breaches",
                 "hide_title": true,
                 "hide_table_of_contents": true,
                 "api": {
                   "tags": [
-                    "username"
+                    "domain"
                   ],
-                  "description": "Takes a username RequestBody, performs the lookup and retrieves breaches associated with that breach if any. Might return an empty set.",
+                  "description": "Takes a DomainRequestBody, and returns breaches associated with a domain.\n Might return an empty set",
                   "requestBody": {
                     "content": {
                       "application/json": {
                         "schema": {
                           "allOf": [
                             {
-                              "title": "UsernameRequestBody"
+                              "title": "DomainRequestBody"
                             },
                             {
                               "type": "object",
                               "properties": {
                                 "value": {
-                                  "minLength": 1,
                                   "type": "string",
-                                  "example": "username"
+                                  "example": "example.com"
                                 }
                               },
-                              "example": {
-                                "value": "username"
-                              },
-                              "title": "Username"
+                              "example": "example.com",
+                              "title": "Domain"
                             }
                           ]
                         }
@@ -890,10 +1800,10 @@
                   },
                   "responses": {
                     "200": {
-                      "description": "Success"
+                      "description": "Retrieved all associated breaches"
                     },
                     "404": {
-                      "description": "Could not find username in database"
+                      "description": "Domain not found in any breaches"
                     }
                   },
                   "security": [
@@ -902,19 +1812,19 @@
                     }
                   ],
                   "method": "post",
-                  "path": "/api/username/breaches",
+                  "path": "/api/domain/breaches",
                   "servers": [
                     {
-                      "url": "https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.0.0",
+                      "url": "https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.7.1",
                       "description": "SwaggerHub API Auto Mocking"
-                    },
-                    {
-                      "url": "openleaked.compute.dtu.dk",
-                      "description": "Default server"
                     },
                     {
                       "url": "localhost",
                       "description": "Local running server"
+                    },
+                    {
+                      "url": "open-leaked.compute.dtu.dk",
+                      "description": "DTU Compute VPN Required"
                     }
                   ],
                   "securitySchemes": {
@@ -923,12 +1833,10 @@
                       "scheme": "basic"
                     }
                   },
-                  "jsonRequestBodyExample": {
-                    "value": "username"
-                  },
+                  "jsonRequestBodyExample": "example.com",
                   "info": {
                     "title": "Open Leaked YAML",
-                    "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\nIt was **extended** to illustrate features of [generator-openapi-repo](https://github.com/Rebilly/generator-openapi-repo)\ntool and [ReDoc](https://github.com/Redocly/redoc) documentation. In addition to standard\nOpenAPI syntax we use a few [vendor extensions](https://github.com/Redocly/redoc/blob/master/docs/redoc-vendor-extensions.md).\n\n## Cross-Origin Resource Sharing\nThis API features Cross-Origin Resource Sharing (CORS) implemented in compliance with  [W3C spec](https://www.w3.org/TR/cors/).\nAnd that allows cross-domain communication from the browser.\nAll responses have a wildcard same-origin which makes them completely public and accessible to everyone, including any code on any site.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. A local API key may be optained from the vendor\n",
+                    "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. Use the HTTP basic form to authorize. ",
                     "contact": {
                       "name": "Open Leaked",
                       "url": "https://github.com/Open-Leaked/Monorepo",
@@ -938,22 +1846,22 @@
                       "name": "Apache 2.0",
                       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
                     },
-                    "version": "1.5.1",
+                    "version": "1.7.1",
                     "x-logo": {
-                      "url": "https://redocly.github.io/redoc/petstore-logo.png",
-                      "altText": "Petstore logo"
+                      "url": "https://raw.githubusercontent.com/Open-Leaked/Monorepo/main/Assets/logo/png/logo-white.png?token=GHSAT0AAAAAACB2FNOUZBLHC6LN6IMED47EZC3SB3Q",
+                      "altText": "Open-Leaked Logo"
                     }
                   },
                   "postman": {
                     "name": "Finds associated breaches",
                     "description": {
-                      "content": "Takes a username RequestBody, performs the lookup and retrieves breaches associated with that breach if any. Might return an empty set.",
+                      "content": "Takes a DomainRequestBody, and returns breaches associated with a domain.\n Might return an empty set",
                       "type": "text/plain"
                     },
                     "url": {
                       "path": [
                         "api",
-                        "username",
+                        "domain",
                         "breaches"
                       ],
                       "host": [
@@ -1005,8 +1913,8 @@
                 "permalink": "/OpenLeakedDocs/docs/API/email"
               },
               "next": {
-                "title": "Simple lookup in the database",
-                "permalink": "/OpenLeakedDocs/docs/API/simple-lookup-in-the-database"
+                "title": "Checks whether or not the email is existing in a breach",
+                "permalink": "/OpenLeakedDocs/docs/API/checks-whether-or-not-the-email-is-existing-in-a-breach"
               }
             },
             {
@@ -1034,8 +1942,8 @@
                 "permalink": "/OpenLeakedDocs/docs/API/open-leaked-yaml"
               },
               "next": {
-                "title": "Checks that the service is currently running",
-                "permalink": "/OpenLeakedDocs/docs/API/checks-that-the-service-is-currently-running"
+                "title": "Checks that the backend service is running",
+                "permalink": "/OpenLeakedDocs/docs/API/checks-that-the-backend-service-is-running"
               }
             },
             {
@@ -1092,26 +2000,26 @@
                   },
                   "responses": {
                     "200": {
-                      "description": "OK"
+                      "description": "Successfully send verification code to user"
                     },
                     "400": {
-                      "description": "Bad Request"
+                      "description": "Could not send verification code"
                     }
                   },
                   "method": "post",
-                  "path": "/api/login/recover",
+                  "path": "/api/auth/recover",
                   "servers": [
                     {
-                      "url": "https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.0.0",
+                      "url": "https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.7.1",
                       "description": "SwaggerHub API Auto Mocking"
-                    },
-                    {
-                      "url": "openleaked.compute.dtu.dk",
-                      "description": "Default server"
                     },
                     {
                       "url": "localhost",
                       "description": "Local running server"
+                    },
+                    {
+                      "url": "open-leaked.compute.dtu.dk",
+                      "description": "DTU Compute VPN Required"
                     }
                   ],
                   "securitySchemes": {
@@ -1126,7 +2034,7 @@
                   },
                   "info": {
                     "title": "Open Leaked YAML",
-                    "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\nIt was **extended** to illustrate features of [generator-openapi-repo](https://github.com/Rebilly/generator-openapi-repo)\ntool and [ReDoc](https://github.com/Redocly/redoc) documentation. In addition to standard\nOpenAPI syntax we use a few [vendor extensions](https://github.com/Redocly/redoc/blob/master/docs/redoc-vendor-extensions.md).\n\n## Cross-Origin Resource Sharing\nThis API features Cross-Origin Resource Sharing (CORS) implemented in compliance with  [W3C spec](https://www.w3.org/TR/cors/).\nAnd that allows cross-domain communication from the browser.\nAll responses have a wildcard same-origin which makes them completely public and accessible to everyone, including any code on any site.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. A local API key may be optained from the vendor\n",
+                    "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. Use the HTTP basic form to authorize. ",
                     "contact": {
                       "name": "Open Leaked",
                       "url": "https://github.com/Open-Leaked/Monorepo",
@@ -1136,10 +2044,10 @@
                       "name": "Apache 2.0",
                       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
                     },
-                    "version": "1.5.1",
+                    "version": "1.7.1",
                     "x-logo": {
-                      "url": "https://redocly.github.io/redoc/petstore-logo.png",
-                      "altText": "Petstore logo"
+                      "url": "https://raw.githubusercontent.com/Open-Leaked/Monorepo/main/Assets/logo/png/logo-white.png?token=GHSAT0AAAAAACB2FNOUZBLHC6LN6IMED47EZC3SB3Q",
+                      "altText": "Open-Leaked Logo"
                     }
                   },
                   "postman": {
@@ -1151,7 +2059,7 @@
                     "url": {
                       "path": [
                         "api",
-                        "login",
+                        "auth",
                         "recover"
                       ],
                       "host": [
@@ -1184,8 +2092,8 @@
               },
               "sidebar": "openApiSidebar",
               "previous": {
-                "title": "Verification of the temporary 6-digit code.",
-                "permalink": "/OpenLeakedDocs/docs/API/verification-of-the-temporary-6-digit-code"
+                "title": "Verify user",
+                "permalink": "/OpenLeakedDocs/docs/API/verify-user"
               },
               "next": {
                 "title": "Create a new password",
@@ -1246,73 +2154,54 @@
               },
               "sidebar": "openApiSidebar",
               "previous": {
-                "title": "Simple lookup in the database",
-                "permalink": "/OpenLeakedDocs/docs/API/simple-lookup-in-the-database"
+                "title": "Checks whether or not the email is existing in a breach",
+                "permalink": "/OpenLeakedDocs/docs/API/checks-whether-or-not-the-email-is-existing-in-a-breach"
               },
               "next": {
-                "title": "Simple lookup in the database",
-                "permalink": "/OpenLeakedDocs/docs/API/simple-lookup-in-the-database"
+                "title": "Checks whether or not the password is existing in a breach",
+                "permalink": "/OpenLeakedDocs/docs/API/checks-whether-or-not-the-password-is-existing-in-a-breach"
               }
             },
             {
-              "unversionedId": "API/simple-lookup-in-the-database",
-              "id": "API/simple-lookup-in-the-database",
-              "title": "Simple lookup in the database",
-              "description": "Checks whether or not the username is existing in the database.",
-              "source": "@site/docs/API/simple-lookup-in-the-database.api.mdx",
+              "unversionedId": "API/signs-out-the-current-user",
+              "id": "API/signs-out-the-current-user",
+              "title": "Signs out the current user",
+              "description": "This action can be performed by any authorized user. Once successfull the session cookie will be removed",
+              "source": "@site/docs/API/signs-out-the-current-user.api.mdx",
               "sourceDirName": "API",
-              "slug": "/API/simple-lookup-in-the-database",
-              "permalink": "/OpenLeakedDocs/docs/API/simple-lookup-in-the-database",
+              "slug": "/API/signs-out-the-current-user",
+              "permalink": "/OpenLeakedDocs/docs/API/signs-out-the-current-user",
               "draft": false,
               "editUrl": null,
               "tags": [],
               "version": "current",
               "frontMatter": {
-                "id": "simple-lookup-in-the-database",
-                "title": "Simple lookup in the database",
-                "description": "Checks whether or not the username is existing in the database.",
-                "sidebar_label": "Simple lookup in the database",
+                "id": "signs-out-the-current-user",
+                "title": "Signs out the current user",
+                "description": "This action can be performed by any authorized user. Once successfull the session cookie will be removed",
+                "sidebar_label": "Signs out the current user",
                 "hide_title": true,
                 "hide_table_of_contents": true,
                 "api": {
                   "tags": [
-                    "username"
+                    "authorisations"
                   ],
-                  "description": "Checks whether or not the username is existing in the database.",
-                  "requestBody": {
-                    "content": {
-                      "application/json": {
-                        "schema": {
-                          "allOf": [
-                            {
-                              "title": "UsernameRequestBody"
-                            },
-                            {
-                              "type": "object",
-                              "properties": {
-                                "value": {
-                                  "minLength": 1,
-                                  "type": "string",
-                                  "example": "username"
-                                }
-                              },
-                              "example": {
-                                "value": "username"
-                              },
-                              "title": "Username"
-                            }
-                          ]
-                        }
-                      }
-                    },
-                    "required": true
-                  },
+                  "description": "This action can be performed by any authorized user. Once successfull the session cookie will be removed",
                   "responses": {
                     "200": {
-                      "description": "success"
+                      "description": "Successfully signed out current user"
                     },
-                    "404": {
-                      "description": "No breaches found"
+                    "401": {
+                      "description": "Could not end session for current user",
+                      "headers": {
+                        "X-CUSTOM-AUTHENTICATE": {
+                          "style": "simple",
+                          "explode": false,
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      }
                     }
                   },
                   "security": [
@@ -1321,19 +2210,19 @@
                     }
                   ],
                   "method": "post",
-                  "path": "/api/Username/exists",
+                  "path": "/api/auth/logout",
                   "servers": [
                     {
-                      "url": "https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.0.0",
+                      "url": "https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.7.1",
                       "description": "SwaggerHub API Auto Mocking"
-                    },
-                    {
-                      "url": "openleaked.compute.dtu.dk",
-                      "description": "Default server"
                     },
                     {
                       "url": "localhost",
                       "description": "Local running server"
+                    },
+                    {
+                      "url": "open-leaked.compute.dtu.dk",
+                      "description": "DTU Compute VPN Required"
                     }
                   ],
                   "securitySchemes": {
@@ -1342,12 +2231,9 @@
                       "scheme": "basic"
                     }
                   },
-                  "jsonRequestBodyExample": {
-                    "value": "username"
-                  },
                   "info": {
                     "title": "Open Leaked YAML",
-                    "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\nIt was **extended** to illustrate features of [generator-openapi-repo](https://github.com/Rebilly/generator-openapi-repo)\ntool and [ReDoc](https://github.com/Redocly/redoc) documentation. In addition to standard\nOpenAPI syntax we use a few [vendor extensions](https://github.com/Redocly/redoc/blob/master/docs/redoc-vendor-extensions.md).\n\n## Cross-Origin Resource Sharing\nThis API features Cross-Origin Resource Sharing (CORS) implemented in compliance with  [W3C spec](https://www.w3.org/TR/cors/).\nAnd that allows cross-domain communication from the browser.\nAll responses have a wildcard same-origin which makes them completely public and accessible to everyone, including any code on any site.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. A local API key may be optained from the vendor\n",
+                    "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. Use the HTTP basic form to authorize. ",
                     "contact": {
                       "name": "Open Leaked",
                       "url": "https://github.com/Open-Leaked/Monorepo",
@@ -1357,23 +2243,23 @@
                       "name": "Apache 2.0",
                       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
                     },
-                    "version": "1.5.1",
+                    "version": "1.7.1",
                     "x-logo": {
-                      "url": "https://redocly.github.io/redoc/petstore-logo.png",
-                      "altText": "Petstore logo"
+                      "url": "https://raw.githubusercontent.com/Open-Leaked/Monorepo/main/Assets/logo/png/logo-white.png?token=GHSAT0AAAAAACB2FNOUZBLHC6LN6IMED47EZC3SB3Q",
+                      "altText": "Open-Leaked Logo"
                     }
                   },
                   "postman": {
-                    "name": "Simple lookup in the database",
+                    "name": "Signs out the current user",
                     "description": {
-                      "content": "Checks whether or not the username is existing in the database.",
+                      "content": "This action can be performed by any authorized user. Once successfull the session cookie will be removed",
                       "type": "text/plain"
                     },
                     "url": {
                       "path": [
                         "api",
-                        "Username",
-                        "exists"
+                        "auth",
+                        "logout"
                       ],
                       "host": [
                         "{{baseUrl}}"
@@ -1381,22 +2267,7 @@
                       "query": [],
                       "variable": []
                     },
-                    "header": [
-                      {
-                        "key": "Content-Type",
-                        "value": "application/json"
-                      }
-                    ],
                     "method": "POST",
-                    "body": {
-                      "mode": "raw",
-                      "raw": "\"\"",
-                      "options": {
-                        "raw": {
-                          "language": "json"
-                        }
-                      }
-                    },
                     "auth": {
                       "type": "basic",
                       "basic": [
@@ -1420,20 +2291,20 @@
               },
               "sidebar": "openApiSidebar",
               "previous": {
-                "title": "Finds associated breaches",
-                "permalink": "/OpenLeakedDocs/docs/API/finds-associated-breaches"
+                "title": "Authorise an existing user",
+                "permalink": "/OpenLeakedDocs/docs/API/authorise-an-existing-user"
               },
               "next": {
-                "title": "password",
-                "permalink": "/OpenLeakedDocs/docs/API/password"
+                "title": "Verify user",
+                "permalink": "/OpenLeakedDocs/docs/API/verify-user"
               }
             },
             {
               "unversionedId": "API/subscribe",
               "id": "API/subscribe",
-              "title": "Subscribe",
-              "description": "Adds the user to the subscribed users table",
-              "source": "@site/docs/API/subscribe.api.mdx",
+              "title": "subscribe",
+              "description": "subscribe",
+              "source": "@site/docs/API/subscribe.tag.mdx",
               "sourceDirName": "API",
               "slug": "/API/subscribe",
               "permalink": "/OpenLeakedDocs/docs/API/subscribe",
@@ -1443,16 +2314,45 @@
               "version": "current",
               "frontMatter": {
                 "id": "subscribe",
-                "title": "Subscribe",
-                "description": "Adds the user to the subscribed users table",
-                "sidebar_label": "Subscribe",
+                "title": "subscribe",
+                "description": "subscribe",
+                "custom_edit_url": null
+              },
+              "sidebar": "openApiSidebar",
+              "previous": {
+                "title": "Finds associated breaches",
+                "permalink": "/OpenLeakedDocs/docs/API/finds-associated-breaches"
+              },
+              "next": {
+                "title": "Verify user",
+                "permalink": "/OpenLeakedDocs/docs/API/verify-user"
+              }
+            },
+            {
+              "unversionedId": "API/subscribe-to-notifications",
+              "id": "API/subscribe-to-notifications",
+              "title": "Subscribe to notifications",
+              "description": "Adds the user to the database of subscribers",
+              "source": "@site/docs/API/subscribe-to-notifications.api.mdx",
+              "sourceDirName": "API",
+              "slug": "/API/subscribe-to-notifications",
+              "permalink": "/OpenLeakedDocs/docs/API/subscribe-to-notifications",
+              "draft": false,
+              "editUrl": null,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "subscribe-to-notifications",
+                "title": "Subscribe to notifications",
+                "description": "Adds the user to the database of subscribers",
+                "sidebar_label": "Subscribe to notifications",
                 "hide_title": true,
                 "hide_table_of_contents": true,
                 "api": {
                   "tags": [
                     "subscribe"
                   ],
-                  "description": "Adds the user to the subscribed users table",
+                  "description": "Adds the user to the database of subscribers",
                   "requestBody": {
                     "content": {
                       "application/json": {
@@ -1489,7 +2389,7 @@
                   },
                   "responses": {
                     "200": {
-                      "description": "Sucess"
+                      "description": "Successfully added the user"
                     },
                     "406": {
                       "description": "Email already exists in the subscribers database"
@@ -1507,16 +2407,16 @@
                   "path": "/api/subscribe/signup",
                   "servers": [
                     {
-                      "url": "https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.0.0",
+                      "url": "https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.7.1",
                       "description": "SwaggerHub API Auto Mocking"
-                    },
-                    {
-                      "url": "openleaked.compute.dtu.dk",
-                      "description": "Default server"
                     },
                     {
                       "url": "localhost",
                       "description": "Local running server"
+                    },
+                    {
+                      "url": "open-leaked.compute.dtu.dk",
+                      "description": "DTU Compute VPN Required"
                     }
                   ],
                   "securitySchemes": {
@@ -1531,7 +2431,7 @@
                   },
                   "info": {
                     "title": "Open Leaked YAML",
-                    "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\nIt was **extended** to illustrate features of [generator-openapi-repo](https://github.com/Rebilly/generator-openapi-repo)\ntool and [ReDoc](https://github.com/Redocly/redoc) documentation. In addition to standard\nOpenAPI syntax we use a few [vendor extensions](https://github.com/Redocly/redoc/blob/master/docs/redoc-vendor-extensions.md).\n\n## Cross-Origin Resource Sharing\nThis API features Cross-Origin Resource Sharing (CORS) implemented in compliance with  [W3C spec](https://www.w3.org/TR/cors/).\nAnd that allows cross-domain communication from the browser.\nAll responses have a wildcard same-origin which makes them completely public and accessible to everyone, including any code on any site.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. A local API key may be optained from the vendor\n",
+                    "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. Use the HTTP basic form to authorize. ",
                     "contact": {
                       "name": "Open Leaked",
                       "url": "https://github.com/Open-Leaked/Monorepo",
@@ -1541,16 +2441,16 @@
                       "name": "Apache 2.0",
                       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
                     },
-                    "version": "1.5.1",
+                    "version": "1.7.1",
                     "x-logo": {
-                      "url": "https://redocly.github.io/redoc/petstore-logo.png",
-                      "altText": "Petstore logo"
+                      "url": "https://raw.githubusercontent.com/Open-Leaked/Monorepo/main/Assets/logo/png/logo-white.png?token=GHSAT0AAAAAACB2FNOUZBLHC6LN6IMED47EZC3SB3Q",
+                      "altText": "Open-Leaked Logo"
                     }
                   },
                   "postman": {
-                    "name": "Subscribe",
+                    "name": "Subscribe to notifications",
                     "description": {
-                      "content": "Adds the user to the subscribed users table",
+                      "content": "Adds the user to the database of subscribers",
                       "type": "text/plain"
                     },
                     "url": {
@@ -1604,41 +2504,12 @@
               },
               "sidebar": "openApiSidebar",
               "previous": {
-                "title": "Finds associated breaches",
-                "permalink": "/OpenLeakedDocs/docs/API/finds-associated-breaches"
-              },
-              "next": {
                 "title": "Verify user",
                 "permalink": "/OpenLeakedDocs/docs/API/verify-user"
-              }
-            },
-            {
-              "unversionedId": "API/subscribe",
-              "id": "API/subscribe",
-              "title": "subscribe",
-              "description": "subscribe",
-              "source": "@site/docs/API/subscribe.tag.mdx",
-              "sourceDirName": "API",
-              "slug": "/API/subscribe",
-              "permalink": "/OpenLeakedDocs/docs/API/subscribe",
-              "draft": false,
-              "editUrl": null,
-              "tags": [],
-              "version": "current",
-              "frontMatter": {
-                "id": "subscribe",
-                "title": "subscribe",
-                "description": "subscribe",
-                "custom_edit_url": null
-              },
-              "sidebar": "openApiSidebar",
-              "previous": {
-                "title": "Finds associated breaches",
-                "permalink": "/OpenLeakedDocs/docs/API/finds-associated-breaches"
               },
               "next": {
-                "title": "Verify user",
-                "permalink": "/OpenLeakedDocs/docs/API/verify-user"
+                "title": "Unsubscribe from notificatons",
+                "permalink": "/OpenLeakedDocs/docs/API/unsubscribe-from-notificatons"
               }
             },
             {
@@ -1662,8 +2533,8 @@
               },
               "sidebar": "openApiSidebar",
               "previous": {
-                "title": "Authorise an existing user",
-                "permalink": "/OpenLeakedDocs/docs/API/authorise-an-existing-user"
+                "title": "Creates a new user in the users database",
+                "permalink": "/OpenLeakedDocs/docs/API/creates-a-new-user-in-the-users-database"
               },
               "next": {
                 "title": "Allows a user to tip the maintainers with additional breaches",
@@ -1671,30 +2542,30 @@
               }
             },
             {
-              "unversionedId": "API/unsubscribe",
-              "id": "API/unsubscribe",
-              "title": "Unsubscribe",
-              "description": "Removes the user from the subscribed users table",
-              "source": "@site/docs/API/unsubscribe.api.mdx",
+              "unversionedId": "API/unsubscribe-from-notificatons",
+              "id": "API/unsubscribe-from-notificatons",
+              "title": "Unsubscribe from notificatons",
+              "description": "Removes the user from the subscribers database",
+              "source": "@site/docs/API/unsubscribe-from-notificatons.api.mdx",
               "sourceDirName": "API",
-              "slug": "/API/unsubscribe",
-              "permalink": "/OpenLeakedDocs/docs/API/unsubscribe",
+              "slug": "/API/unsubscribe-from-notificatons",
+              "permalink": "/OpenLeakedDocs/docs/API/unsubscribe-from-notificatons",
               "draft": false,
               "editUrl": null,
               "tags": [],
               "version": "current",
               "frontMatter": {
-                "id": "unsubscribe",
-                "title": "Unsubscribe",
-                "description": "Removes the user from the subscribed users table",
-                "sidebar_label": "Unsubscribe",
+                "id": "unsubscribe-from-notificatons",
+                "title": "Unsubscribe from notificatons",
+                "description": "Removes the user from the subscribers database",
+                "sidebar_label": "Unsubscribe from notificatons",
                 "hide_title": true,
                 "hide_table_of_contents": true,
                 "api": {
                   "tags": [
                     "subscribe"
                   ],
-                  "description": "Removes the user from the subscribed users table",
+                  "description": "Removes the user from the subscribers database",
                   "requestBody": {
                     "content": {
                       "application/json": {
@@ -1731,10 +2602,10 @@
                   },
                   "responses": {
                     "200": {
-                      "description": "Sucess"
+                      "description": "Successfully removed the user from the subscribers database"
                     },
                     "400": {
-                      "description": "Failed to remove subscribers users"
+                      "description": "Failed to remove the user - User is not in the subscribers table"
                     }
                   },
                   "security": [
@@ -1746,16 +2617,16 @@
                   "path": "/api/subscribe/unsubscribe",
                   "servers": [
                     {
-                      "url": "https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.0.0",
+                      "url": "https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.7.1",
                       "description": "SwaggerHub API Auto Mocking"
-                    },
-                    {
-                      "url": "openleaked.compute.dtu.dk",
-                      "description": "Default server"
                     },
                     {
                       "url": "localhost",
                       "description": "Local running server"
+                    },
+                    {
+                      "url": "open-leaked.compute.dtu.dk",
+                      "description": "DTU Compute VPN Required"
                     }
                   ],
                   "securitySchemes": {
@@ -1770,7 +2641,7 @@
                   },
                   "info": {
                     "title": "Open Leaked YAML",
-                    "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\nIt was **extended** to illustrate features of [generator-openapi-repo](https://github.com/Rebilly/generator-openapi-repo)\ntool and [ReDoc](https://github.com/Redocly/redoc) documentation. In addition to standard\nOpenAPI syntax we use a few [vendor extensions](https://github.com/Redocly/redoc/blob/master/docs/redoc-vendor-extensions.md).\n\n## Cross-Origin Resource Sharing\nThis API features Cross-Origin Resource Sharing (CORS) implemented in compliance with  [W3C spec](https://www.w3.org/TR/cors/).\nAnd that allows cross-domain communication from the browser.\nAll responses have a wildcard same-origin which makes them completely public and accessible to everyone, including any code on any site.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. A local API key may be optained from the vendor\n",
+                    "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. Use the HTTP basic form to authorize. ",
                     "contact": {
                       "name": "Open Leaked",
                       "url": "https://github.com/Open-Leaked/Monorepo",
@@ -1780,16 +2651,16 @@
                       "name": "Apache 2.0",
                       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
                     },
-                    "version": "1.5.1",
+                    "version": "1.7.1",
                     "x-logo": {
-                      "url": "https://redocly.github.io/redoc/petstore-logo.png",
-                      "altText": "Petstore logo"
+                      "url": "https://raw.githubusercontent.com/Open-Leaked/Monorepo/main/Assets/logo/png/logo-white.png?token=GHSAT0AAAAAACB2FNOUZBLHC6LN6IMED47EZC3SB3Q",
+                      "altText": "Open-Leaked Logo"
                     }
                   },
                   "postman": {
-                    "name": "Unsubscribe",
+                    "name": "Unsubscribe from notificatons",
                     "description": {
-                      "content": "Removes the user from the subscribed users table",
+                      "content": "Removes the user from the subscribers database",
                       "type": "text/plain"
                     },
                     "url": {
@@ -1843,8 +2714,8 @@
               },
               "sidebar": "openApiSidebar",
               "previous": {
-                "title": "subscribe",
-                "permalink": "/OpenLeakedDocs/docs/API/subscribe"
+                "title": "Subscribe to notifications",
+                "permalink": "/OpenLeakedDocs/docs/API/subscribe-to-notifications"
               },
               "next": {
                 "title": "username",
@@ -1872,174 +2743,12 @@
               },
               "sidebar": "openApiSidebar",
               "previous": {
-                "title": "Unsubscribe",
-                "permalink": "/OpenLeakedDocs/docs/API/unsubscribe"
+                "title": "Unsubscribe from notificatons",
+                "permalink": "/OpenLeakedDocs/docs/API/unsubscribe-from-notificatons"
               },
               "next": {
-                "title": "Simple lookup in the database",
-                "permalink": "/OpenLeakedDocs/docs/API/simple-lookup-in-the-database"
-              }
-            },
-            {
-              "unversionedId": "API/verification-of-the-temporary-6-digit-code",
-              "id": "API/verification-of-the-temporary-6-digit-code",
-              "title": "Verification of the temporary 6-digit code.",
-              "description": "Verification of the temporary 6-digit code.",
-              "source": "@site/docs/API/verification-of-the-temporary-6-digit-code.api.mdx",
-              "sourceDirName": "API",
-              "slug": "/API/verification-of-the-temporary-6-digit-code",
-              "permalink": "/OpenLeakedDocs/docs/API/verification-of-the-temporary-6-digit-code",
-              "draft": false,
-              "editUrl": null,
-              "tags": [],
-              "version": "current",
-              "frontMatter": {
-                "id": "verification-of-the-temporary-6-digit-code",
-                "title": "Verification of the temporary 6-digit code.",
-                "description": "Verification of the temporary 6-digit code.",
-                "sidebar_label": "Verification of the temporary 6-digit code.",
-                "hide_title": true,
-                "hide_table_of_contents": true,
-                "api": {
-                  "tags": [
-                    "authorisations"
-                  ],
-                  "requestBody": {
-                    "content": {
-                      "application/json": {
-                        "schema": {
-                          "type": "object",
-                          "properties": {
-                            "Local": {
-                              "type": "string",
-                              "description": "First part of the email pre-@",
-                              "example": "johndoe"
-                            },
-                            "Domain": {
-                              "type": "string",
-                              "description": "Second part of the email post-@",
-                              "example": "example.com"
-                            },
-                            "verifyCode": {
-                              "maxLength": 6,
-                              "minLength": 6,
-                              "type": "integer",
-                              "description": "6-Digit randomly generated code",
-                              "example": 123456
-                            }
-                          },
-                          "example": {
-                            "Local": "johndoe",
-                            "Domain": "example.com",
-                            "verifyCode": 123456
-                          },
-                          "title": "Verify"
-                        }
-                      }
-                    },
-                    "required": true
-                  },
-                  "responses": {
-                    "200": {
-                      "description": "OK"
-                    },
-                    "400": {
-                      "description": "Bad Request"
-                    }
-                  },
-                  "description": "Verification of the temporary 6-digit code.",
-                  "method": "post",
-                  "path": "/api/login/verify",
-                  "servers": [
-                    {
-                      "url": "https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.0.0",
-                      "description": "SwaggerHub API Auto Mocking"
-                    },
-                    {
-                      "url": "openleaked.compute.dtu.dk",
-                      "description": "Default server"
-                    },
-                    {
-                      "url": "localhost",
-                      "description": "Local running server"
-                    }
-                  ],
-                  "securitySchemes": {
-                    "basicAuth": {
-                      "type": "http",
-                      "scheme": "basic"
-                    }
-                  },
-                  "jsonRequestBodyExample": {
-                    "Local": "johndoe",
-                    "Domain": "example.com",
-                    "verifyCode": 123456
-                  },
-                  "info": {
-                    "title": "Open Leaked YAML",
-                    "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\nIt was **extended** to illustrate features of [generator-openapi-repo](https://github.com/Rebilly/generator-openapi-repo)\ntool and [ReDoc](https://github.com/Redocly/redoc) documentation. In addition to standard\nOpenAPI syntax we use a few [vendor extensions](https://github.com/Redocly/redoc/blob/master/docs/redoc-vendor-extensions.md).\n\n## Cross-Origin Resource Sharing\nThis API features Cross-Origin Resource Sharing (CORS) implemented in compliance with  [W3C spec](https://www.w3.org/TR/cors/).\nAnd that allows cross-domain communication from the browser.\nAll responses have a wildcard same-origin which makes them completely public and accessible to everyone, including any code on any site.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. A local API key may be optained from the vendor\n",
-                    "contact": {
-                      "name": "Open Leaked",
-                      "url": "https://github.com/Open-Leaked/Monorepo",
-                      "email": "openleaked@gmail.com"
-                    },
-                    "license": {
-                      "name": "Apache 2.0",
-                      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
-                    },
-                    "version": "1.5.1",
-                    "x-logo": {
-                      "url": "https://redocly.github.io/redoc/petstore-logo.png",
-                      "altText": "Petstore logo"
-                    }
-                  },
-                  "postman": {
-                    "name": "Verification of the temporary 6-digit code.",
-                    "description": {
-                      "type": "text/plain"
-                    },
-                    "url": {
-                      "path": [
-                        "api",
-                        "login",
-                        "verify"
-                      ],
-                      "host": [
-                        "{{baseUrl}}"
-                      ],
-                      "query": [],
-                      "variable": []
-                    },
-                    "header": [
-                      {
-                        "key": "Content-Type",
-                        "value": "application/json"
-                      }
-                    ],
-                    "method": "POST",
-                    "body": {
-                      "mode": "raw",
-                      "raw": "\"\"",
-                      "options": {
-                        "raw": {
-                          "language": "json"
-                        }
-                      }
-                    }
-                  }
-                },
-                "sidebar_class_name": "post api-method",
-                "info_path": "docs/API/open-leaked-yaml",
-                "custom_edit_url": null
-              },
-              "sidebar": "openApiSidebar",
-              "previous": {
-                "title": "Ends current the current",
-                "permalink": "/OpenLeakedDocs/docs/API/ends-current-the-current"
-              },
-              "next": {
-                "title": "Initiate recovery process",
-                "permalink": "/OpenLeakedDocs/docs/API/initiate-recovery-process"
+                "title": "Checks whether or not the username is existing in a breach",
+                "permalink": "/OpenLeakedDocs/docs/API/checks-whether-or-not-the-username-is-existing-in-a-breach"
               }
             },
             {
@@ -2111,10 +2820,10 @@
                   },
                   "responses": {
                     "200": {
-                      "description": "Sucess"
+                      "description": "Successfully verified user - Entered was correct"
                     },
                     "400": {
-                      "description": "Bad request"
+                      "description": "Could not verify - Entered was incorrect"
                     }
                   },
                   "security": [
@@ -2126,16 +2835,16 @@
                   "path": "/api/subscribe/verify",
                   "servers": [
                     {
-                      "url": "https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.0.0",
+                      "url": "https://virtserver.swaggerhub.com/Peetzie/OpenLeaked/1.7.1",
                       "description": "SwaggerHub API Auto Mocking"
-                    },
-                    {
-                      "url": "openleaked.compute.dtu.dk",
-                      "description": "Default server"
                     },
                     {
                       "url": "localhost",
                       "description": "Local running server"
+                    },
+                    {
+                      "url": "open-leaked.compute.dtu.dk",
+                      "description": "DTU Compute VPN Required"
                     }
                   ],
                   "securitySchemes": {
@@ -2151,7 +2860,7 @@
                   },
                   "info": {
                     "title": "Open Leaked YAML",
-                    "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\nIt was **extended** to illustrate features of [generator-openapi-repo](https://github.com/Rebilly/generator-openapi-repo)\ntool and [ReDoc](https://github.com/Redocly/redoc) documentation. In addition to standard\nOpenAPI syntax we use a few [vendor extensions](https://github.com/Redocly/redoc/blob/master/docs/redoc-vendor-extensions.md).\n\n## Cross-Origin Resource Sharing\nThis API features Cross-Origin Resource Sharing (CORS) implemented in compliance with  [W3C spec](https://www.w3.org/TR/cors/).\nAnd that allows cross-domain communication from the browser.\nAll responses have a wildcard same-origin which makes them completely public and accessible to everyone, including any code on any site.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. A local API key may be optained from the vendor\n",
+                    "description": "## Introduction\nThis API is documented in **OpenAPI** format. \n\n## OpenAPI Specification\nThis API is documented in **OpenAPI format** and is based on\n[Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.\n\n## Authentication\nThe application makes uses of build in authentication. Some of the client calls will be restricted. Use the HTTP basic form to authorize. ",
                     "contact": {
                       "name": "Open Leaked",
                       "url": "https://github.com/Open-Leaked/Monorepo",
@@ -2161,10 +2870,10 @@
                       "name": "Apache 2.0",
                       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
                     },
-                    "version": "1.5.1",
+                    "version": "1.7.1",
                     "x-logo": {
-                      "url": "https://redocly.github.io/redoc/petstore-logo.png",
-                      "altText": "Petstore logo"
+                      "url": "https://raw.githubusercontent.com/Open-Leaked/Monorepo/main/Assets/logo/png/logo-white.png?token=GHSAT0AAAAAACB2FNOUZBLHC6LN6IMED47EZC3SB3Q",
+                      "altText": "Open-Leaked Logo"
                     }
                   },
                   "postman": {
@@ -2224,12 +2933,60 @@
               },
               "sidebar": "openApiSidebar",
               "previous": {
-                "title": "subscribe",
-                "permalink": "/OpenLeakedDocs/docs/API/subscribe"
+                "title": "Signs out the current user",
+                "permalink": "/OpenLeakedDocs/docs/API/signs-out-the-current-user"
               },
               "next": {
-                "title": "subscribe",
-                "permalink": "/OpenLeakedDocs/docs/API/subscribe"
+                "title": "Initiate recovery process",
+                "permalink": "/OpenLeakedDocs/docs/API/initiate-recovery-process"
+              }
+            },
+            {
+              "unversionedId": "Authentication",
+              "id": "Authentication",
+              "title": "Authentication",
+              "description": "In the following section we make an introduction to the technical specification and usage of our authentication system.",
+              "source": "@site/docs/04-Authentication.mdx",
+              "sourceDirName": ".",
+              "slug": "/Authentication",
+              "permalink": "/OpenLeakedDocs/docs/Authentication",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 4,
+              "frontMatter": {},
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Backend",
+                "permalink": "/OpenLeakedDocs/docs/Backend"
+              },
+              "next": {
+                "title": "Frontend",
+                "permalink": "/OpenLeakedDocs/docs/Frontend"
+              }
+            },
+            {
+              "unversionedId": "Backend",
+              "id": "Backend",
+              "title": "Backend",
+              "description": "Folder Strucutre",
+              "source": "@site/docs/03-Backend.mdx",
+              "sourceDirName": ".",
+              "slug": "/Backend",
+              "permalink": "/OpenLeakedDocs/docs/Backend",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 3,
+              "frontMatter": {},
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Redis - BloomFilter",
+                "permalink": "/OpenLeakedDocs/docs/Database/BloomFilter"
+              },
+              "next": {
+                "title": "Authentication",
+                "permalink": "/OpenLeakedDocs/docs/Authentication"
               }
             },
             {
@@ -2253,8 +3010,8 @@
                 "permalink": "/OpenLeakedDocs/docs/Database/Cache"
               },
               "next": {
-                "title": "Introduction",
-                "permalink": "/OpenLeakedDocs/docs/API/open-leaked-yaml"
+                "title": "Backend",
+                "permalink": "/OpenLeakedDocs/docs/Backend"
               }
             },
             {
@@ -2362,6 +3119,30 @@
               }
             },
             {
+              "unversionedId": "Frontend",
+              "id": "Frontend",
+              "title": "Frontend",
+              "description": "The frontend, a userinterface written in Typescript -- a programming language build on JavaScript.",
+              "source": "@site/docs/05-Frontend.mdx",
+              "sourceDirName": ".",
+              "slug": "/Frontend",
+              "permalink": "/OpenLeakedDocs/docs/Frontend",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 5,
+              "frontMatter": {},
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Authentication",
+                "permalink": "/OpenLeakedDocs/docs/Authentication"
+              },
+              "next": {
+                "title": "Introduction",
+                "permalink": "/OpenLeakedDocs/docs/API/open-leaked-yaml"
+              }
+            },
+            {
               "unversionedId": "intro",
               "id": "intro",
               "title": "Introduction",
@@ -2420,6 +3201,18 @@
                 ]
               },
               {
+                "type": "doc",
+                "id": "Backend"
+              },
+              {
+                "type": "doc",
+                "id": "Authentication"
+              },
+              {
+                "type": "doc",
+                "id": "Frontend"
+              },
+              {
                 "type": "category",
                 "label": "API",
                 "collapsible": true,
@@ -2438,6 +3231,10 @@
                   },
                   {
                     "type": "doc",
+                    "id": "API/authenticationstatus"
+                  },
+                  {
+                    "type": "doc",
                     "id": "API/authorisations"
                   },
                   {
@@ -2448,9 +3245,39 @@
                   },
                   {
                     "type": "doc",
-                    "id": "API/checks-that-the-service-is-currently-running",
-                    "label": "Checks that the service is currently running",
+                    "id": "API/checks-that-the-backend-service-is-running",
+                    "label": "Checks that the backend service is running",
                     "className": "get api-method"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "API/checks-whether-or-not-the-current-client-is-authorized",
+                    "label": "Checks whether or not the current client is authorized.",
+                    "className": "post api-method"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "API/checks-whether-or-not-the-domain-is-existing-in-a-breach",
+                    "label": "Checks whether or not the domain is existing in a breach",
+                    "className": "post api-method"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "API/checks-whether-or-not-the-email-is-existing-in-a-breach",
+                    "label": "Checks whether or not the email is existing in a breach",
+                    "className": "post api-method"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "API/checks-whether-or-not-the-password-is-existing-in-a-breach",
+                    "label": "Checks whether or not the password is existing in a breach",
+                    "className": "post api-method"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "API/checks-whether-or-not-the-username-is-existing-in-a-breach",
+                    "label": "Checks whether or not the username is existing in a breach",
+                    "className": "post api-method"
                   },
                   {
                     "type": "doc",
@@ -2460,13 +3287,17 @@
                   },
                   {
                     "type": "doc",
-                    "id": "API/email"
+                    "id": "API/creates-a-new-user-in-the-users-database",
+                    "label": "Creates a new user in the users database",
+                    "className": "post api-method"
                   },
                   {
                     "type": "doc",
-                    "id": "API/ends-current-the-current",
-                    "label": "Ends current the current",
-                    "className": "post api-method"
+                    "id": "API/domain"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "API/email"
                   },
                   {
                     "type": "doc",
@@ -2490,13 +3321,15 @@
                   },
                   {
                     "type": "doc",
-                    "id": "API/simple-lookup-in-the-database",
-                    "label": "Simple lookup in the database",
+                    "id": "API/signs-out-the-current-user",
+                    "label": "Signs out the current user",
                     "className": "post api-method"
                   },
                   {
                     "type": "doc",
-                    "id": "API/subscribe"
+                    "id": "API/subscribe-to-notifications",
+                    "label": "Subscribe to notifications",
+                    "className": "post api-method"
                   },
                   {
                     "type": "doc",
@@ -2508,19 +3341,13 @@
                   },
                   {
                     "type": "doc",
-                    "id": "API/unsubscribe",
-                    "label": "Unsubscribe",
+                    "id": "API/unsubscribe-from-notificatons",
+                    "label": "Unsubscribe from notificatons",
                     "className": "post api-method"
                   },
                   {
                     "type": "doc",
                     "id": "API/username"
-                  },
-                  {
-                    "type": "doc",
-                    "id": "API/verification-of-the-temporary-6-digit-code",
-                    "label": "Verification of the temporary 6-digit code.",
-                    "className": "post api-method"
                   },
                   {
                     "type": "doc",
@@ -2556,8 +3383,8 @@
                     "items": [
                       {
                         "type": "doc",
-                        "id": "API/checks-that-the-service-is-currently-running",
-                        "label": "Checks that the service is currently running",
+                        "id": "API/checks-that-the-backend-service-is-running",
+                        "label": "Checks that the backend service is running",
                         "className": "api-method get",
                         "translatable": true
                       }
@@ -2582,15 +3409,15 @@
                       },
                       {
                         "type": "doc",
-                        "id": "API/ends-current-the-current",
-                        "label": "Ends current the current",
+                        "id": "API/signs-out-the-current-user",
+                        "label": "Signs out the current user",
                         "className": "api-method post",
                         "translatable": true
                       },
                       {
                         "type": "doc",
-                        "id": "API/verification-of-the-temporary-6-digit-code",
-                        "label": "Verification of the temporary 6-digit code.",
+                        "id": "API/verify-user",
+                        "label": "Verify user",
                         "className": "api-method post",
                         "translatable": true
                       },
@@ -2610,8 +3437,8 @@
                       },
                       {
                         "type": "doc",
-                        "id": "API/authorise-an-existing-user",
-                        "label": "Authorise an existing user",
+                        "id": "API/creates-a-new-user-in-the-users-database",
+                        "label": "Creates a new user in the users database",
                         "className": "api-method post",
                         "translatable": true
                       }
@@ -2655,8 +3482,8 @@
                       },
                       {
                         "type": "doc",
-                        "id": "API/simple-lookup-in-the-database",
-                        "label": "Simple lookup in the database",
+                        "id": "API/checks-whether-or-not-the-email-is-existing-in-a-breach",
+                        "label": "Checks whether or not the email is existing in a breach",
                         "className": "api-method post",
                         "translatable": true
                       }
@@ -2674,8 +3501,8 @@
                     "items": [
                       {
                         "type": "doc",
-                        "id": "API/simple-lookup-in-the-database",
-                        "label": "Simple lookup in the database",
+                        "id": "API/checks-whether-or-not-the-password-is-existing-in-a-breach",
+                        "label": "Checks whether or not the password is existing in a breach",
                         "className": "api-method post",
                         "translatable": true
                       },
@@ -2707,15 +3534,15 @@
                       },
                       {
                         "type": "doc",
-                        "id": "API/subscribe",
-                        "label": "Subscribe",
+                        "id": "API/subscribe-to-notifications",
+                        "label": "Subscribe to notifications",
                         "className": "api-method post",
                         "translatable": true
                       },
                       {
                         "type": "doc",
-                        "id": "API/unsubscribe",
-                        "label": "Unsubscribe",
+                        "id": "API/unsubscribe-from-notificatons",
+                        "label": "Unsubscribe from notificatons",
                         "className": "api-method post",
                         "translatable": true
                       }
@@ -2733,8 +3560,8 @@
                     "items": [
                       {
                         "type": "doc",
-                        "id": "API/simple-lookup-in-the-database",
-                        "label": "Simple lookup in the database",
+                        "id": "API/checks-whether-or-not-the-username-is-existing-in-a-breach",
+                        "label": "Checks whether or not the username is existing in a breach",
                         "className": "api-method post",
                         "translatable": true
                       },
@@ -2742,6 +3569,51 @@
                         "type": "doc",
                         "id": "API/finds-associated-breaches",
                         "label": "Finds associated breaches",
+                        "className": "api-method post",
+                        "translatable": true
+                      }
+                    ],
+                    "collapsed": true,
+                    "collapsible": true
+                  },
+                  {
+                    "type": "category",
+                    "label": "domain",
+                    "link": {
+                      "type": "doc",
+                      "id": "API/domain"
+                    },
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "API/finds-associated-breaches",
+                        "label": "Finds associated breaches",
+                        "className": "api-method post",
+                        "translatable": true
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/checks-whether-or-not-the-domain-is-existing-in-a-breach",
+                        "label": "Checks whether or not the domain is existing in a breach",
+                        "className": "api-method post",
+                        "translatable": true
+                      }
+                    ],
+                    "collapsed": true,
+                    "collapsible": true
+                  },
+                  {
+                    "type": "category",
+                    "label": "authenticationstatus",
+                    "link": {
+                      "type": "doc",
+                      "id": "API/authenticationstatus"
+                    },
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "API/checks-whether-or-not-the-current-client-is-authorized",
+                        "label": "Checks whether or not the current client is authorized.",
                         "className": "api-method post",
                         "translatable": true
                       }
