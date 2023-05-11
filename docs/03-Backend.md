@@ -48,7 +48,7 @@ The *entrypoints* folder contains the custom entry point used in the ```Security
 Contain only one class - ```RateLimitFilter``` which is responsible for providing rate-limiting functionality to the application. 
 
 #### Ratelimit
-The rate-limit feature is implemented using the [*Token Bucket Algorithm*](https://en.wikipedia.org/wiki/Token_bucket). The rate-limit is based on user accounts, with each account assigned a capacity of tokens within a specified time period. This capacity is set upon [authorization](./04-Authentication.mdx). Once a user's capacity is reach, all subsequent requests will be denied and the user will recieve ```429 - Too Many Requests``` HTTP response. This feature provides an added layer of security to prevent brute-force attacks and DDoS attacks. 
+The rate-limit feature is implemented using the [*Token Bucket Algorithm*](https://en.wikipedia.org/wiki/Token_bucket). The rate-limit is based on user accounts, with each account assigned a capacity of tokens within a specified time period. This capacity is set upon [authorization](./Authentication). Once a user's capacity is reach, all subsequent requests will be denied and the user will recieve ```429 - Too Many Requests``` HTTP response. This feature provides an added layer of security to prevent brute-force attacks and DDoS attacks. 
 :::tip
 The capacity and time-period of tokens is adjusted within the ```application.yml```file.
 ::::
@@ -71,7 +71,7 @@ Theese directories contain records that define the data that is send and retriev
 ### Repositories
 
 In the *repositories* folder, you find classes that provide the configuration of [CRUD](https://stackify.com/what-are-crud-operations/) functionality for the database. 
-Additionally, we enable [caching](./02-Database/Cache.mdx) of certain entities using the ```@Cacheable``` annotation. 
+Additionally, we enable [caching](./Database/Cache) of certain entities using the ```@Cacheable``` annotation. 
 
 
 ### Security
@@ -81,7 +81,7 @@ In here we can define SSO authentication aswell to add it to the ```Secuity Chai
 :::
 
 ### Services
-The *services* folder contains services classes that provide helper functions and logic for various features of the application. This includes functions such as hashing, sending mails and defining custom functions to be used with the [Bloom filter](./02-Database/BloomFilter.mdx).
+The *services* folder contains services classes that provide helper functions and logic for various features of the application. This includes functions such as hashing, sending mails and defining custom functions to be used with the [Bloom filter](./Database/BloomFilter).
 We also define the general connection pool for and storage types for Redis. 
 
 

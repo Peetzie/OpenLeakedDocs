@@ -9,7 +9,7 @@ We make use of authentication for two reasons - simulate the usage of the Single
 [Spring security](https://docs.spring.io/spring-security/reference/index.html) contains many methods for securing an application. We make use of libraries to be consistant with the usage of Spring Boot, 
 but an added benefit is the fact that their implementation is better and more secure compared to what we would be able to write ourselves. 
 
-Specified in the [Database](./02-Database/MariaDB.mdx) section we make us of a simple SQL server to handle our users and their permissions - which is being used by [JDBC Connection](https://docs.spring.io/spring-security/reference/servlet/authentication/passwords/jdbc.html) to handle authentication. 
+Specified in the [Database](./Database/MariaDB) section we make us of a simple SQL server to handle our users and their permissions - which is being used by [JDBC Connection](https://docs.spring.io/spring-security/reference/servlet/authentication/passwords/jdbc.html) to handle authentication. 
 This includes hashing passwords and adding salt. This is done using the ```BCRYPT Algorithm```.
 
 The security type we define is based on sessions. Meaning that once a user is verified they are authorized temporarily using a ```session Cookie```. The cookie expires when the client is closed. 
