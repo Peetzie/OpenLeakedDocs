@@ -4,8 +4,8 @@
  * Modify the docusaurus.config.js file at your site's root instead.
  */
 export default {
-  "title": "An open source approach to leaked account credentials",
-  "tagline": "Leaked credentials are uncool, expensive and a hassle",
+  "title": "Open-Leaked",
+  "tagline": "An open source approach to leaked account credentials",
   "url": "https://peetzie.github.io",
   "baseUrl": "/OpenLeakedDocs/",
   "onBrokenLinks": "warn",

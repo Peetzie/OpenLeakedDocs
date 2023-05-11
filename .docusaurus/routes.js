@@ -44,7 +44,7 @@ export default [
   },
   {
     path: '/OpenLeakedDocs/docs',
-    component: ComponentCreator('/OpenLeakedDocs/docs', '623'),
+    component: ComponentCreator('/OpenLeakedDocs/docs', '874'),
     routes: [
       {
         path: '/OpenLeakedDocs/docs/API/allows-a-user-to-tip-the-maintainers-with-additional-breaches',
@@ -204,13 +204,13 @@ export default [
       },
       {
         path: '/OpenLeakedDocs/docs/Authentication',
-        component: ComponentCreator('/OpenLeakedDocs/docs/Authentication', '90b'),
+        component: ComponentCreator('/OpenLeakedDocs/docs/Authentication', 'b07'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
         path: '/OpenLeakedDocs/docs/Backend',
-        component: ComponentCreator('/OpenLeakedDocs/docs/Backend', '8c0'),
+        component: ComponentCreator('/OpenLeakedDocs/docs/Backend', '401'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
@@ -228,7 +228,7 @@ export default [
       },
       {
         path: '/OpenLeakedDocs/docs/Database/Cache',
-        component: ComponentCreator('/OpenLeakedDocs/docs/Database/Cache', '999'),
+        component: ComponentCreator('/OpenLeakedDocs/docs/Database/Cache', '6b4'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
@@ -259,6 +259,12 @@ export default [
       {
         path: '/OpenLeakedDocs/docs/intro',
         component: ComponentCreator('/OpenLeakedDocs/docs/intro', '279'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/OpenLeakedDocs/docs/Loading',
+        component: ComponentCreator('/OpenLeakedDocs/docs/Loading', '33a'),
         exact: true,
         sidebar: "tutorialSidebar"
       }

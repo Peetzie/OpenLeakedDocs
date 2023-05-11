@@ -2946,7 +2946,7 @@
               "id": "Authentication",
               "title": "Authentication",
               "description": "In the following section we make an introduction to the technical specification and usage of our authentication system.",
-              "source": "@site/docs/04-Authentication.mdx",
+              "source": "@site/docs/04-Authentication.md",
               "sourceDirName": ".",
               "slug": "/Authentication",
               "permalink": "/OpenLeakedDocs/docs/Authentication",
@@ -2969,8 +2969,8 @@
               "unversionedId": "Backend",
               "id": "Backend",
               "title": "Backend",
-              "description": "Folder Strucutre",
-              "source": "@site/docs/03-Backend.mdx",
+              "description": "Overview",
+              "source": "@site/docs/03-Backend.md",
               "sourceDirName": ".",
               "slug": "/Backend",
               "permalink": "/OpenLeakedDocs/docs/Backend",
@@ -3018,8 +3018,8 @@
               "unversionedId": "Database/Cache",
               "id": "Database/Cache",
               "title": "Redis - Cache",
-              "description": "We implement caching as a means to improve the overall performance of our database. It is a requirement for fulfilling the constraints of a RESTful API.",
-              "source": "@site/docs/02-Database/Cache.mdx",
+              "description": "To see how caching is enabled on certain entities check the Backend docs",
+              "source": "@site/docs/02-Database/Cache.md",
               "sourceDirName": "02-Database",
               "slug": "/Database/Cache",
               "permalink": "/OpenLeakedDocs/docs/Database/Cache",
@@ -3096,7 +3096,7 @@
               "unversionedId": "Docker",
               "id": "Docker",
               "title": "Docker containers",
-              "description": "Docker containers are used to manage the application. In the following section we briefly descripe the containerized aspect of our applicaiton design.",
+              "description": "Our application design incorporates the use of Docker containers to manage it.",
               "source": "@site/docs/01-Docker.mdx",
               "sourceDirName": ".",
               "slug": "/Docker",
@@ -3110,7 +3110,7 @@
               },
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "Introduction",
+                "title": "Getting started in 5 minutes ⏱️",
                 "permalink": "/OpenLeakedDocs/docs/intro"
               },
               "next": {
@@ -3138,15 +3138,15 @@
                 "permalink": "/OpenLeakedDocs/docs/Authentication"
               },
               "next": {
-                "title": "Introduction",
-                "permalink": "/OpenLeakedDocs/docs/API/open-leaked-yaml"
+                "title": "Upload data",
+                "permalink": "/OpenLeakedDocs/docs/Loading"
               }
             },
             {
               "unversionedId": "intro",
               "id": "intro",
-              "title": "Introduction",
-              "description": "This is the official site for documentation related to the Open-Leaked project.",
+              "title": "Getting started in 5 minutes ⏱️",
+              "description": "Introduction",
               "source": "@site/docs/00-intro.md",
               "sourceDirName": ".",
               "slug": "/intro",
@@ -3162,6 +3162,30 @@
               "next": {
                 "title": "Docker containers",
                 "permalink": "/OpenLeakedDocs/docs/Docker"
+              }
+            },
+            {
+              "unversionedId": "Loading",
+              "id": "Loading",
+              "title": "Upload data",
+              "description": "With the initial install there is no data contained in the database running on the machine.",
+              "source": "@site/docs/06-Loading.md",
+              "sourceDirName": ".",
+              "slug": "/Loading",
+              "permalink": "/OpenLeakedDocs/docs/Loading",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 6,
+              "frontMatter": {},
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Frontend",
+                "permalink": "/OpenLeakedDocs/docs/Frontend"
+              },
+              "next": {
+                "title": "Introduction",
+                "permalink": "/OpenLeakedDocs/docs/API/open-leaked-yaml"
               }
             }
           ],
@@ -3211,6 +3235,10 @@
               {
                 "type": "doc",
                 "id": "Frontend"
+              },
+              {
+                "type": "doc",
+                "id": "Loading"
               },
               {
                 "type": "category",

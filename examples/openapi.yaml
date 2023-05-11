@@ -10,7 +10,7 @@ info:
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
-  version: 1.7.1
+  version: 2.0.1
   x-logo:
     url: https://raw.githubusercontent.com/Open-Leaked/Monorepo/main/Assets/logo/png/logo-white.png?token=GHSAT0AAAAAACB2FNOUZBLHC6LN6IMED47EZC3SB3Q
     altText: Open-Leaked Logo
@@ -49,6 +49,12 @@ tags:
 - name: authenticationstatus
   description: All endpoints associated with checking if the user is logged in
   x-displayname: Authoirisations
+- name: breaches
+  description: Returns a pageable with all breaches and their information
+  x-displayname: breaches
+- name: csrf
+  description: Returns the CSRF token
+  x-displayname: csrf
 paths:
   /api/domain/breaches:
     post:
@@ -138,9 +144,7 @@ paths:
       responses:
         "200":
           description: Successfully added the user
-        "409":
-          description: Verification already send
-        "406":
+        "400":
           description: Email already exists in the subscribers database
       security:
       - basicAuth: []
@@ -155,7 +159,7 @@ paths:
       responses:
         "200":
           description: Successfully removed the user from the subscribers database
-        "400":
+        "404":
           description: Failed to remove the user - User is not in the subscribers table
       security:
       - basicAuth: []
@@ -420,14 +424,14 @@ components:
     Email:
       type: object
       properties:
-        Local:
-          type: string
-          description: First part of the email pre-@
-          example: johndoe
         Domain:
           type: string
           description: Second part of the email post-@
           example: example.com
+        Local:
+          type: string
+          description: First part of the email pre-@
+          example: johndoe
       example:
         local: example
         domain: example.com

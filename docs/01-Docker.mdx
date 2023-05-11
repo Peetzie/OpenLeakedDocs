@@ -7,22 +7,23 @@ sidebar_position: 2
 <img src="https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png" alt="drawing" width="40%" height="200"/>
 </p>
 
-[Docker](https://www.docker.com/) containers are used to manage the application. In the following section we briefly descripe the containerized aspect of our applicaiton design.
+Our application design incorporates the use of [Docker](https://www.docker.com/) containers to manage it. 
+In the subsequnet section, we will provide a brief overview of how containerization is implemented in our application. 
 
-There are three different types of docker-compose nessesary for the application. 
+Our application makes use of three different types of ```docker-compose```files: 
 1. ```docker-compose-production```
-    - Used to manage the production level containers. Some of which are simplified by making use of server packages. 
-    This reduces the space and complexity. 
+    - This file manages the production-level containers, some of which are simplified through the use of server packages. 
+    This approach reduces both the space requirements and complexity of the containers. 
 2. ```docker-compose```
-    - This docker compose file is used throughout development. It utilises Docker images that are not all server based.
-    This allows the images to contain tools that could be used for development. 
+    - This file is used throughout the development process. It uilizes Docker images that are not all server-based, which allows the images to contain tools that could be used for development purposes. 
 3. ```docker-compose-import-database``` 
-    - A usefull container containing the images requred to import data into the database. 
+    - This container contains the necessary images required to import data into the database.
+
 
 :::info
-A great example of the different images is the Redis Image, where the development image contains RedisStack. 
-This is a usefull tool to manage the Redis Cache database
+The Redis Image is a great example of how we use different images in our application. The development image contains RedisStack, which is a usefull tool to manage the Redis Cache database. 
 :::
+
 
 ## Versioning
 
@@ -34,48 +35,36 @@ This is a usefull tool to manage the Redis Cache database
 | Redis         | redis-stack:latest                    | 6379
 
 :::info
-The front end is not containerized but rendered client side in HTML send by HTTP from Nginx. 
-However Nginx is listening for HTTP traffic on port 5173 for the Frontend
+In production, the frontend of our application is not containerized. Instead, it is rendered client-side via HTML, which is provided by the reverse proxy, Nginx. 
+To support this approach, Nginx is configured to listen for HTTP traffic on port 5173 from the frontend. 
 :::
 
 :::tip
-
-You can change the required ports if you have a service already running by editing the [docker-compose.yml](#) file
-The same can be done for the deployment Docker compose file. 
+You can modify the used ports by editing the ```docker-compose``` files. 
 :::
 
 ## Why containerized architecture?
-This is simply to accomodate different development enviroments and to ensure that the final application is compatible with the server. 
+Our choise of a containerized architecture is motivated by several reasons. 
+Firstly, it enables us to accomodate different development enviroments and ensure compatibility with the server. 
+While the same goal can be achieved using Virtual Machines, it comes at cost - using more resources. 
+In contrast, containers allow us to use the same Host-OS, avoiding duplication of the OS by packaging the required binaries and libraries into each container. Communication between containers are facilitated through the use of a reverse proxy and network bridges in the docker file.
 
-The same goal is achievable by the use of Virtual Machines - But at the cost of resources. 
-
-Containers allows us to use the same host-os and avoid duplicating the OS by packagig the required binaries and libraries to each container. 
-
-Communication is done through the reverse proxy and network bridges between containers. 
 
 :::caution
-The containers will by default not inerhit any system files from the host-os. This includes the timezone files. 
-If the server(s) are deployed to regions out of the ```TZ=Europe/Copenhagen``` timezone please change that in the compose file. 
+By default, the containers do not inherit any system files from the Host-OS, including timezone files. If the server(s) are deployed in regions outside of the ```TZ=Europe/Copenhagen``` timezone, it is important to modify this setting in the relevant compose file to ensure proper functionality of the application. 
 :::
 
 
-## Deployment
+## Deploying all or one image
+For first time installing please follow this [installation guide](intro#-installation). 
 
-In order to run the application choose either of the versions of the software first clone the [GitHub Repository](https://github.com/Open-Leaked/Monorepo).
+After setting up the installation for the first time you can restart the applcation by running the follwing commands:
 
-Select either of the 3 ```Docker Compose files``` and type in the following command
-
-```bash
-docker compose build all
-```
-
-To build individual images use 
-```bash
-docker compose build <image>
-```
-:::info
-The development compose file also contains a ```frontend``` image. This is to enable automatic change update in React. 
-This feature is disbled in production where it is simply rendered HTML
-::::
-
-
+1. To restart all containers
+    ```bash
+    docker compose up --build all 
+    ```
+2. To restart an individual container
+    ```bash
+    docker compose up --build <container-name>
+    ``` 

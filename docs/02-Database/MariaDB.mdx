@@ -9,7 +9,7 @@ We also here define basic schematics used to deploy the project.
 The database is based on a SQL database in MariaDB. 
 Therefor the entity relationships are important. If improperly design they would slow down the application and vice versa. 
 
-The database evolves around 1 ```SCHEME```. 
+The database evolves around one ```schema```. 
 
 The entity relationships are freely available here for the interrested users:
 
@@ -20,7 +20,7 @@ The entity relationships are freely available here for the interrested users:
 
 ## Loading the schematics
 
-To start the Docker containers the SCHEME of the database is important. 
+To start the Docker containers the ```schema``` of the database is important. 
 To get you started we have provided that in SQL form here.
 
 Essentially the following snippet creates the tables in the database and adds constraints to values, assigns primary keys and foregin keys.  
@@ -168,7 +168,7 @@ create table authorities
 );
 ```
 :::tip
-The following assumes that you've created the ```SCHEME```
+The following assumes that you've created the ```schema```
 If not enter the following containerized
 ```sql
 CREATE SCHEMA IF NOT EXISTS OPEN_LEAKED
@@ -178,48 +178,46 @@ use OPEN_LEAKED
 :::
 
 ## Design thoughts
-The design of the database evolves around the idea that each breach in the real world is unique, however their associated data is not. 
-An ```searchable``` can be found in multiple databases. This help us set up the different entity relationships that are required. 
+The database deisgn is based on the concept that each real-world breach is unique, but the associated data is not. 
+This means that a ```searchable```, such as a username, email, password or domain may be present in multiple databreaches. 
+This approach allows us to establish the required entity relationships for the application. During pre-processing of the data each searchable entity is assigned a unique ID by MariaDB, as is each individual breach. 
+
+
 
 ### Data
-During pre-processing each ```searchable``` gets an ID assigned by MariaDB. The same goes for each indiviudal breach. 
-Large tables are then created containing an id for an ```searchable``` and an id for a breach. 
-If a ```searchable``` is found in multiple breaches the ID would be duplicated in that table. However the primary key with be unique as the associated breach ID would differ from the remainder. 
+large tables are created each containing an ID for each type of ```searchable``` entity and an id for a breach.
+If a searchable entity appears in multiple breaches, its ID will be duplicated in the table, but the primary key will remain unique due to the different associated breach IDs. 
+By splitting up the entity types and using unique IDs, we can avoid searching through unnecessary records, resulting in faster query speeds. 
+By splitting the email into ```local``` and ```domain``` we can easily filter and search based on the domain name alone. This significantly reduce the number of records tht need to be searched, resulting in faster query speeds. 
+Additionally it allows for a more targed searches,  such as finding all breaches associated with a particular domain name. 
 
-By splitting up entity types we can avoid looking through more records than nessesary - resulting in faster speeds. 
+:::danger
+To ensure security, it is strongly advised to restrict the usage of domain search functionality to authorized users only. This is because it could be exploited by attackers to gather sensitive information about a domain. 
+It is recommended to implement a verification process that confirms the user is the owner or administrator of the domain.
+::::
+
+
 
 
 ### Authorisations
-There are two disctinct tables from the data tables even though they are contained in the same schematics. 
-This is ```user``` and ```authorities``` a base schematic from [JDBC Authentication](https://docs.spring.io/spring-security/reference/servlet/authentication/passwords/jdbc.html)
+In the application, there are two tables ```user```and ```authorities```, that are used for authentication. These tables are an extension of the [JDBC Authentication](https://docs.spring.io/spring-security/reference/servlet/authentication/passwords/jdbc.html) base schema which is provided by 
+[Spring Security](https://docs.spring.io/spring-security/reference/index.html).
 
-Here they define the *default* user schematics as:
-```sql
-create table users(
-	username varchar_ignorecase(50) not null primary key,
-	password varchar_ignorecase(500) not null,
-	enabled boolean not null
-);
+The ```user``` table contains the user's username, passwrod and whether the account is enabled or disabled. 
+The ```authorities``` table contains the user's role. 
 
-create table authorities (
-	username varchar_ignorecase(50) not null,
-	authority varchar_ignorecase(50) not null,
-	constraint fk_authorities_users foreign key(username) references users(username)
-);
-create unique index ix_auth_username on authorities (username,authority);
-```
+Our ```user```table have been extended to also contain information regarding the student number or employee initials, and a full name. 
+The ```authorities``` remains to default values. 
 
-To define our much the same way, however we accomodate a bit more information to simulate the info that we possibly would have utilizing the Single-Sign On System from DTU. 
+
+#### Future works
+A great idea for future development was perhabs to include the Single-Sign On system from DTU, to automaticly allow users access without them having to create an account. 
+
 :::info
 Single sign on allows users to be authentication across sites by sending a special type of authentication token. 
 This can both be a vulnerability and a security boost based on the application. 
 By using the two-factor authentication from DTU, SSO could help in further securing this application 
 :::
-
-## Connections
-
-MariaDB is run through the containerzied image. Thus mounting of volumes and ports are listed in the ```Docker compose``` files. 
-All connections from the backend to mariaDB is done through [*Spring Boot*](https://spring.io/) and the ```JPA Connection Pool```
 
 
 

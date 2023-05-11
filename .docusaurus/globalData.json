@@ -186,6 +186,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "Loading",
+              "path": "/OpenLeakedDocs/docs/Loading",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "/category/api-documentation",
               "path": "/OpenLeakedDocs/docs/category/api-documentation",
               "sidebar": "openApiSidebar"

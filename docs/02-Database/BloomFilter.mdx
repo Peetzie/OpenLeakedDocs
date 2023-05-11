@@ -63,7 +63,33 @@ With the Pickle file you can transfer it to any server available.
 Using the same script you are able to reconstruct the filter. 
 
 As a small terminal application the task of loading and dumping filters are made alot easier as it takes you through all steps required.
-
 :::caution
-It is difficult to make the dumping process be hanlded by other languages than python - the dumps are byte safe arrays which many compresses / alters when deserialized or saved to disk. 
+It is difficult to make the dumping process to be handled by other languages than python - the dumps are byte safe arrays which many compresses / alters when deserialized or saved to disk. 
 :::
+## Launching the script
+A brief guide to running the scripts are provided here
+
+### Requirements
+A compination of python packages are required. 
+> - Dask
+> - Redis
+> - TQDM
+> - Pandas
+:::tip
+We commend setting up a virtual enviroment instead of a global install.
+
+You can read more [here](https://docs.python.org/3/library/venv.html).
+:::
+To install all required packages run the following command:
+```zsh
+python -m pip install "dask[complete]" "pandas" "tqdm"  "redis"
+```
+Now simply run either python file by:
+```zsh
+python <python-file.py>
+```
+:::caution
+It may take several hours to build the Bloom Filter depending on size.
+Whilst loading an existing filter should be done in a couple of seconds.
+:::
+

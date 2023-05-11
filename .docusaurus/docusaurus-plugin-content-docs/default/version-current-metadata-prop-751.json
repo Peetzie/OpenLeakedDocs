@@ -11,7 +11,7 @@
     "tutorialSidebar": [
       {
         "type": "link",
-        "label": "Introduction",
+        "label": "Getting started in 5 minutes ⏱️",
         "href": "/OpenLeakedDocs/docs/intro",
         "docId": "intro"
       },
@@ -70,6 +70,12 @@
         "label": "Frontend",
         "href": "/OpenLeakedDocs/docs/Frontend",
         "docId": "Frontend"
+      },
+      {
+        "type": "link",
+        "label": "Upload data",
+        "href": "/OpenLeakedDocs/docs/Loading",
+        "docId": "Loading"
       },
       {
         "type": "category",
@@ -657,7 +663,7 @@
     "Backend": {
       "id": "Backend",
       "title": "Backend",
-      "description": "Folder Strucutre",
+      "description": "Overview",
       "sidebar": "tutorialSidebar"
     },
     "Database/BloomFilter": {
@@ -669,7 +675,7 @@
     "Database/Cache": {
       "id": "Database/Cache",
       "title": "Redis - Cache",
-      "description": "We implement caching as a means to improve the overall performance of our database. It is a requirement for fulfilling the constraints of a RESTful API.",
+      "description": "To see how caching is enabled on certain entities check the Backend docs",
       "sidebar": "tutorialSidebar"
     },
     "Database/Introduction": {
@@ -687,7 +693,7 @@
     "Docker": {
       "id": "Docker",
       "title": "Docker containers",
-      "description": "Docker containers are used to manage the application. In the following section we briefly descripe the containerized aspect of our applicaiton design.",
+      "description": "Our application design incorporates the use of Docker containers to manage it.",
       "sidebar": "tutorialSidebar"
     },
     "Frontend": {
@@ -698,8 +704,14 @@
     },
     "intro": {
       "id": "intro",
-      "title": "Introduction",
-      "description": "This is the official site for documentation related to the Open-Leaked project.",
+      "title": "Getting started in 5 minutes ⏱️",
+      "description": "Introduction",
+      "sidebar": "tutorialSidebar"
+    },
+    "Loading": {
+      "id": "Loading",
+      "title": "Upload data",
+      "description": "With the initial install there is no data contained in the database running on the machine.",
       "sidebar": "tutorialSidebar"
     }
   }

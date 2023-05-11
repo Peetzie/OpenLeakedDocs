@@ -2,105 +2,127 @@
 sidebar_position: 1
 ---
 
-# Introduction
+# Getting started in 5 minutes ⏱️ 
 
+## Introduction
 <p align="center">
 <img src={require("/static/img/openleaked.png").default} width="375"/>
 </p>
 
+This site serves as the official documentaion for the Open-Leaked project. 
 
-This is the official site for documentation related to the Open-Leaked project. 
-
-The project was initially developed by Niels Kjær Ersbøll and Frederik Peetz-Schou Larsen as a Bachelor Thesis. 
-
+The project was developed by Niels Kjær Ersbøll and Frederik Peetz-Schou Larsen as part of a bachelor's thesis. 
 
 
-The docs wiil covers anything from original design ideas for the future and a walk through of how the project is structured. 
-Many of this is also included in the Thesis. 
+The documentation covers a range of topics, including the original design ideas and a detaield walkthrough of the project's structure. Much of this content is also included in the thesis. 
 
-As an added benefit we allow ourselves to fully document the RESTful API ustilized in the project. 
+
+As an added benefit, we have taken the opportunity to document the RESTful API to its full extend. 
 
 **Hosting**
 
-The application is currenly being hosted on a server at The Compute Department at The Technical University of Denmark
+The application is currently being hosted on a server located at the Compute Department of the Technical University of Denmark. 
+Therfore access is restricted by a VPN. 
 
 
 :::info
-To start the project it is important to read through the documentation. However a Quick start / getting started is available here
+To get a full overview of the project please read through the entire documentation - however we have included a guide to getting you setup running the application on your own machine - Please check [Installation (1st time)](#installation-1st-time)
+
 :::
+## ⚓ Requirements 
+Getting started only requires [Docker](https://www.docker.com/)
 
+## ✨ Installation  
 
-## Folder structure for the entire Monorepo
+1. Begin by downloading the [Github Repository](https://github.com/Open-Leaked/Monorepo) into your preffered location. 
+    ```bash
+    git clone https://github.com/Open-Leaked/Monorepo.git
+    cd Monorepo
+    ```
 
-```bash
-.
-├── Assets/
-│   ├── guideline/
-│   │   └── fonts
-│   └── logo
-├── backend/
-│   ├── src
-│   ├── main/
-│   │   ├── java/
-│   │   │   ├── dk.dtu.openleaked.Backend/
-│   │   │   │   ├── configuration/
-│   │   │   │   ├── controllers/
-│   │   │   │   ├── entrypoints/
-│   │   │   │   ├── filters/
-│   │   │   │   ├── models/
-│   │   │   │   │   ├── request/
-│   │   │   │   │   └── response/
-│   │   │   │   ├── repositories/
-│   │   │   │   ├── security/
-│   │   │   │   └── services/
-│   │   │   └── OpenLeakedBackendServerApplication
-│   │   └── Resources/
-│   │       ├── mail/
-│   │       │   └── html/
-│   │       └── application.yml
-│   ├── Dockerfile
-│   ├── Dockerfile-production
-│   └── pom.xml
-├── dataparsing/
-│   ├── filterbuilder/
-│   ├── newDataIndexer/
-│   ├── Parser/
-│   ├── Transformer
-│   └── sorter.sh
-├── frontend/
-│   ├── public/
-│   ├── src/
-│   │   ├── api/
-│   │   ├── components/
-│   │   ├── hooks/
-│   │   ├── types/
-│   │   ├── app.tx
-│   │   └── main.tsx
-│   └── DockerFile
-├── mariadb/
-│   ├── config/
-│   ├── db/
-│   │   ├── mysql/
-│   │   ├── OPEN_LEAKED/
-│   │   ├── performance_schema/
-│   │   └── sys/
-│   ├── initdb/
-│   ├── Dockerfile
-│   └── import.sql
-├── performance-testing/
-│   ├── 0-copy-16.csv
-│   └── locustfile.py
-├── proxy/
-│   ├── Dockerfile
-│   └── nginx.conf
-├── target/
-│   ├── classes/
-│   ├── generated-sources/
-│   └── maven-status/
-├── docker-compose.yml
-├── docker-compose-import-data.yml
-├── docker-compose-prodocution.yml
-├── Dockerfile-nginx-production
-├── nginx-production.conf
-└── external libraries/
-```
+    Once you open the Monorepo folder, you should observe a folder structure that looks like this: 
+    this. 
+    ```bash
+    .
+    ├── Assets/
+    │   ├── guideline/
+    │   │   └── fonts
+    │   └── logo/
+    ├── backend/
+    │   ├── src
+    │   ├── main/
+    │   │   ├── java/
+    │   │   │   ├── dk.dtu.openleaked.Backend/
+    │   │   │   │   ├── configuration/
+    │   │   │   │   ├── controllers/
+    │   │   │   │   ├── entrypoints/
+    │   │   │   │   ├── filters/
+    │   │   │   │   ├── models/
+    │   │   │   │   │   ├── request/
+    │   │   │   │   │   └── response/
+    │   │   │   │   ├── repositories/
+    │   │   │   │   ├── security/
+    │   │   │   │   └── services/
+    │   │   │   └── OpenLeakedBackendServerApplication
+    │   │   └── Resources/
+    │   │       ├── mail/
+    │   │       │   └── html/
+    ├── dataparsing/
+    │   ├── filterbuilder/
+    │   ├── newDataIndexer/
+    │   ├── Parser/
+    │   ├── Transformer
+    ├── frontend/
+    │   ├── public/
+    │   ├── src/
+    │   │   ├── api/
+    │   │   ├── components/
+    │   │   ├── hooks/
+    │   │   ├── types/
+    │   └── DockerFile
+    ├── mariadb/
+    │   ├── config/
+    │   ├── db/
+    │   │   ├── mysql/
+    │   │   ├── OPEN_LEAKED/
+    │   │   ├── performance_schema/
+    │   │   └── sys/
+    │   ├── initdb/
+    ├── performance-testing/
+    ├── proxy/
+    ├── target/
+    │   ├── classes/
+    │   ├── generated-sources/
+    │   └── maven-status/
+    ```
+
+    Each primary folder (e.g., backend, frontend, proxy etc.) contains a Dockerfile, which is primarily responsible for controlling volume mounting for each image type, copying required files from the Host-OS and installing packages. 
+
+    You can choose one of the trhee ```Docker Compose``` structures located in the Monorepo folder: 
+
+    For more information of which one to choose, click [here.](./01-Docker.mdx)
+    1. ```docker-compose-production``` 
+    2. ```docker-compose```
+    3. ```docker-compose-import-database``` 
+
+2. To initiate the installation and launch the application services, simply launch all Docker containers. The Dockerfiles manage the installation's definitions and structure. 
+    ```bash
+    docker compose -f <Docker-Compose-File> up --build  
+    ```
+
+    ```<Docker-Compose-File>``` specifies a path to a Docker Compose file. 
+
+    Example usage: 
+    ```bash
+    docker compose -f docker-compose.yml up --build  
+    ```
+
+3. Open your preferred web browser and navigate to ```localhost```.
+:::tip
+You dont have to specify ports in the URL, this is handled by the proxy
+::::
+🎊 Congratulations! The application and its services are now up and running on your local machine. 🎊
+:::info
+No users are added by default. To login and use the system, simply use the registration form.
+In addition there is no data in the database. See [Filling the databas](loading) section to get more information
+:::

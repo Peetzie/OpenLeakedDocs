@@ -3,7 +3,7 @@
   "id": "Backend",
   "title": "Backend",
   "description": "Overview",
-  "source": "@site/docs/03-Backend.mdx",
+  "source": "@site/docs/03-Backend.md",
   "sourceDirName": ".",
   "slug": "/Backend",
   "permalink": "/OpenLeakedDocs/docs/Backend",
