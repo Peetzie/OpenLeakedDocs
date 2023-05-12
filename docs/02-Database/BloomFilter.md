@@ -1,18 +1,18 @@
 ---
 sidebar-position: 3
 ---
-# Redis - BloomFilter
+# Redis - Bloom filter
 
 ## A brief introduction
 
-Not everybody is familar with Bloom Filters of which we give a short introduction in the following section. 
+Not everybody is familar with Bloom filters of which we give a short introduction in the following section. 
 
-In addition to the cache, we make use of a Bloom Filter data structure to further improve the responsiveness of our application.
-A Bloom Filter is a well known solution providing probabilistic responses to queries regarding values in a set. 
+In addition to the cache, we make use of a Bloom filter data structure to further improve the responsiveness of our application.
+A Bloom filter is a well known solution providing probabilistic responses to queries regarding values in a set. 
 
-A Bloom Filter can answer a simple query of whether a given value is part of a specific set. 
+A Bloom filter can answer a simple query of whether a given value is part of a specific set. 
 By using byte arrays, the Bloom Filter can provide an accurate response that an element is **not** part of the set. Additionally, within a certain probabilistic range, 
-the Bloom Filter can provide a response that the element might be in the set. In the latter case, a lookup in the persistent storage layer is performed to determine whether the element is indeed part of the set. 
+the Bloom filter can provide a response that the element might be in the set. In the latter case, a lookup in the persistent storage layer is performed to determine whether the element is indeed part of the set. 
 
 By utilises Bloom Filters, we can significantly improve the speed and effeciency of our systems operations, particularly given the size of our dataset. 
 :::info
