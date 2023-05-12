@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[512],{86875:e=>{e.exports=JSON.parse('{"title":"API Docs","slug":"/category/api-documentation","permalink":"/OpenLeakedDocs/docs/category/api-documentation","navigation":{"next":{"title":"Introduction","permalink":"/OpenLeakedDocs/docs/API/open-leaked-yaml"}}}')}}]);
