@@ -17,7 +17,7 @@ const FeatureList = [
     Svg: require('../../../static/folder-directory-files-icon.svg').default,
     description: (
       <>
-      A database conatining +300 million user credentials and more coming!
+      A database conatining +800 million user credentials and more coming!
       </>
     ),
   },
