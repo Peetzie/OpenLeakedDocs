@@ -2994,7 +2994,7 @@
               "id": "Database/BloomFilter",
               "title": "Redis - BloomFilter",
               "description": "A brief introduction",
-              "source": "@site/docs/02-Database/BloomFilter.mdx",
+              "source": "@site/docs/02-Database/BloomFilter.md",
               "sourceDirName": "02-Database",
               "slug": "/Database/BloomFilter",
               "permalink": "/OpenLeakedDocs/docs/Database/BloomFilter",

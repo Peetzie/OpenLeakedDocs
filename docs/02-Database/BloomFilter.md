@@ -49,14 +49,14 @@ An entire overview of commands possible to implement is listed on the Bloom Filt
 Spring Boot does not build the filter. Instead this is done by a Python script. 
 The reason for this design is to allow users to reuse filters and allow server maintaince (the filter are lost upon server shutdown). 
 ```RedisBloom```the module in Redis Stack contianing the Filter has methods available for dumping filters using Python and Loading them back in. 
-By the use of their documentation we have created a simple application using two python scripts; ```main.py``` and ```builder.py```
+By the use of their documentation we have created a simple application using two python scripts; ```Mover.py``` and ```Builder.py```
 
-Using ```main.py``` to construct the filter. We load in TSV files. Essentially creating a filter for each searchable type. 
+Using ```Mover.py``` to construct the filter. We load in TSV files. Essentially creating a filter for each searchable type. 
 The capacity of the filter is set with the variable; ```BF_CAPACITY = 405635679``` - allowing plenty of capacity.
 Once the filter(s) are build they can be utilized through the backend if build on the server or transfered to the server. 
 
 ### Transfering / loading a previously created filter
-The script ```builder.py``` is a small terminal applciation that allows dumping and loading the filters to persistent storage. 
+The script ```Builder.py``` is a small terminal applciation that allows dumping and loading the filters to persistent storage. 
 The script makes use of Pandas dataframes to create python objects containing iterative dump strings. These are then deserialized to a Pickle file allowing for consize saving of the python object. 
 With the Pickle file you can transfer it to any server available. 
 

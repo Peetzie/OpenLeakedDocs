@@ -44,7 +44,7 @@ export default [
   },
   {
     path: '/OpenLeakedDocs/docs',
-    component: ComponentCreator('/OpenLeakedDocs/docs', '874'),
+    component: ComponentCreator('/OpenLeakedDocs/docs', '171'),
     routes: [
       {
         path: '/OpenLeakedDocs/docs/API/allows-a-user-to-tip-the-maintainers-with-additional-breaches',
@@ -222,7 +222,7 @@ export default [
       },
       {
         path: '/OpenLeakedDocs/docs/Database/BloomFilter',
-        component: ComponentCreator('/OpenLeakedDocs/docs/Database/BloomFilter', 'ec7'),
+        component: ComponentCreator('/OpenLeakedDocs/docs/Database/BloomFilter', 'a8f'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
