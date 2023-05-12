@@ -35,6 +35,11 @@
   justify-content: start;
 }
 
+.navbar__logo img{
+  height:180%;
+  margin-top:  -13px;
+}
+
 .api-method>.menu__link::before {
   width: 50px;
   height: 20px;
@@ -48,7 +53,7 @@
   text-align: center;
   flex-shrink: 0;
   border-color: transparent;
-  color: white;
+  color: white
 }
 
 .get>.menu__link::before {
