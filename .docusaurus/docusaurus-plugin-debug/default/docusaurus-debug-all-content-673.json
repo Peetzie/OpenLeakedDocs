@@ -2981,7 +2981,7 @@
               "frontMatter": {},
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "Redis - BloomFilter",
+                "title": "Redis - Bloom filter",
                 "permalink": "/OpenLeakedDocs/docs/Database/BloomFilter"
               },
               "next": {
@@ -2992,7 +2992,7 @@
             {
               "unversionedId": "Database/BloomFilter",
               "id": "Database/BloomFilter",
-              "title": "Redis - BloomFilter",
+              "title": "Redis - Bloom filter",
               "description": "A brief introduction",
               "source": "@site/docs/02-Database/BloomFilter.md",
               "sourceDirName": "02-Database",
@@ -3036,7 +3036,7 @@
                 "permalink": "/OpenLeakedDocs/docs/Database/MariaDB"
               },
               "next": {
-                "title": "Redis - BloomFilter",
+                "title": "Redis - Bloom filter",
                 "permalink": "/OpenLeakedDocs/docs/Database/BloomFilter"
               }
             },

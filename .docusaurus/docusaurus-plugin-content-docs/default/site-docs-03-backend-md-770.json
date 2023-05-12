@@ -14,7 +14,7 @@
   "frontMatter": {},
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Redis - BloomFilter",
+    "title": "Redis - Bloom filter",
     "permalink": "/OpenLeakedDocs/docs/Database/BloomFilter"
   },
   "next": {

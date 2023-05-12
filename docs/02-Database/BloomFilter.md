@@ -66,7 +66,7 @@ As a small terminal application the task of loading and dumping filters are made
 :::caution
 It is difficult to make the dumping process to be handled by other languages than python - the dumps are byte safe arrays which many compresses / alters when deserialized or saved to disk. 
 :::
-## Launching the script
+## Launching the scripts
 A brief guide to running the scripts are provided here
 
 ### Requirements
@@ -88,8 +88,24 @@ Now simply run either python file by:
 ```zsh
 python <python-file.py>
 ```
+
+#### Building the filder
+Buildng the filter is based on the ```Builder.py```.
+When you run the file you will be prompted to enter an absolute path for a TSV file. 
+The TSV file must be the files coming from the [data parsing](../Loading).
+It only uses one TSV file per run. Therefore you chose which filters you want to build. If *all* you have to run the script for each type of data you want in the Bloom filter.
+
+Remember that the Redis Docker container must be running - before you can fill the Bloom Filter
+To read more about starting individual docker containers [click here](../Docker#deploying-all-or-one-image)
+
+We have also provided the code right here:
+```bash
+docker compose up --build redis
+```
+
 :::caution
 It may take several hours to build the Bloom Filter depending on size.
 Whilst loading an existing filter should be done in a couple of seconds.
 :::
+
 

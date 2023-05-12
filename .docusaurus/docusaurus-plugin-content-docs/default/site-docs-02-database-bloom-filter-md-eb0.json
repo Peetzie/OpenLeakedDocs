@@ -1,7 +1,7 @@
 {
   "unversionedId": "Database/BloomFilter",
   "id": "Database/BloomFilter",
-  "title": "Redis - BloomFilter",
+  "title": "Redis - Bloom filter",
   "description": "A brief introduction",
   "source": "@site/docs/02-Database/BloomFilter.md",
   "sourceDirName": "02-Database",

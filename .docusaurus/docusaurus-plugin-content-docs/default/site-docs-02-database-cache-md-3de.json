@@ -20,7 +20,7 @@
     "permalink": "/OpenLeakedDocs/docs/Database/MariaDB"
   },
   "next": {
-    "title": "Redis - BloomFilter",
+    "title": "Redis - Bloom filter",
     "permalink": "/OpenLeakedDocs/docs/Database/BloomFilter"
   }
 }

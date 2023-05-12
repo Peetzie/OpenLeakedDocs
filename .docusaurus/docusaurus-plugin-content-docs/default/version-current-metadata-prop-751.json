@@ -47,7 +47,7 @@
           },
           {
             "type": "link",
-            "label": "Redis - BloomFilter",
+            "label": "Redis - Bloom filter",
             "href": "/OpenLeakedDocs/docs/Database/BloomFilter",
             "docId": "Database/BloomFilter"
           }
@@ -668,7 +668,7 @@
     },
     "Database/BloomFilter": {
       "id": "Database/BloomFilter",
-      "title": "Redis - BloomFilter",
+      "title": "Redis - Bloom filter",
       "description": "A brief introduction",
       "sidebar": "tutorialSidebar"
     },
