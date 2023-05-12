@@ -3,41 +3,6 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 
 export default [
   {
-    path: '/OpenLeakedDocs/__docusaurus/debug',
-    component: ComponentCreator('/OpenLeakedDocs/__docusaurus/debug', '664'),
-    exact: true
-  },
-  {
-    path: '/OpenLeakedDocs/__docusaurus/debug/config',
-    component: ComponentCreator('/OpenLeakedDocs/__docusaurus/debug/config', '0c4'),
-    exact: true
-  },
-  {
-    path: '/OpenLeakedDocs/__docusaurus/debug/content',
-    component: ComponentCreator('/OpenLeakedDocs/__docusaurus/debug/content', '800'),
-    exact: true
-  },
-  {
-    path: '/OpenLeakedDocs/__docusaurus/debug/globalData',
-    component: ComponentCreator('/OpenLeakedDocs/__docusaurus/debug/globalData', '4ab'),
-    exact: true
-  },
-  {
-    path: '/OpenLeakedDocs/__docusaurus/debug/metadata',
-    component: ComponentCreator('/OpenLeakedDocs/__docusaurus/debug/metadata', 'f77'),
-    exact: true
-  },
-  {
-    path: '/OpenLeakedDocs/__docusaurus/debug/registry',
-    component: ComponentCreator('/OpenLeakedDocs/__docusaurus/debug/registry', '298'),
-    exact: true
-  },
-  {
-    path: '/OpenLeakedDocs/__docusaurus/debug/routes',
-    component: ComponentCreator('/OpenLeakedDocs/__docusaurus/debug/routes', 'd80'),
-    exact: true
-  },
-  {
     path: '/OpenLeakedDocs/markdown-page',
     component: ComponentCreator('/OpenLeakedDocs/markdown-page', '63a'),
     exact: true

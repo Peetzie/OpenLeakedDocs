@@ -1,214 +1,171 @@
 {
-  "/OpenLeakedDocs/__docusaurus/debug-664": {
-    "__comp": "__comp---theme-debug-config-23-a-2ff",
-    "__context": {
-      "plugin": "plugin---open-leaked-docs-docusaurus-debuge-79-8e9"
-    }
-  },
-  "/OpenLeakedDocs/__docusaurus/debug/config-0c4": {
-    "__comp": "__comp---theme-debug-config-23-a-2ff",
-    "__context": {
-      "plugin": "plugin---open-leaked-docs-docusaurus-debuge-79-8e9"
-    }
-  },
-  "/OpenLeakedDocs/__docusaurus/debug/content-800": {
-    "__comp": "__comp---theme-debug-contentba-8-ce7",
-    "__context": {
-      "plugin": "plugin---open-leaked-docs-docusaurus-debuge-79-8e9"
-    },
-    "allContent": "allContent---open-leaked-docs-docusaurus-debug-content-246-874"
-  },
-  "/OpenLeakedDocs/__docusaurus/debug/globalData-4ab": {
-    "__comp": "__comp---theme-debug-global-dataede-0fa",
-    "__context": {
-      "plugin": "plugin---open-leaked-docs-docusaurus-debuge-79-8e9"
-    }
-  },
-  "/OpenLeakedDocs/__docusaurus/debug/metadata-f77": {
-    "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
-    "__context": {
-      "plugin": "plugin---open-leaked-docs-docusaurus-debuge-79-8e9"
-    }
-  },
-  "/OpenLeakedDocs/__docusaurus/debug/registry-298": {
-    "__comp": "__comp---theme-debug-registry-679-501",
-    "__context": {
-      "plugin": "plugin---open-leaked-docs-docusaurus-debuge-79-8e9"
-    }
-  },
-  "/OpenLeakedDocs/__docusaurus/debug/routes-d80": {
-    "__comp": "__comp---theme-debug-routes-946-699",
-    "__context": {
-      "plugin": "plugin---open-leaked-docs-docusaurus-debuge-79-8e9"
-    }
-  },
   "/OpenLeakedDocs/markdown-page-63a": {
-    "__comp": "__comp---theme-mdx-page-1-f-3-b90",
+    "__comp": "1f391b9e",
     "__context": {
-      "plugin": "plugin---open-leaked-docs-markdown-page-193-c11"
+      "plugin": "19358f37"
     },
-    "content": "content---open-leaked-docs-markdown-page-393-a5c"
+    "content": "393be207"
   },
   "/OpenLeakedDocs/docs-171": {
-    "__comp": "__comp---theme-doc-page-1-be-9be",
+    "__comp": "1be78505",
     "__context": {
-      "plugin": "plugin---open-leaked-docs-docs-655-fdd"
+      "plugin": "655f299f"
     },
-    "versionMetadata": "versionMetadata---open-leaked-docs-docs-935-8b4"
+    "versionMetadata": "935f2afb"
   },
   "/OpenLeakedDocs/docs/API/allows-a-user-to-tip-the-maintainers-with-additional-breaches-40c": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-api-allows-a-user-to-tip-the-maintainers-with-additional-breaches-7-e-5-b15"
+    "__comp": "4c5e977b",
+    "content": "7e5f95be"
   },
   "/OpenLeakedDocs/docs/API/authenticationstatus-054": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-api-authenticationstatusbd-8-823"
+    "__comp": "4c5e977b",
+    "content": "bd84ed2b"
   },
   "/OpenLeakedDocs/docs/API/authorisations-4fd": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-api-authorisationsd-7-d-ddc"
+    "__comp": "4c5e977b",
+    "content": "d7dc160a"
   },
   "/OpenLeakedDocs/docs/API/authorise-an-existing-user-35c": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-api-authorise-an-existing-userfac-824"
+    "__comp": "4c5e977b",
+    "content": "facdae05"
   },
   "/OpenLeakedDocs/docs/API/checks-that-the-backend-service-is-running-d9b": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-api-checks-that-the-backend-service-is-running-1-b-2-e72"
+    "__comp": "4c5e977b",
+    "content": "1b22072f"
   },
   "/OpenLeakedDocs/docs/API/checks-whether-or-not-the-current-client-is-authorized-5c0": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-api-checks-whether-or-not-the-current-client-is-authorized-2-e-3-351"
+    "__comp": "4c5e977b",
+    "content": "2e3dc0e5"
   },
   "/OpenLeakedDocs/docs/API/checks-whether-or-not-the-domain-is-existing-in-a-breach-c78": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-api-checks-whether-or-not-the-domain-is-existing-in-a-breach-868-ede"
+    "__comp": "4c5e977b",
+    "content": "8682edfc"
   },
   "/OpenLeakedDocs/docs/API/checks-whether-or-not-the-email-is-existing-in-a-breach-00c": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-api-checks-whether-or-not-the-email-is-existing-in-a-breach-6-a-9-156"
+    "__comp": "4c5e977b",
+    "content": "6a9391f1"
   },
   "/OpenLeakedDocs/docs/API/checks-whether-or-not-the-password-is-existing-in-a-breach-ea0": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-api-checks-whether-or-not-the-password-is-existing-in-a-breach-907-196"
+    "__comp": "4c5e977b",
+    "content": "907693bd"
   },
   "/OpenLeakedDocs/docs/API/checks-whether-or-not-the-username-is-existing-in-a-breach-81b": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-api-checks-whether-or-not-the-username-is-existing-in-a-breach-255-1b8"
+    "__comp": "4c5e977b",
+    "content": "255149e5"
   },
   "/OpenLeakedDocs/docs/API/create-a-new-password-968": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-api-create-a-new-password-708-2f0"
+    "__comp": "4c5e977b",
+    "content": "708c30df"
   },
   "/OpenLeakedDocs/docs/API/creates-a-new-user-in-the-users-database-375": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-api-creates-a-new-user-in-the-users-databasede-9-2d3"
+    "__comp": "4c5e977b",
+    "content": "de9a17c2"
   },
   "/OpenLeakedDocs/docs/API/domain-af6": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-api-domain-38-e-52e"
+    "__comp": "4c5e977b",
+    "content": "38eea5e7"
   },
   "/OpenLeakedDocs/docs/API/email-378": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-api-email-0-af-88c"
+    "__comp": "4c5e977b",
+    "content": "0af4bb96"
   },
   "/OpenLeakedDocs/docs/API/finds-associated-breaches-dda": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-api-finds-associated-breaches-8-b-6-d93"
+    "__comp": "4c5e977b",
+    "content": "8b6b9b47"
   },
   "/OpenLeakedDocs/docs/API/healthcheck-c01": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-api-healthcheck-2-a-6-571"
+    "__comp": "4c5e977b",
+    "content": "2a63e821"
   },
   "/OpenLeakedDocs/docs/API/initiate-recovery-process-1bc": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-api-initiate-recovery-processc-84-9e1"
+    "__comp": "4c5e977b",
+    "content": "c84ce06b"
   },
   "/OpenLeakedDocs/docs/API/open-leaked-yaml-764": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-api-open-leaked-yamldd-6-f65"
+    "__comp": "4c5e977b",
+    "content": "dd6338bd"
   },
   "/OpenLeakedDocs/docs/API/password-9a1": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-api-passwordc-0-e-64e"
+    "__comp": "4c5e977b",
+    "content": "c0e36f73"
   },
   "/OpenLeakedDocs/docs/API/signs-out-the-current-user-aaa": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-api-signs-out-the-current-user-401-2dc"
+    "__comp": "4c5e977b",
+    "content": "401b5552"
   },
   "/OpenLeakedDocs/docs/API/subscribe-33c": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-api-subscribe-351-712"
+    "__comp": "4c5e977b",
+    "content": "3514ccf5"
   },
   "/OpenLeakedDocs/docs/API/subscribe-to-notifications-734": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-api-subscribe-to-notificationsfda-c63"
+    "__comp": "4c5e977b",
+    "content": "fda21157"
   },
   "/OpenLeakedDocs/docs/API/tip-c86": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-api-tipef-0-32b"
+    "__comp": "4c5e977b",
+    "content": "ef012a94"
   },
   "/OpenLeakedDocs/docs/API/unsubscribe-from-notificatons-600": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-api-unsubscribe-from-notificatons-6-e-3-792"
+    "__comp": "4c5e977b",
+    "content": "6e3c0dee"
   },
   "/OpenLeakedDocs/docs/API/username-562": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-api-usernamee-3-f-dee"
+    "__comp": "4c5e977b",
+    "content": "e3f8bc24"
   },
   "/OpenLeakedDocs/docs/API/verify-user-96f": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-api-verify-user-082-66b"
+    "__comp": "4c5e977b",
+    "content": "082f400a"
   },
   "/OpenLeakedDocs/docs/Authentication-b07": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-authentication-3-c-6-380"
+    "__comp": "4c5e977b",
+    "content": "3c64044c"
   },
   "/OpenLeakedDocs/docs/Backend-401": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-backend-770-6d0"
+    "__comp": "4c5e977b",
+    "content": "7704d4bd"
   },
   "/OpenLeakedDocs/docs/category/api-documentation-ad1": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "categoryGeneratedIndex": "categoryGeneratedIndex---open-leaked-docs-docs-category-api-documentationf-2-a-b8d"
+    "__comp": "14eb3368",
+    "categoryGeneratedIndex": "f2af5850"
   },
   "/OpenLeakedDocs/docs/Database/BloomFilter-a8f": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-database-bloom-filtereb-0-e0a"
+    "__comp": "4c5e977b",
+    "content": "eb0d16e9"
   },
   "/OpenLeakedDocs/docs/Database/Cache-6b4": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-database-cache-3-de-88c"
+    "__comp": "4c5e977b",
+    "content": "3de7fe39"
   },
   "/OpenLeakedDocs/docs/Database/Introduction-3c7": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-database-introduction-451-259"
+    "__comp": "4c5e977b",
+    "content": "4514036d"
   },
   "/OpenLeakedDocs/docs/Database/MariaDB-f36": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-database-maria-d-bbc-8-a49"
+    "__comp": "4c5e977b",
+    "content": "bc878a88"
   },
   "/OpenLeakedDocs/docs/Docker-588": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-docker-957-e94"
+    "__comp": "4c5e977b",
+    "content": "957b6b05"
   },
   "/OpenLeakedDocs/docs/Frontend-9ae": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-frontend-07-c-62f"
+    "__comp": "4c5e977b",
+    "content": "07cda070"
   },
   "/OpenLeakedDocs/docs/intro-279": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-intro-367-406"
+    "__comp": "4c5e977b",
+    "content": "36759dfc"
   },
   "/OpenLeakedDocs/docs/Loading-33a": {
-    "__comp": "__comp---theme-api-item-4-c-5-a29",
-    "content": "content---open-leaked-docs-docs-loading-2-e-8-531"
+    "__comp": "4c5e977b",
+    "content": "2e8d959f"
   },
   "/OpenLeakedDocs/-e8d": {
-    "__comp": "__comp---site-src-pages-index-jsc-4-f-f99",
+    "__comp": "c4f5d8e4",
     "__context": {
-      "plugin": "plugin---open-leaked-docs-markdown-page-193-c11"
+      "plugin": "19358f37"
     },
-    "config": "config---open-leaked-docs-5-e-9-f9f"
+    "config": "5e9f5e1a"
   }
 }

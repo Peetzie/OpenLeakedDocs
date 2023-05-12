@@ -34,15 +34,15 @@
                 {
                   "type": "object",
                   "properties": {
-                    "Local": {
-                      "type": "string",
-                      "description": "First part of the email pre-@",
-                      "example": "johndoe"
-                    },
                     "Domain": {
                       "type": "string",
                       "description": "Second part of the email post-@",
                       "example": "example.com"
+                    },
+                    "Local": {
+                      "type": "string",
+                      "description": "First part of the email pre-@",
+                      "example": "johndoe"
                     }
                   },
                   "example": {
@@ -61,11 +61,8 @@
         "200": {
           "description": "Successfully added the user"
         },
-        "406": {
+        "400": {
           "description": "Email already exists in the subscribers database"
-        },
-        "409": {
-          "description": "Verification already send"
         }
       },
       "security": [
@@ -111,7 +108,7 @@
           "name": "Apache 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
         },
-        "version": "1.7.1",
+        "version": "2.0.1",
         "x-logo": {
           "url": "https://raw.githubusercontent.com/Open-Leaked/Monorepo/main/Assets/logo/png/logo-white.png?token=GHSAT0AAAAAACB2FNOUZBLHC6LN6IMED47EZC3SB3Q",
           "altText": "Open-Leaked Logo"
