@@ -3,68 +3,73 @@ sidebar_position: 2
 ---
 
 # Docker containers
+
 <p align="center">
-<img src="https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png" alt="drawing" width="40%" height="200"/>
+  <img
+    src="https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png"
+    alt="drawing"
+    width="40%"
+    height="200"
+  />
 </p>
 
-Our application design incorporates the use of [Docker](https://www.docker.com/) containers to manage it. 
-In the subsequnet section, we will provide a brief overview of how containerization is implemented in our application. 
+Our application design incorporates the use of [Docker](https://www.docker.com/) containers to manage it.
+In the subsequent section, we will provide a brief overview of how containerization is implemented in our application.
 
-Our application makes use of three different types of ```docker-compose```files: 
-1. ```docker-compose-production```
-    - This file manages the production-level containers, some of which are simplified through the use of server packages. 
-    This approach reduces both the space requirements and complexity of the containers. 
-2. ```docker-compose```
-    - This file is used throughout the development process. It uilizes Docker images that are not all server-based, which allows the images to contain tools that could be used for development purposes. 
-3. ```docker-compose-import-database``` 
-    - This container contains the necessary images required to import data into the database.
+Our application makes use of three different types of `docker-compose`files:
 
+1. `docker-compose-production`
+   - This file manages the production-level containers, some of which are simplified through the use of server packages.
+     This approach reduces both the space requirements and complexity of the containers.
+2. `docker-compose`
+   - This file is used throughout the development process. It uilizes Docker images that are not all server-based, which allows the images to contain tools that could be used for development purposes.
+3. `docker-compose-import-database`
+   - This container contains the images required to import data into the database.
 
 :::info
-The Redis Image is a great example of how we use different images in our application. The development image contains RedisStack, which is a usefull tool to manage the Redis Cache database. 
+The Redis Image is a great example of how we use different images in our application. The development image contains RedisStack, which is a usefull tool to manage the Redis Cache database.
 :::
-
 
 ## Versioning
 
-| Container     | Images                                | default ports
-|---------------|---------------------------------------|------------------                 
-| Nginx         | nginx:latest                          | 80
-| Backend       | maven:3.8.7-amazoncorretto-17         | 8080
-| MariaDB       | mariadb:latest                        | 3306
-| Redis         | redis-stack:latest                    | 6379
+| Container | Images                        | default ports |
+| --------- | ----------------------------- | ------------- |
+| Nginx     | nginx:latest                  | 80            |
+| Backend   | maven:3.8.7-amazoncorretto-17 | 8080          |
+| MariaDB   | mariadb:latest                | 3306          |
+| Redis     | redis-stack:latest            | 6379          |
 
 :::info
-In production, the frontend of our application is not containerized. Instead, it is rendered client-side via HTML, which is provided by the reverse proxy, Nginx. 
-To support this approach, Nginx is configured to listen for HTTP traffic on port 5173 from the frontend. 
+In production, the frontend of our application is not containerized. Instead, it is rendered client-side via HTML, which is provided by the reverse proxy, Nginx.
+To support this approach, Nginx is configured to listen for HTTP traffic on port 5173 from the frontend.
 :::
 
 :::tip
-You can modify the used ports by editing the ```docker-compose``` files. 
+You can modify the used ports by editing the `docker-compose` files.
 :::
 
 ## Why containerized architecture?
-Our choise of a containerized architecture is motivated by several reasons. 
-Firstly, it enables us to accomodate different development enviroments and ensure compatibility with the server. 
-While the same goal can be achieved using Virtual Machines, it comes at cost - using more resources. 
+
+Our choise of a containerized architecture is motivated by several reasons.
+Firstly, it enables us to accomodate different development enviroments and ensure compatibility with the server.
+While the same goal can be achieved using Virtual Machines, it comes at cost - using more resources.
 In contrast, containers allow us to use the same Host-OS, avoiding duplication of the OS by packaging the required binaries and libraries into each container. Communication between containers are facilitated through the use of a reverse proxy and network bridges in the docker file.
 
-
 :::caution
-By default, the containers do not inherit any system files from the Host-OS, including timezone files. If the server(s) are deployed in regions outside of the ```TZ=Europe/Copenhagen``` timezone, it is important to modify this setting in the relevant compose file to ensure proper functionality of the application. 
+By default, the containers do not inherit any system files from the Host-OS, including timezone files. If the server(s) are deployed in regions outside of the `TZ=Europe/Copenhagen` timezone, it is important to modify this setting in the relevant compose file to ensure proper functionality of the application.
 :::
 
-
 ## Deploying all or one image
-For first time installing please follow this [installation guide](intro#-installation). 
+
+For first time installing please follow this [installation guide](intro#-installation).
 
 After setting up the installation for the first time you can restart the applcation by running the follwing commands:
 
 1. To restart all containers
-    ```bash
-    docker compose up --build all 
-    ```
+   ```bash
+   docker compose up --build all
+   ```
 2. To restart an individual container
-    ```bash
-    docker compose up --build <container-name>
-    ``` 
+   ```bash
+   docker compose up --build <container-name>
+   ```
