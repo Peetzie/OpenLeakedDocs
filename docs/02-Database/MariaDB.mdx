@@ -26,15 +26,20 @@ To get you started we have provided that in SQL form here.
 Essentially the following snippet creates the tables in the database and adds constraints to values, assigns primary keys and foregin keys.
 
 ```sql
+DROP DATABASE IF EXISTS OPEN_LEAKED;
+
+CREATE DATABASE OPEN_LEAKED;
+
+USE OPEN_LEAKED;
+
 create table breach
 (
-    id            bigint unsigned auto_increment
-        primary key,
+    id            serial primary key,
     date          date         null,
     inserted_date date         not null,
     name          varchar(255) not null,
     source        varchar(255) null,
-    verified      tinyint(1)   not null,
+    verified      boolean      not null,
     iconURL       varchar(255) null,
     summary       text         null,
     description   text         null
@@ -42,66 +47,40 @@ create table breach
 
 create table email
 (
-    id     bigint unsigned not null,
-    domain varchar(255)    not null,
-    local  varchar(255)    not null,
-    primary key (domain, local),
-    constraint domain
-        unique (domain, local),
-    constraint domain_2
-        unique (domain, local),
-    constraint id
-        unique (id),
-    constraint id_2
-        unique (id)
+    id     serial primary key,
+    domain varchar(255) not null,
+    local  varchar(255) not null
 );
 
 create table email_breaches
 (
     email_id    bigint unsigned not null,
-    breaches_id bigint unsigned not null,
-    primary key (email_id, breaches_id),
-    constraint email_id
-        unique (email_id, breaches_id),
-    constraint email_breaches_ibfk_1
-        foreign key (breaches_id) references breach (id),
-    constraint email_breaches_ibfk_2
-        foreign key (email_id) references email (id)
+    breaches_id bigint unsigned not null
 );
-
-create index breaches_id
-    on email_breaches (breaches_id);
 
 create table password
 (
-    id    bigint unsigned not null,
-    value varchar(255)    not null
-        primary key,
-    constraint id
-        unique (id),
-    constraint id_2
-        unique (id),
-    constraint value
-        unique (value),
-    constraint value_2
-        unique (value)
+    id    serial unique primary key,
+    value varchar(255) not null
 );
 
 create table password_breaches
 (
     password_id bigint unsigned not null,
-    breaches_id bigint unsigned not null,
-    primary key (password_id, breaches_id),
-    constraint password_id
-        unique (password_id, breaches_id),
-    constraint password_breaches_ibfk_1
-        foreign key (breaches_id) references breach (id),
-    constraint password_breaches_ibfk_2
-        foreign key (breaches_id) references breach (id)
+    breaches_id bigint unsigned not null
 );
 
-create index breaches_id
-    on password_breaches (breaches_id);
+create table username
+(
+    id    serial unique primary key ,
+    value varchar(255) not null
+);
+
+create table username_breaches
+(
+    username_id bigint unsigned not null,
+    breaches_id bigint unsigned not null
+);
 
 create table subscription
 (
@@ -112,50 +91,23 @@ create table subscription
 
 create table tip
 (
-    link varchar(255) not null
-        primary key,
+    link varchar(255) primary key,
     description varchar(255) null,
-    size        int          null,
+    size        int,
     unit        varchar(255) null,
     breach_date date         null
 );
 
-create table username
-(
-    id    bigint unsigned not null,
-    value varchar(255)    not null
-        primary key,
-    constraint id
-        unique (id),
-    constraint value
-        unique (value)
-);
-
-create table username_breaches
-(
-    username_id bigint unsigned not null,
-    breaches_id bigint unsigned not null,
-    primary key (username_id, breaches_id),
-    constraint username_id
-        unique (username_id, breaches_id),
-    constraint username_breaches_ibfk_1
-        foreign key (username_id) references email (id),
-    constraint username_breaches_ibfk_2
-        foreign key (breaches_id) references breach (id)
-);
-
-create index breaches_id
-    on username_breaches (breaches_id);
 
 create table users
 (
     username   varchar(50)       not null
         primary key,
     password   varchar(100)      not null,
-    full_name  varchar(100)      not null,
-    student_no varchar(50)       not null,
     enabled    tinyint default 1 not null
 );
+
+
 
 create table authorities
 (
@@ -164,7 +116,7 @@ create table authorities
     constraint ix_auth_username
         unique (username, authority),
     constraint authorities_ibfk_1
-        foreign key (username) references users (username)
+        foreign key (username) references OPEN_LEAKED.users (username)
 );
 ```
 
@@ -201,7 +153,7 @@ It is recommended to implement a verification process that confirms the user is 
 
 ### Authorisations
 
-In the application, there are two tables `user`and `authorities`, that are used for authentication. These tables are an extension of the [JDBC Authentication](https://docs.spring.io/spring-security/reference/servlet/authentication/passwords/jdbc.html) base schema which is provided by
+In the application, there are two tables `user`and `authorities`, that are used for authentication. These tables are an based on the [JDBC Authentication](https://docs.spring.io/spring-security/reference/servlet/authentication/passwords/jdbc.html) base schema which is provided by
 [Spring Security](https://docs.spring.io/spring-security/reference/index.html).
 
 The `user` table contains the user's username, passwrod and whether the account is enabled or disabled.
