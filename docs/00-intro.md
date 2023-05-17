@@ -110,7 +110,7 @@ Getting started only requires [Docker](https://www.docker.com/) and [git](https:
 2. To initiate the installation and launch the application services, we first have to create all containers
 
    ```bash
-   docker compose -f <Docker-Compose-File> create
+   docker compose -f <Docker-Compose-File> up
    ```
 
    `<Docker-Compose-File>` specifies a path to a Docker Compose file.
@@ -118,19 +118,9 @@ Getting started only requires [Docker](https://www.docker.com/) and [git](https:
    Example usage:
 
    ```bash
-   docker compose -f docker-compose.yml create
+   docker compose -f docker-compose.yml up
    ```
-
-3. Setup the basic schema for the SQL database
-   1. First enter a terminal in the container contanining the MariaDB image.
-      ```bash
-      cd mariadb/initdb
-      ``` 
-      ```bash
-      
-
-
-4. Open your preferred web browser and navigate to `localhost`.
+3. Open your preferred web browser and navigate to `localhost`.
    :::tip
    You dont have to specify ports in the URL, this is handled by the proxy.
    ::::

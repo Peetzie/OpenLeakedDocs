@@ -5,7 +5,7 @@ sidebar_position: 1
 # MariaDB - Persistent storage
 
 In this section we aim to provide usefull insight into the design decisions for the databases.
-We also here define basic schematics used to deploy the project.
+We also here define basic schemas used to deploy the project.
 
 The database is based on a SQL database in MariaDB.
 Therefor the entity relationships are important. If improperly design they would slow down the application and vice versa.
@@ -18,7 +18,7 @@ The entity relationships are freely available here for the interrested users:
 >
 > 2. [![Entity Relationship diagram for data]](/img/ERD/ERD_diagram.drawio.pdf)
 
-## Loading the schematics
+## Loading the schemas
 
 To start the Docker containers the `schema` of the database is important.
 To get you started we have provided that in SQL form here.
@@ -171,3 +171,7 @@ Single sign on allows users to be authentication across sites by sending a speci
 This can both be a vulnerability and a security boost based on the application.
 By using the two-factor authentication from DTU, SSO could help in further securing this application
 :::
+
+:::caution
+Any major changes to the database would require removing the folder ```db``` inside ```root/MariaDB```.
+This rebuilds the entire database from the schema stated [here](#loading-the-schemas)
